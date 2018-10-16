@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Meta from '../components/Meta';
 
 // Styles
-import '../style.css';
+import '../styles/style.scss';
 
 class Page extends Component {
     render() {
