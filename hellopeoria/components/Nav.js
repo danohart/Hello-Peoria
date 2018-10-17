@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const Nav = () => (
-    <div>
+    <div className="nav">
         <Link href="/">
             <a>Home</a>
         </Link>

@@ -73,10 +73,16 @@ var Home = function Home(props) {
       lineNumber: 3
     },
     __self: this
-  }, "Homepage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Homepage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
+    },
+    __self: this
+  }, "This is an h2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
     },
     __self: this
   }, "Hello!"));
@@ -105,7 +111,7 @@ var Home = function Home(props) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -130,5 +136,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]));;
+},[[4,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=index.js.map

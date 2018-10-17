@@ -8,7 +8,7 @@ import '../styles/style.scss';
 class Page extends Component {
     render() {
         return (
-            <div>
+            <div className="main">
                 <Meta />
                 <Header />
                 {this.props.children}
