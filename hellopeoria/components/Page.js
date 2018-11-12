@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
-import Meta from '../components/Meta';
+import Header from './Header';
+import HomeHeader from './HomeHeader';
+import Meta from './Meta';
 
 // Styles
 import '../styles/style.scss';
@@ -8,10 +9,13 @@ import '../styles/style.scss';
 class Page extends Component {
     render() {
         return (
-            <div className="main">
+            <div>
                 <Meta />
                 <Header />
-                {this.props.children}
+                <HomeHeader />
+                <div className="main">
+                	{this.props.children}
+                </div>
             </div>
         );
     }
