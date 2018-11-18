@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'form';
 
 * {
     margin: 0px;
@@ -104,12 +105,6 @@ header {
 .main {
 
     padding: 0px 10px;
-
-    &:before {
-        content: '';
-        padding: 20px;
-        background: $secondary-color-bold;
-    }
 }
 
 .card-wrapper {

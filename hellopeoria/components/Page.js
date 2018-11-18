@@ -12,7 +12,6 @@ class Page extends Component {
             <div>
                 <Meta />
                 <Header />
-                <HomeHeader />
                 <div className="main">
                 	{this.props.children}
                 </div>

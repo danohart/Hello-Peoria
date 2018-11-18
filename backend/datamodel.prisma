@@ -1,0 +1,13 @@
+type User {
+  id: ID! @unique
+  name: String!
+  email: String!
+}
+
+type Place {
+  id: ID! @unique
+  name: String!
+  address: String!
+  description: String!
+  category: String
+}
