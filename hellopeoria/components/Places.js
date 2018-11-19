@@ -35,3 +35,4 @@ class Places extends Component {
 }
 
 export default Places;
+export { ALL_PLACES_QUERY };
