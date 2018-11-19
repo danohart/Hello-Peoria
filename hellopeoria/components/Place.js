@@ -13,7 +13,7 @@ class Place extends Component {
             
                 <div className="place card">
                     <div className="image">
-                    {place.image && <img src={place.image} alt={place.title} />}
+                        {place.image && <img src={place.image} alt={place.title} />}
                     </div>
                     <div className="inner">
                         <h2>{place.title}</h2>

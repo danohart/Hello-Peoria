@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/daniel-hart/hellopeoria/dev
-# timestamp: Mon Nov 19 2018 00:16:23 GMT-0600 (Central Standard Time)
+# timestamp: Mon Nov 19 2018 10:03:02 GMT-0600 (Central Standard Time)
 
 type AggregatePlace {
   count: Int!
@@ -67,6 +67,7 @@ type Place implements Node {
   name: String!
   address: String!
   description: String!
+  image: String
   category: String
 }
 
@@ -84,6 +85,7 @@ input PlaceCreateInput {
   name: String!
   address: String!
   description: String!
+  image: String
   category: String
 }
 
@@ -105,6 +107,8 @@ enum PlaceOrderByInput {
   address_DESC
   description_ASC
   description_DESC
+  image_ASC
+  image_DESC
   category_ASC
   category_DESC
   updatedAt_ASC
@@ -118,6 +122,7 @@ type PlacePreviousValues {
   name: String!
   address: String!
   description: String!
+  image: String
   category: String
 }
 
@@ -164,6 +169,7 @@ input PlaceUpdateInput {
   name: String
   address: String
   description: String
+  image: String
   category: String
 }
 
@@ -171,6 +177,7 @@ input PlaceUpdateManyMutationInput {
   name: String
   address: String
   description: String
+  image: String
   category: String
 }
 
@@ -343,6 +350,46 @@ input PlaceWhereInput {
 
   """All values not ending with the given string."""
   description_not_ends_with: String
+  image: String
+
+  """All values that are not equal to given value."""
+  image_not: String
+
+  """All values that are contained in given list."""
+  image_in: [String!]
+
+  """All values that are not contained in given list."""
+  image_not_in: [String!]
+
+  """All values less than the given value."""
+  image_lt: String
+
+  """All values less than or equal the given value."""
+  image_lte: String
+
+  """All values greater than the given value."""
+  image_gt: String
+
+  """All values greater than or equal the given value."""
+  image_gte: String
+
+  """All values containing the given string."""
+  image_contains: String
+
+  """All values not containing the given string."""
+  image_not_contains: String
+
+  """All values starting with the given string."""
+  image_starts_with: String
+
+  """All values not starting with the given string."""
+  image_not_starts_with: String
+
+  """All values ending with the given string."""
+  image_ends_with: String
+
+  """All values not ending with the given string."""
+  image_not_ends_with: String
   category: String
 
   """All values that are not equal to given value."""

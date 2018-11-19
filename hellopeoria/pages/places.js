@@ -5,7 +5,7 @@ const places = props => (
     <div>
        <h1>Places</h1>
         <p>Hello!</p>
-        <button><Link href={{pathname: '/add-place',}}>Add New Place</Link></button>
+        <Link><a className="button" href={{pathname: '/add-place',}}>Add New Place</a></Link>
         <Places />
     </div>
 )

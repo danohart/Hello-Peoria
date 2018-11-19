@@ -2,7 +2,7 @@ const Mutations = {
     async createPlace(parent, args, ctx, info) {
         // TODO Logged in?
 
-        const item = await ctx.db.mutation.createPlace(
+        const place = await ctx.db.mutation.createPlace(
             {
                 data: {
                     ...args
@@ -11,7 +11,7 @@ const Mutations = {
             info
         );
 
-        return item;
+        return place;
     },
     // updatePlace(parent, args, ctx, info) {
     //     // first take a copy of the updates

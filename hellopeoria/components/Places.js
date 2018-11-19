@@ -10,6 +10,7 @@ const ALL_PLACES_QUERY = gql`
             name
             description
             address
+            image
         }
     }
 `;
