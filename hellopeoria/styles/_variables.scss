@@ -19,7 +19,7 @@ $dark-gray: #555555;
 }
 
 @mixin button {
-    display: inline;
+    display: inline-block;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
@@ -27,6 +27,7 @@ $dark-gray: #555555;
     color: #FFFFFF;
     background: $secondary-color;
     margin-right: 10px;
+    padding: 12px 20px;
     border: 2px solid transparent;
     @include rounded-corners;
     margin-top: 5px;
@@ -36,7 +37,6 @@ $dark-gray: #555555;
     a {
         color: #FFFFFF;
         display: block;
-        padding: 12px 20px;
 
         &:hover {
             color: $secondary-color;
@@ -59,4 +59,8 @@ $dark-gray: #555555;
             background: $secondary-color;
         }
     }
+}
+
+a.button {
+    @include button;
 }

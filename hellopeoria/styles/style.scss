@@ -109,15 +109,15 @@ header {
 
 .card-wrapper {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     .card {
         display: flex;
-        justify-content: center;
         flex-direction: column;
-        width: 30%;
-        margin: 10px 20px 10px 0px;
+        width: 32%;
+        margin: 14px 0px;
         box-shadow: 1px 1px 20px rgba(0,0,0, 0.2);
         @include ease-transition;
         @include rounded-corners;
@@ -140,6 +140,14 @@ header {
                 width: 100%;
                 height: auto;
             }
+        }
+
+        .description {
+            padding: 10px 0px;
+        }
+
+        .address {
+            font-weight: bold;
         }
 
         .footer {
