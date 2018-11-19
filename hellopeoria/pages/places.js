@@ -1,8 +1,10 @@
+import Link from 'next/link';
+
 const Places = props => (
     <div>
        <h1>Places</h1>
         <p>Hello!</p>
-        <button className="secondary">Add New Place</button>
+        <button><Link href={{pathname: '/add-place',}}>Add New Place</Link></button>
         <div className="card-wrapper">
             <div className="place card">
                 <div className="image">

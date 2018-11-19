@@ -26,13 +26,22 @@ $dark-gray: #555555;
     text-align: center;
     color: #FFFFFF;
     background: $secondary-color;
-    padding: 12px 20px;
     margin-right: 10px;
     border: 2px solid transparent;
     @include rounded-corners;
     margin-top: 5px;
     cursor: pointer;
     @include ease-transition;
+
+    a {
+        color: #FFFFFF;
+        display: block;
+        padding: 12px 20px;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
 
     &:hover {
         background: transparent;
