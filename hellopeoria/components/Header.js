@@ -1,4 +1,5 @@
 import Nav from './Nav';
+import Search from './Search';
 import Link from 'next/link';
 import Router from 'next/router';
 
@@ -9,6 +10,7 @@ const Header = () => (
                 <a><img src={'../static/images/logo.png'} /></a>
             </Link>
         </div>
+        <Search />
         <Nav />
     </header>
 )

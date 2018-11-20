@@ -9,16 +9,19 @@ const CREATE_PLACE_MUTATION = gql`
             $name: String!
             $address: String!
             $description: String!
+            $category: String
         ) {
             createPlace(
                 name: $name
                 description: $description
                 address: $address
+                category: $category
             ) {
                 id
                 name
                 description
                 address
+                category
             }
         
     }
@@ -30,6 +33,7 @@ class createPlace extends Component {
         address: '500 Main St.',
         description: 'This is a description of your place or venue',
         image: 'image.jpg',
+        category: '',
     }
 
     handleChange = (e) => {
@@ -65,6 +69,9 @@ class createPlace extends Component {
                             <input type="text" id="description" name="description" placeholder="Description" required value={this.state.description} onChange={this.handleChange} />
 
                             <input type="text" id="image" name="image" placeholder="Image" required value={this.state.image} onChange={this.handleChange} />
+
+                            <input type="checkbox" id="gallery" name="category"
+                            value={this.state.category} /><label htmlFor="gallery" value="gallery">Art Gallery</label>
                             
                             <br/>
                             <button type="submit">Submit</button>

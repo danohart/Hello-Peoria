@@ -25,7 +25,7 @@ class Places extends Component {
 
                     return (
                         <div className="card-wrapper">
-                            {data.places.map(place => <Place place={place}key={place.id}/>)}
+                            {data.places.map(place => <Place place={place} key={place.id}/>)}
                         </div>
                     )
                 }}

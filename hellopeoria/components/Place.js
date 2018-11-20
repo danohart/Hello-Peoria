@@ -19,6 +19,7 @@ class Place extends Component {
                         <h2>{place.name}</h2>
                         <p className="description">{place.description}</p>
                         <p className="address">{place.address}</p>
+                        {place.category}
                     </div>
                     <div className="footer">
                         <button>✏️ Edit</button>

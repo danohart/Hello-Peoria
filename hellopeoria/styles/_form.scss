@@ -3,8 +3,14 @@ fieldset {
 
     input {
         width: 100%;
-        padding: 10px 8px;
+        padding: 10px 8px 10px 0px;
         font-size: 14px;
         margin: 5px 0px;
+    }
+
+    input[type='checkbox'] {
+        width: initial;
+        margin: 4px;
+        display: inline;
     }
 }
