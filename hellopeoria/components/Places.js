@@ -11,6 +11,7 @@ const ALL_PLACES_QUERY = gql`
             description
             address
             image
+            category
         }
     }
 `;

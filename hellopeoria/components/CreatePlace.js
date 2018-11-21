@@ -70,8 +70,9 @@ class createPlace extends Component {
 
                             <input type="text" id="image" name="image" placeholder="Image" required value={this.state.image} onChange={this.handleChange} />
 
-                            <input type="checkbox" id="gallery" name="category"
-                            value={this.state.category} /><label htmlFor="gallery" value="gallery">Art Gallery</label>
+                            <input type="text" id="category" name="category"
+                            value={this.state.category}
+                            onChange={this.handleChange} />
                             
                             <br/>
                             <button type="submit">Submit</button>

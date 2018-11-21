@@ -10,16 +10,17 @@ class Place extends Component {
 
     render() {
         const { place } = this.props;
+        console.log('category', place.category);
         return (
                 <div className="place card">
                     <div className="image">
-                        {place.image && <img src={place.image} alt={place.name} /> ? <img src={place.image} alt={place.name} /> : <img src={'https://via.placeholder.com/350x150?text=' + place.name} alt={place.name} />}
+                        {place.image && <img src={place.image} alt={place.name} /> ? <img src={place.image} alt={place.name} /> : <img src={'https://source.unsplash.com/400x200/?' + place.category} alt={place.name} />}
                     </div>
                     <div className="inner">
                         <h2>{place.name}</h2>
                         <p className="description">{place.description}</p>
                         <p className="address">{place.address}</p>
-                        {place.category}
+                        <p className="place-category">{place.category}</p>
                         <a target='_blank' href={'https://maps.google.com/?q=' + place.name + ' ' + place.address}>Map</a>
                     </div>
                     <div className="footer">
