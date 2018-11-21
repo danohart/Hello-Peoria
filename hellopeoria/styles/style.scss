@@ -59,7 +59,7 @@ header {
     position: relative;
 
     .search-button {
-        
+        display: block;
     }
 
     ::placeholder {
@@ -145,7 +145,7 @@ header {
 }
 
 .main {
-
+    min-height: 650px;
     padding: 0px 10px;
 }
 
@@ -185,6 +185,17 @@ header {
 
         .inner {
             padding: 20px;
+
+            .place-category {
+                margin: 10px 0px;
+
+                span {
+                    text-transform: capitalize;
+                    background: $light-gray;
+                    padding: 3px 8px;
+                    width: initial;
+                }
+            }
         }
 
         .image {
