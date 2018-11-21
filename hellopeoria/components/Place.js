@@ -13,7 +13,7 @@ class Place extends Component {
         return (
                 <div className="place card">
                     <div className="image">
-                        {place.image && <img src={place.image} alt={place.name} /> ? <img src={place.image} alt={place.name} /> : <img src='https://via.placeholder.com/350x150?text=Image' alt={place.name} />}
+                        {place.image && <img src={place.image} alt={place.name} /> ? <img src={place.image} alt={place.name} /> : <img src={'https://via.placeholder.com/350x150?text=' + place.name} alt={place.name} />}
                     </div>
                     <div className="inner">
                         <h2>{place.name}</h2>

@@ -56,6 +56,11 @@ header {
 
 .search {
     width: 60%;
+    position: relative;
+
+    .search-button {
+        
+    }
 
     ::placeholder {
         color: $dark-gray;
