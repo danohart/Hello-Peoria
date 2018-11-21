@@ -20,6 +20,7 @@ class Place extends Component {
                         <p className="description">{place.description}</p>
                         <p className="address">{place.address}</p>
                         {place.category}
+                        <a target='_blank' href={'https://maps.google.com/?q=' + place.name + ' ' + place.address}>Map</a>
                     </div>
                     <div className="footer">
                         <button>✏️ Edit</button>
