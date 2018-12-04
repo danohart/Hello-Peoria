@@ -318,8 +318,15 @@ header {
 
     .map {
         width: 45%;
+        
         iframe {
             width: 100%;
         }
     }
+}
+
+.pagination {
+    display: block;
+    text-align: center;
+    margin: 30px auto;
 }

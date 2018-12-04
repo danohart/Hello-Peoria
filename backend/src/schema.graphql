@@ -9,4 +9,5 @@ type Mutation {
 type Query {
     places: [Place]!
     place(where: PlaceWhereUniqueInput!): Place
+    placesConnection(where: PlaceWhereInput): PlaceConnection!
 }
