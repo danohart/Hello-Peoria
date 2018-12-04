@@ -17,6 +17,8 @@ body {
 img {
     width: 100%;
     height: auto;
+    margin: 0px;
+    padding: 0px;
 }
 
 a {
@@ -201,6 +203,8 @@ header {
         .image {
             width: 100%;
             height: auto;
+            min-height: 200px;
+            background: $light-gray;
             overflow: hidden;
 
             img {
@@ -280,6 +284,42 @@ header {
         }
         &.breakfast {
             background-image: url(/static/categories/breakfast.jpg);
+        }
+    }
+}
+
+
+.single-place-wrapper {
+    display: flex;
+    justify-content: space-around;
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    .single-place {
+        width: 50%;
+        @include mobile {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .image {
+            background: $light-gray;
+            min-height: 190px;
+            min-width: 100%;
+
+            @include mobile {
+                min-height: 90px;
+                background: initial;
+            }
+        }
+    }
+
+    .map {
+        width: 45%;
+        iframe {
+            width: 100%;
         }
     }
 }
