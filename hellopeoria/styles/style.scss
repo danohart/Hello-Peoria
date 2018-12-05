@@ -149,6 +149,13 @@ header {
 .main {
     min-height: 650px;
     padding: 0px 10px;
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0px;
+    }
 }
 
 .card-wrapper {
