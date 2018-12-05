@@ -190,6 +190,7 @@ header {
 
             .place-category {
                 margin: 10px 0px;
+                min-height: 25px;
 
                 span {
                     text-transform: capitalize;
@@ -326,7 +327,30 @@ header {
 }
 
 .pagination {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin: 30px auto;
+
+    .prev, .next {
+        border: 1px solid $light-gray;
+        @include rounded-corners;
+        padding: 10px 15px;
+    }
+    .prev {
+        border-right: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .next {
+        border-left: 0px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .num-pages {
+        border: 1px solid $light-gray;
+        padding: 10px 15px;
+    }
 }

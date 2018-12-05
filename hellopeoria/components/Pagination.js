@@ -2,6 +2,8 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { perPage } from '../config';
+import Head from 'next/head';
+import Link from 'next/link';
 
 const PAGINATION_QUERY = gql`
     query PAGINATION_QUERY {
@@ -20,9 +22,15 @@ const Pagination = props => (
             if(loading) return <p>Loading...</p>;
             const count = data.placesConnection.aggregate.count;
             const pages = Math.ceil(count / perPage);
+            const page = props.page;
             return (
                 <div className="pagination">
-                    1 of {pages}
+                    <Head>
+                        <title>Hello Peoria // Places {page} of {pages} </title>
+                    </Head>
+                    <Link prefetch href={{pathname: 'places', query: {page: page - 1}}}><a className="prev" aria-disable={page <= 1}>&#xab; Previous</a></Link>
+                    <div className='num-pages'>{props.page} of {pages}</div>
+                    <Link prefetch href={{pathname: 'places', query: {page: page + 1}}}><a className="next" aria-disable={page >= {pages}}>Next &#xbb;</a></Link>
                 </div>
             );
         }}    

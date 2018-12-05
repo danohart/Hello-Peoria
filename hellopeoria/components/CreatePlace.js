@@ -3,6 +3,7 @@ import { Mutation } from 'react-apollo'
 import Router from 'next/router'
 import gql from 'graphql-tag'
 import Error from './ErrorMessage'
+import { ALL_PLACES_QUERY } from './Places';
 
 const CREATE_PLACE_MUTATION = gql`
     mutation CREATE_PLACE_MUTATION (

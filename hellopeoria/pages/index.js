@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 const Home = props => (
     <div>
-     	<h1>Homepage</h1>
         <div className="card-wrapper">
             <div className="category card coffee">
                 <div className="inner">
@@ -31,7 +32,7 @@ const Home = props => (
             </div>
         </div>
        	
-        <div align="center"><button>More</button></div>
+        <div align="center"><Link href="/places"><button>More</button></Link></div>
     </div>
 )
 

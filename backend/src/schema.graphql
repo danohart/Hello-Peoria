@@ -7,7 +7,7 @@ type Mutation {
 }
 
 type Query {
-    places: [Place]!
+    places(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, first: Int): [Place]!
     place(where: PlaceWhereUniqueInput!): Place
     placesConnection(where: PlaceWhereInput): PlaceConnection!
 }
