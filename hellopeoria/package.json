@@ -4,7 +4,7 @@
   "description": "A guide to Peoria Illinois",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 7777",
+    "dev": "next -p 7777 --env-file variables.env",
     "build": "next build",
     "start": "next start",
     "test": "NODE_ENV=test jest --watch",
@@ -47,6 +47,7 @@
     "babel-jest": "^23.6.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "casual": "^1.5.19",
+    "dotenv": "^6.2.0",
     "enzyme-to-json": "^3.3.4",
     "graphql-tools": "^4.0.0",
     "jest": "^23.6.0",
