@@ -10,5 +10,6 @@ type Place {
   address: String!
   description: String!
   image: String
+  largeImage: String
   category: String
 }

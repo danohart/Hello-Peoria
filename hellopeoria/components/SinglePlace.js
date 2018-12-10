@@ -3,8 +3,6 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import Error from './ErrorMessage';
 import Head from 'next/head';
-import { eventNames } from 'cluster';
-import { isEnv } from 'apollo-utilities';
 
 const SINGLE_PLACE_QUERY = gql`
     query SINGLE_PLACE_QUERY($id: ID!) {
@@ -14,6 +12,7 @@ const SINGLE_PLACE_QUERY = gql`
             address
             description
             category
+            largeImage
         }
     }
 `;
@@ -36,14 +35,14 @@ class SinglePlace extends Component {
                         </Head>
                         <div className="single-place">
                             <div className="image">
-                                {place.image && <img src={place.image} alt={place.name} /> ? <img src={place.image} alt={place.name} /> : <img src={'https://source.unsplash.com/600x200/?' + place.category} alt={place.name} />}
+                                {place.largeImage && <img src={place.largeImage} alt={place.name} /> ? <img src={place.largeImage} alt={place.name} /> : <img src={'https://source.unsplash.com/600x200/?' + place.category} alt={place.name} />}
                             </div>
                             <h1>{place.name}</h1>
                             <p>{place.description}</p>
                             <p>{place.address}</p>
                         </div>
                         <div className="map">
-                            <iframe src={'https://www.google.com/maps/embed/v1/place?key='${env.GOOGLE_MAPS_EMBED_API}'&q=' + place.name + ' ' +place.address} width="600" height="450" frameborder="0" allowfullscreen></iframe>
+                            <iframe src={'https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=' + place.name + ' ' +place.address} width="600" height="450" frameborder="0" allowFullScreen></iframe>
                         </div>
                     </div>
                 );

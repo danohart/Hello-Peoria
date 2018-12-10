@@ -160,16 +160,15 @@ header {
 
 .card-wrapper {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: left;
 
     .card {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        width: 32%;
-        margin: 14px 0px;
+        width: 31%;
+        margin: 14px;
         box-shadow: 1px 1px 20px rgba(0,0,0, 0.2);
         @include ease-transition;
         @include rounded-corners;
@@ -210,7 +209,8 @@ header {
 
         .image {
             width: 100%;
-            height: auto;
+            height: 200px;
+
             min-height: 200px;
             background: $light-gray;
             overflow: hidden;
@@ -223,6 +223,7 @@ header {
 
         .description {
             padding: 20px 0px;
+            min-height: 60px;
         }
 
         .address {
@@ -253,7 +254,7 @@ header {
         background-position: center;
         color: #FFFFFF;
         height: 400px;
-        width: 23%;
+        width: 22.6%;
 
         @include tablet {
             width: 48%;
@@ -330,6 +331,13 @@ header {
         iframe {
             width: 100%;
         }
+    }
+}
+
+.upload-form {
+    img {
+        width: initial;
+        height: auto;
     }
 }
 

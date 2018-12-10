@@ -28,9 +28,9 @@ const Pagination = props => (
                     <Head>
                         <title>Hello Peoria // Places {page} of {pages} </title>
                     </Head>
-                    <Link prefetch href={{pathname: 'places', query: {page: page - 1}}}><a className="prev" aria-disable={page <= 1}>&#xab; Previous</a></Link>
+                    <Link prefetch href={{pathname: 'places', query: {page: page - 1}}}><a className="prev" aria-disabled={page <= 1}>&#xab; Previous</a></Link>
                     <div className='num-pages'>{props.page} of {pages}</div>
-                    <Link prefetch href={{pathname: 'places', query: {page: page + 1}}}><a className="next" aria-disable={page >= {pages}}>Next &#xbb;</a></Link>
+                    <Link prefetch href={{pathname: 'places', query: {page: page + 1}}}><a className="next" aria-disabled={page >= {pages}}>Next &#xbb;</a></Link>
                 </div>
             );
         }}    
