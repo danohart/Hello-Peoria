@@ -23,7 +23,7 @@ class DeletePlace extends Component {
         data.places = data.places.filter(place => place.id !== payload.data.deletePlace.id);
         // 3. Put the places back!
         cache.writeQuery({ 
-            query: ALL_PLACES_QUERY, 
+            query: ALL_PLACES_QUERY,
             data
         });
     };

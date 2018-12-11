@@ -60,6 +60,40 @@ header {
     width: 60%;
     position: relative;
 
+    .search-wrapper { 
+        position: absolute;
+        background: #FFFFFF;
+        box-shadow: 1px 8px 15px #00000029;
+        border-top: 1px solid $light-gray;
+        z-index: 100;
+
+        .search-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            overflow: hidden;
+            padding: 25px;
+            border-bottom: 1px solid $light-gray;
+
+            .image {
+                width: 20%;
+            }
+
+            .name {
+                font-weight: bold;
+                font-size: 21px;
+                width: 100%;
+                
+                .description {
+                    font-weight: lighter;
+                    font-size: 16px;
+                    margin-left: 25px;
+                }
+            }
+        }
+    }
+
     .search-button {
         display: block;
     }
