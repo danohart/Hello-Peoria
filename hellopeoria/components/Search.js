@@ -28,7 +28,7 @@ function routeToPlace(place) {
         query: {
             id: place.id,
         },
-    })
+    });
 }
 
 class AutoComplete extends React.Component {

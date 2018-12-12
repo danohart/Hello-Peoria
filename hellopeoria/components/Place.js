@@ -39,6 +39,7 @@ class Place extends Component {
                         <div className="options">
                             <a target='_blank' href={'https://maps.google.com/?q=' + place.name + ' ' + place.address}>Map</a>
                             <Link href={{pathname: '/place', query: { id: place.id },}}><a>Learn More</a></Link>
+                            <a className='isDisabled' title='Coming Soon'>Add To List +</a>
                         </div>
                         
                     </div>
