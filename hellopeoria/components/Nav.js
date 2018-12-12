@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Nav = () => (
     <div className="nav">
-        <Link href='/places'>
+        <Link href={{pathname: '/places',}}>
             <a>Places</a>
         </Link>
     </div>

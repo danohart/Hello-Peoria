@@ -6,7 +6,7 @@ import Router from 'next/router';
 const Header = () => (
     <header>
         <div className="logo">
-            <Link href="/">
+            <Link href={{pathname: '/',}}>
                 <a><img src={'../static/images/logo.png'} /></a>
             </Link>
         </div>

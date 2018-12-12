@@ -42,7 +42,7 @@ class SinglePlace extends Component {
                             <div className="address">{place.address}</div>
                         </div>
                         <div className="map">
-                            <iframe src={'https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=' + place.name + ' ' +place.address} width="600" height="450" frameborder="0" allowFullScreen></iframe>
+                            <iframe src={'https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=' + place.name + ' ' +place.address} width="600" height="450" frameBorder="0" allowFullScreen></iframe>
                         </div>
                     </div>
                 );
