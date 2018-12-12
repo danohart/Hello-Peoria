@@ -15,23 +15,6 @@ class Place extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     fetch ('https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Broken%20Tree&inputtype=textquery&fields=photos&key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U', {mode: 'cors'})
-    //     .then(results => {
-    //         return results.json();
-    //     }).then(data => {
-    //         let photo = data.results.map((pic) => {
-    //             return (
-    //                 <div key={pic.results}>
-    //                     <img src={candidates.place_id} />
-    //                 </div>
-    //             )
-    //         })
-    //         this.setState({photo: photo});
-    //         console.log('photo id', this.state.photo);
-    //     })
-    // }
-
     render() {
         const { place } = this.props;
         return (
@@ -41,24 +24,28 @@ class Place extends Component {
                         <a>{place.image && <img src={place.image} alt={place.name} /> ? <img src={place.image} alt={place.name} /> : <img src={'https://source.unsplash.com/400x200/?' + place.category} alt={place.name} />}</a>
                     </Link>
                     </div>
+                    
                     <div className="inner">
+                        <div className="place-category">
+                            {place.category ? <span>{place.category}</span> : null}
+                        </div>
                         <h2>
                             <Link href={{pathname: '/place', query: { id: place.id },}}>
                                 <a>{place.name}</a>
                             </Link>
                         </h2>
-                        {/* <div><img src={''} /></div> */}
                         <p className="description">{place.description}</p>
                         <p className="address">{place.address}</p>
-                        <div className="place-category">
-                            {place.category ? <span>{place.category}</span> : null}
+                        <div className="options">
+                            <a target='_blank' href={'https://maps.google.com/?q=' + place.name + ' ' + place.address}>Map</a>
+                            <Link href={{pathname: '/place', query: { id: place.id },}}><a>Learn More</a></Link>
                         </div>
-                        <a target='_blank' href={'https://maps.google.com/?q=' + place.name + ' ' + place.address}>Map</a>
+                        
                     </div>
-                    <div className="footer">
+                    {/* <div className="footer">
                         <button>✏️ Edit</button>
                         <DeletePlace id={place.id}>❌ Delete</DeletePlace>
-                    </div>
+                    </div> */}
                 </div>
         );
     }
