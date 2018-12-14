@@ -76,7 +76,7 @@ class AutoComplete extends React.Component {
                                 <div className="search-wrapper">
                                     <div>
                                         {this.state.places.map((place, index) => (
-                                            <Link href={{pathname: '/place', query: { id: place.id },}}><a>
+                                            <Link href={{pathname: '/place', query: { id: place.id },}} key={place.id}><a>
                                                 <div className="search-item"  key={place.id}>
                                                     <div className="image"><img src={place.image} /></div>
                                                     <div className="name">{place.name}<div className="description">{place.description}</div></div>
