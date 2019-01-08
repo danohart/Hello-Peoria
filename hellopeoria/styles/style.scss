@@ -202,16 +202,18 @@ header {
 
 .card-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-bottom: 10px;
 
     .card {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        width: 31%;
+        width: 28.6%;
         margin: 14px;
         box-shadow: 1px 1px 20px rgba(0,0,0, 0.2);
+        flex: 0 0 auto;
         @include ease-transition;
         @include rounded-corners;
         overflow: hidden;
