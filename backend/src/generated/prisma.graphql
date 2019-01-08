@@ -1,5 +1,9 @@
-# source: https://us1.prisma.sh/daniel-hart/hellopeoria/dev
-# timestamp: Sat Dec 08 2018 12:59:11 GMT-0600 (Central Standard Time)
+# source: https://hello-peoria-prod-19a7dc0bca.herokuapp.com/hello-peoria-prod/prod
+# timestamp: Sun Jan 06 2019 14:49:59 GMT-0600 (Central Standard Time)
+
+type AggregatePath {
+  count: Int!
+}
 
 type AggregatePlace {
   count: Int!
@@ -23,6 +27,7 @@ scalar Long
 type Mutation {
   createUser(data: UserCreateInput!): User!
   createPlace(data: PlaceCreateInput!): Place!
+  createPath(data: PathCreateInput!): Path!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   updatePlace(data: PlaceUpdateInput!, where: PlaceWhereUniqueInput!): Place
   deleteUser(where: UserWhereUniqueInput!): User
@@ -31,8 +36,10 @@ type Mutation {
   upsertPlace(where: PlaceWhereUniqueInput!, create: PlaceCreateInput!, update: PlaceUpdateInput!): Place!
   updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
   updateManyPlaces(data: PlaceUpdateManyMutationInput!, where: PlaceWhereInput): BatchPayload!
+  updateManyPaths(data: PathUpdateManyMutationInput!, where: PathWhereInput): BatchPayload!
   deleteManyUsers(where: UserWhereInput): BatchPayload!
   deleteManyPlaces(where: PlaceWhereInput): BatchPayload!
+  deleteManyPaths(where: PathWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -62,6 +69,176 @@ type PageInfo {
   endCursor: String
 }
 
+type Path {
+  mainPath: String
+  secondaryPath: [String!]!
+}
+
+"""A connection to a list of items."""
+type PathConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [PathEdge]!
+  aggregate: AggregatePath!
+}
+
+input PathCreateInput {
+  mainPath: String
+  secondaryPath: PathCreatesecondaryPathInput
+}
+
+input PathCreateOneInput {
+  create: PathCreateInput
+}
+
+input PathCreatesecondaryPathInput {
+  set: [String!]
+}
+
+"""An edge in a connection."""
+type PathEdge {
+  """The item at the end of the edge."""
+  node: Path!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum PathOrderByInput {
+  mainPath_ASC
+  mainPath_DESC
+  id_ASC
+  id_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
+}
+
+type PathPreviousValues {
+  mainPath: String
+  secondaryPath: [String!]!
+}
+
+type PathSubscriptionPayload {
+  mutation: MutationType!
+  node: Path
+  updatedFields: [String!]
+  previousValues: PathPreviousValues
+}
+
+input PathSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [PathSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [PathSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [PathSubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: PathWhereInput
+}
+
+input PathUpdateDataInput {
+  mainPath: String
+  secondaryPath: PathUpdatesecondaryPathInput
+}
+
+input PathUpdateManyMutationInput {
+  mainPath: String
+  secondaryPath: PathUpdatesecondaryPathInput
+}
+
+input PathUpdateOneInput {
+  create: PathCreateInput
+  disconnect: Boolean
+  delete: Boolean
+  update: PathUpdateDataInput
+  upsert: PathUpsertNestedInput
+}
+
+input PathUpdatesecondaryPathInput {
+  set: [String!]
+}
+
+input PathUpsertNestedInput {
+  update: PathUpdateDataInput!
+  create: PathCreateInput!
+}
+
+input PathWhereInput {
+  """Logical AND on all given filters."""
+  AND: [PathWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [PathWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [PathWhereInput!]
+  mainPath: String
+
+  """All values that are not equal to given value."""
+  mainPath_not: String
+
+  """All values that are contained in given list."""
+  mainPath_in: [String!]
+
+  """All values that are not contained in given list."""
+  mainPath_not_in: [String!]
+
+  """All values less than the given value."""
+  mainPath_lt: String
+
+  """All values less than or equal the given value."""
+  mainPath_lte: String
+
+  """All values greater than the given value."""
+  mainPath_gt: String
+
+  """All values greater than or equal the given value."""
+  mainPath_gte: String
+
+  """All values containing the given string."""
+  mainPath_contains: String
+
+  """All values not containing the given string."""
+  mainPath_not_contains: String
+
+  """All values starting with the given string."""
+  mainPath_starts_with: String
+
+  """All values not starting with the given string."""
+  mainPath_not_starts_with: String
+
+  """All values ending with the given string."""
+  mainPath_ends_with: String
+
+  """All values not ending with the given string."""
+  mainPath_not_ends_with: String
+}
+
 type Place implements Node {
   id: ID!
   name: String!
@@ -70,6 +247,7 @@ type Place implements Node {
   image: String
   largeImage: String
   category: String
+  path: Path
 }
 
 """A connection to a list of items."""
@@ -89,6 +267,7 @@ input PlaceCreateInput {
   image: String
   largeImage: String
   category: String
+  path: PathCreateOneInput
 }
 
 """An edge in a connection."""
@@ -177,6 +356,7 @@ input PlaceUpdateInput {
   image: String
   largeImage: String
   category: String
+  path: PathUpdateOneInput
 }
 
 input PlaceUpdateManyMutationInput {
@@ -477,6 +657,7 @@ input PlaceWhereInput {
 
   """All values not ending with the given string."""
   category_not_ends_with: String
+  path: PathWhereInput
 }
 
 input PlaceWhereUniqueInput {
@@ -486,10 +667,12 @@ input PlaceWhereUniqueInput {
 type Query {
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   places(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Place]!
+  paths(where: PathWhereInput, orderBy: PathOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Path]!
   user(where: UserWhereUniqueInput!): User
   place(where: PlaceWhereUniqueInput!): Place
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
   placesConnection(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PlaceConnection!
+  pathsConnection(where: PathWhereInput, orderBy: PathOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PathConnection!
 
   """Fetches an object given its ID"""
   node(
@@ -501,6 +684,7 @@ type Query {
 type Subscription {
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
   place(where: PlaceSubscriptionWhereInput): PlaceSubscriptionPayload
+  path(where: PathSubscriptionWhereInput): PathSubscriptionPayload
 }
 
 type User implements Node {

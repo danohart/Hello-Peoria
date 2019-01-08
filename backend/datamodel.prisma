@@ -12,4 +12,10 @@ type Place {
   image: String
   largeImage: String
   category: String
+  path: Path
+}
+
+type Path {
+  mainPath: String
+  secondaryPath: [String!]
 }

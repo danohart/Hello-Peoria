@@ -18,5 +18,10 @@ type Place {
   name: String!
   address: String!
   description: String!
-  category: String
+  category: [Category]
+}
+
+type Category {
+  id: ID! @unique
+  type: String!
 }
