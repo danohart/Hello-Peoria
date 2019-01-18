@@ -1,0 +1,69 @@
+{
+    "valueType": "nodes",
+    "values": [
+{
+  "_typeName": "Place",
+  "name": "thirty-thirty Coffee Co.",
+  "address": "734 Main St, Peoria, IL 61602, USA",
+  "description": "cafe",
+  "place_id": "ChIJzTXpHXNZCogRLNV5rpuX54Q",
+  "id": "IJzTXpHXNZCogRLNV5rpuX54Q"
+},
+{
+  "_typeName": "Place",
+  "name": "Zion Coffee Bar",
+  "address": "803 SW Adams St, Peoria, IL 61602, USA",
+  "description": "cafe",
+  "place_id": "ChIJE_GdRBBZCogR9Cz4XsNRONU",
+  "id": "IJE_GdRBBZCogR9Cz4XsNRONU"
+},
+{
+  "_typeName": "Place",
+  "name": "[CxT] Roasting Company - Apollo",
+  "address": "309B Main St, Peoria, IL 61602, USA",
+  "description": "cafe",
+  "place_id": "ChIJY1eurgtZCogRZJVc6olprT8",
+  "id": "IJY1eurgtZCogRZJVc6olprT8"
+},
+{
+  "_typeName": "Place",
+  "name": "Leaves 'n Beans Coffee - Peoria Heights",
+  "address": "4800 N Prospect Rd, Peoria Heights, IL 61616, USA",
+  "description": "cafe",
+  "place_id": "ChIJHU2RskRaCogR-zB46myyo8U",
+  "id": "IJHU2RskRaCogR-zB46myyo8U"
+},
+{
+  "_typeName": "Place",
+  "name": "thirty-thirty Coffee Co. (Junction City)",
+  "address": "5901 N Prospect Rd #7, Peoria, IL 61614, USA",
+  "description": "cafe",
+  "place_id": "ChIJO5dOKQFbCogRSNXCajIG4Lw",
+  "id": "IJO5dOKQFbCogRSNXCajIG4Lw"
+},
+{
+  "_typeName": "Place",
+  "name": "Cafe 401",
+  "address": "401 Southwest Water Street #401, Peoria, IL 61602, USA",
+  "description": "cafe",
+  "place_id": "ChIJEbLuKQ9ZCogR7Hi3jeHaCf0",
+  "id": "IJEbLuKQ9ZCogR7Hi3jeHaCf0"
+},
+{
+  "_typeName": "Place",
+  "name": "Maui Wowi Hawaiian",
+  "address": "105 Lexington Drive, East Peoria, IL 61611, USA",
+  "description": "cafe",
+  "place_id": "ChIJ93XRPHRcCogRygp8PoCXdVU",
+  "id": "IJ93XRPHRcCogRygp8PoCXdVU"
+},
+{
+  "_typeName": "Place",
+  "name": "Café Brevé",
+  "address": "1 College Dr, East Peoria, IL 61611, USA",
+  "description": "cafe",
+  "place_id": "ChIJr1CkqjFXCogRtGerozkJSzU",
+  "id": "IJr1CkqjFXCogRtGerozkJSzU"
+}
+    ]
+}

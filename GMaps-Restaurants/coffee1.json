@@ -1,0 +1,930 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "CpQECAIAAAWL6qoPsfUdQj8p6fL-4B6VUnVXfVNnKLWi62C8lQp-xn2-VTcUkj0NVWTnVxvX10lFqJiGEhWJKTggwfbgsQonOn3F6uoDBJNcBeTLxwObyvuMBQtnfeIP_ztJu2VXtrYUnb53IphlYHkP-QZnEX6vgn_UmB4qtG1i6sNZPMIBt1JqV2yx5MZZmdcYQkN90KmeuG4nTIVWmgTESUt4cJqmb0CzSoJ9uceyg2TG6tS3PexXj8pRdrgE3zfH2-lmJcVbHQuhJeWQ85du23ZOrjm5O_b6UnwLBny-mvw_d3RF6-3DGbqSLnF22fW5OdbtCfRL5ZDt3LaW4kwR90hPOMMAkMDWSa5fHh5yqIc9FGL5Q5NnVc5ZAO34AiAlP2jqjA6fSte-2LOb47ExDiR8G9pBaszR1xVU08-L8RPW04w5jbk19dKudtKyggwvc2UwYA-xcEYpd1Hw0Lx1I3iENXYGNanDKEADoSuEqBZjwRYOgZ1Jh6ivBrHbi7uqpS5B7OtWcQ8WG-lBPtNWAhqeuKulHuYj2MYmzUj5kk497gFEaBD0neLh5DgQDwqqHclKMBuIuYsE0PtOAab0ENXTqvXxoaA4Ze_I6msAW-Y9P-Wygk95c_2xA87ktAZpTDRTF1dSmKS6V0qgxXi7VAIIYUVAP2sP6YZlb3mdFUi8jegnGXiyxOKNYBLflpJ6zLUGVhIQ9nJMuVSNB3t3x60JlZizPRoUcwFP3lCNY21dBNUpNOVNkQhDS0g",
+   "results" : [
+      {
+         "formatted_address" : "734 Main St, Peoria, IL 61602, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.6967343,
+               "lng" : -89.59447139999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.69802547989272,
+                  "lng" : -89.59320882010726
+               },
+               "southwest" : {
+                  "lat" : 40.69532582010728,
+                  "lng" : -89.5959084798927
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "76c2ba74984f9d585db803b064b99d87413684c7",
+         "name" : "thirty-thirty Coffee Co.",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2340,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118340521224260523316/photos\"\u003eZack Teague\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAkXZsq5DSTDjy8Wf5MaVzGsfvlKlsUKeTho-wbiec6At_XAwVOXLZyLcVJ41_yrwcXaoRm3G8uDIMkdlGnt9OysjC_mkFwsGoUvKE7aYN5nrJMzBovjBe64GsCG0vekvXEhAJCljwL8INBbt32DtUgAxoGhSUMGt28R_01Ovo3KtWUlSGqiah9Q",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJzTXpHXNZCogRLNV5rpuX54Q",
+         "plus_code" : {
+            "compound_code" : "MCW4+M6 Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGMCW4+M6"
+         },
+         "price_level" : 2,
+         "rating" : 4.7,
+         "reference" : "ChIJzTXpHXNZCogRLNV5rpuX54Q",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 472
+      },
+      {
+         "formatted_address" : "803 SW Adams St, Peoria, IL 61602, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.6863225,
+               "lng" : -89.5985776
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.68760477989272,
+                  "lng" : -89.59715337010726
+               },
+               "southwest" : {
+                  "lat" : 40.68490512010727,
+                  "lng" : -89.59985302989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "42c2fceb047e21da4d97b0b3fad3432354731a4f",
+         "name" : "Zion Coffee Bar",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 722,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117437666685448289832/photos\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAATT-FweX845G-IYnttk-1frmpJn4E9EBY22cbf-rZprPu6jIgabzFreI9hyFLKbwoy3Ty3gHz3h4-ou3LSuXDOwMz6CqsJa-IsD9Moar58vWb-GFZqPkKv6a79bCRY2H4EhC1bRfq7LKJgzpB8HS7zdy6GhS_ixFCrCtqM4E8qu0cc67FxZcbmw",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJE_GdRBBZCogR9Cz4XsNRONU",
+         "plus_code" : {
+            "compound_code" : "MCP2+GH Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGMCP2+GH"
+         },
+         "price_level" : 2,
+         "rating" : 4.5,
+         "reference" : "ChIJE_GdRBBZCogR9Cz4XsNRONU",
+         "types" : [
+            "cafe",
+            "bar",
+            "store",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+         ],
+         "user_ratings_total" : 371
+      },
+      {
+         "formatted_address" : "309B Main St, Peoria, IL 61602, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.69197,
+               "lng" : -89.59016099999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.69339917989272,
+                  "lng" : -89.58867992010727
+               },
+               "southwest" : {
+                  "lat" : 40.69069952010727,
+                  "lng" : -89.59137957989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "e37cf89f1ba2b60eb2b862f5a6e3034979d6ec33",
+         "name" : "[CxT] Roasting Company - Apollo",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 3368,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101793300096598174391/photos\"\u003e[CxT] Roasting Company\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA5lr8-1uZ2tj_mJB0gMiMONJLE8uIbBc1jmhErayF9NmDCS9Rma1p2vkL2QVZaOIpmgSYPqlQmogSFyuTWZHqrIqBwkZGL1lIlC-vDi1zglTbra2YEKOkgVidexxx3YHoEhCc-mTdL3u3ZSO6g-MKLvUZGhSJtOP6nrzUV--v8ublM37dBgBi_A",
+               "width" : 4905
+            }
+         ],
+         "place_id" : "ChIJY1eurgtZCogRZJVc6olprT8",
+         "plus_code" : {
+            "compound_code" : "MCR5+QW Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGMCR5+QW"
+         },
+         "rating" : 5,
+         "reference" : "ChIJY1eurgtZCogRZJVc6olprT8",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 55
+      },
+      {
+         "formatted_address" : "3706 N Prospect Rd, Peoria, IL 61614, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.732306,
+               "lng" : -89.573481
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.73359722989272,
+                  "lng" : -89.57213052010728
+               },
+               "southwest" : {
+                  "lat" : 40.73089757010727,
+                  "lng" : -89.57483017989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "bd6402497d34fa08a2fbdc123e2c5663238f060b",
+         "name" : "Starbucks",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 664,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102680686772638097940/photos\"\u003eStarbucks\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAV4TEdDHnXvH6EUi6O-Xno5ZG7cZrE7e77aRnQfALlOAQ6IbzgFisXBVjWtnsDHRL5l1R6m0FqA6hks3UCmp8ChjY4lbHVDqU0JqLVUm5exgjfzsAL3dPTECpJ_XCtKf2EhDPcNywQhKQ4NlwSa3jB2U5GhQVOMo9rqYI1ZWg5hMcWI9j0VA8Dw",
+               "width" : 732
+            }
+         ],
+         "place_id" : "ChIJDVNpLjlaCogRjr2QMhNwFE8",
+         "plus_code" : {
+            "compound_code" : "PCJG+WJ Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGPCJG+WJ"
+         },
+         "price_level" : 2,
+         "rating" : 4.4,
+         "reference" : "ChIJDVNpLjlaCogRjr2QMhNwFE8",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 219
+      },
+      {
+         "formatted_address" : "4800 N Prospect Rd, Peoria Heights, IL 61616, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.745507,
+               "lng" : -89.573668
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.74685762989272,
+                  "lng" : -89.57248502010727
+               },
+               "southwest" : {
+                  "lat" : 40.74415797010728,
+                  "lng" : -89.57518467989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "341873c01986e7e68fdd530eec7dadf62be3febe",
+         "name" : "Leaves 'n Beans Coffee - Peoria Heights",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3000,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117240977754358181573/photos\"\u003eKeith Bloompott\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRZAAAAJKgEmjj1U98HYj_UmtdqS1DD-MlSKN2ksaKIo2SxRTFhxlZygxkzpeGGc3IocOP0VdBO9uOKjwMkwBylLmgOZqItolKRHX-KJh-ib9bx0vAAkiI69hP69e7iXvsr_iJ_EhALj6WL806FR6wcou4gYOamGhQg-6sTwlIaglTZortb26jZ-iNsvg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJHU2RskRaCogR-zB46myyo8U",
+         "plus_code" : {
+            "compound_code" : "PCWG+6G Peoria Heights, Illinois, USA",
+            "global_code" : "86GGPCWG+6G"
+         },
+         "price_level" : 1,
+         "rating" : 4.6,
+         "reference" : "ChIJHU2RskRaCogR-zB46myyo8U",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 202
+      },
+      {
+         "formatted_address" : "2200 W War Memorial Dr, Peoria, IL 61613, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.7411337,
+               "lng" : -89.6289687
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.74270287989272,
+                  "lng" : -89.62748417010728
+               },
+               "southwest" : {
+                  "lat" : 40.74000322010728,
+                  "lng" : -89.63018382989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "37f5ddd30de1e280223527fa1219e7c1bb3dacd3",
+         "name" : "Gloria Jeans Coffees",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100804136481946142801/photos\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAIr6spXvDhC2Q7l8vyrMwNNhIcIOQiZ0xH-wfCArOOQCgp2GpJozMX-qkGooFSggEBwiKvRUJEa1mXTkB2-r6d3yRmYwuwiBV6yZa3nE0yTjk94BpssWremJ2OYwAzf10EhDGlFDS8kkrxdy7fk6nuxx2GhSOJHg0zfuvfas2fPpuSxNJXjs7iQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJOYL26DxdCogRRKnUyEFhHK8",
+         "plus_code" : {
+            "compound_code" : "P9RC+FC Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGP9RC+FC"
+         },
+         "rating" : 4,
+         "reference" : "ChIJOYL26DxdCogRRKnUyEFhHK8",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 5
+      },
+      {
+         "formatted_address" : "1200 W Main St, Peoria, IL 61606, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.699487,
+               "lng" : -89.61272599999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.70088932989272,
+                  "lng" : -89.61137502010727
+               },
+               "southwest" : {
+                  "lat" : 40.69818967010728,
+                  "lng" : -89.61407467989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "aa702a94f096c860f010ed2cafed516a4ba5a912",
+         "name" : "Starbucks",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 664,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101894408401051137378/photos\"\u003eStarbucks\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAATNBCmkQqpwandLdfuOQzXxEOc82K4nJM8shYJ3hpaSGJPLwmSyzXbfiLx4d5M8un4j1jJNaCZoUtHZnmE3MXRwAXGUUxuQ3U3QWr4ZxQo-IlkNxmCoFUNUJkzF7kooMXEhAYKSlgPT6GlEZFPvaqKlEjGhQ_2tehnesr5xUNkxZuGEW3gFxVig",
+               "width" : 732
+            }
+         ],
+         "place_id" : "ChIJTyC0mkZZCogRB6Zg4BetDc8",
+         "plus_code" : {
+            "compound_code" : "M9XP+QW Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGM9XP+QW"
+         },
+         "price_level" : 2,
+         "rating" : 4.3,
+         "reference" : "ChIJTyC0mkZZCogRB6Zg4BetDc8",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 128
+      },
+      {
+         "formatted_address" : "5901 N Prospect Rd #7, Peoria, IL 61614, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.7584767,
+               "lng" : -89.59222489999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.75972422989273,
+                  "lng" : -89.59087622010728
+               },
+               "southwest" : {
+                  "lat" : 40.75702457010728,
+                  "lng" : -89.59357587989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "c16a65c04e4b77a1441b4c67f44252fd2b976c8f",
+         "name" : "thirty-thirty Coffee Co. (Junction City)",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 1080,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117493061605661323451/photos\"\u003eEtta Devich\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAmqgjWhCbzBxZA8KepDl0fWTFZExE17CG9Ah37wRLoDJYPfBZfCGBXaxD3iDK-kX5v_YlvpNsCiyEWTVruTCrKGnFiCEil8NEJnFKmMvMIsc3UmzxZrqbI3ZNV-8--sBtEhD-PHFqTEfqVmXX_9f_E2qfGhTyENLEuLmGpXwD1bUVDiH3U9afQw",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJO5dOKQFbCogRSNXCajIG4Lw",
+         "plus_code" : {
+            "compound_code" : "QC55+94 Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGQC55+94"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJO5dOKQFbCogRSNXCajIG4Lw",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 72
+      },
+      {
+         "formatted_address" : "480 West Washington Street, East Peoria, IL 61611, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.6727137,
+               "lng" : -89.5835063
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.67418012989273,
+                  "lng" : -89.58189612010727
+               },
+               "southwest" : {
+                  "lat" : 40.67148047010728,
+                  "lng" : -89.58459577989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "ed909f17a5add38f641d7263450031ceefe65134",
+         "name" : "Starbucks",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2552,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112332044287927640303/photos\"\u003eWill McMilleon\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAtx6VBVxftxdeHuC7MjlVItfAvwPw3smargckXVGeqm9vCRcSFim5gUAI7F2alUAooHui39QsNHiv2FiEAJj5et62gKZ-wHPvAgoaZlb2Wsc8BaXxjhb00CA0PB2E6GhGEhBq8khqGOb-ndqaRfnvShZfGhSmv1Hx4TcVEF9ahN2ID4csyTDXGg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJv-TT61VYCogRAVRUGI6N88c",
+         "plus_code" : {
+            "compound_code" : "MCF8+3H East Peoria, Illinois, USA",
+            "global_code" : "86GGMCF8+3H"
+         },
+         "price_level" : 2,
+         "rating" : 3.8,
+         "reference" : "ChIJv-TT61VYCogRAVRUGI6N88c",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 116
+      },
+      {
+         "formatted_address" : "4125 N Sheridan Rd, Peoria, IL 61614, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.738779,
+               "lng" : -89.605537
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.74012192989273,
+                  "lng" : -89.60388867010728
+               },
+               "southwest" : {
+                  "lat" : 40.73742227010728,
+                  "lng" : -89.60658832989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "097e056bdd72588d23680317528eef02525c06b7",
+         "name" : "Starbucks",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "place_id" : "ChIJ04JMOr5bCogRd8FYBk8xl90",
+         "plus_code" : {
+            "compound_code" : "P9QV+GQ Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGP9QV+GQ"
+         },
+         "price_level" : 2,
+         "rating" : 3.7,
+         "reference" : "ChIJ04JMOr5bCogRd8FYBk8xl90",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 3
+      },
+      {
+         "formatted_address" : "3428 N University St, Peoria, IL 61604, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.729961,
+               "lng" : -89.61230499999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.73140727989273,
+                  "lng" : -89.61096847010727
+               },
+               "southwest" : {
+                  "lat" : 40.72870762010728,
+                  "lng" : -89.6136681298927
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "dfb54fb181b2f72f5b1bc562e7f8d01c100223c7",
+         "name" : "Dunkin' Donuts",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 768,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117675191784077704511/photos\"\u003eDunkin&#39; Donuts\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAOxu5fYIrX6a2Zh-2HpCzZCpaUEqM92Low_5_sBxWdPgTPmcVviarPMj71gCnTF6yZBgUrg-YJr_4a0BF6Nc6HKTePtFd5rmkPoyqCws7vV89DfQM5NNi6zIngswsPEM2EhAEzSBDrBrCYU69iMcKlGCMGhR7-YrqYT0_eXxm8yMn0exjNO3zcw",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJG3tFmO5bCogRMJcR-vtVT7g",
+         "plus_code" : {
+            "compound_code" : "P9HQ+X3 Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGP9HQ+X3"
+         },
+         "price_level" : 1,
+         "rating" : 4.2,
+         "reference" : "ChIJG3tFmO5bCogRMJcR-vtVT7g",
+         "types" : [
+            "cafe",
+            "bakery",
+            "store",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+         ],
+         "user_ratings_total" : 76
+      },
+      {
+         "formatted_address" : "201 N Main St, East Peoria, IL 61611, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.6676385,
+               "lng" : -89.5791495
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.66897457989272,
+                  "lng" : -89.57781547010728
+               },
+               "southwest" : {
+                  "lat" : 40.66627492010728,
+                  "lng" : -89.58051512989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "ff0437d3134966a44a37cdadba2f42d7f88fb5ce",
+         "name" : "Starbucks",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100705759452982906692/photos\"\u003eKevin Sheahan\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAS8DayiSSKTBQwPlTvV0sJ-zhmTHAvPwqxJlNkIn5bhrQaq2nF7FL59L35h4icBxpC0H0SLhyW7x-dvBgi6G0i8X44YlPeHBSSQBI4RGxjhLh-YpyLZ2rvRBLiUTtbHl6EhAIqsvgun07Dl9QeufKKftcGhS8L48v8CYovyPXklRaH1NNzwd4Zw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJLzQCstVZCogRFiIJoxw3UAA",
+         "plus_code" : {
+            "compound_code" : "MC9C+38 East Peoria, Illinois, USA",
+            "global_code" : "86GGMC9C+38"
+         },
+         "price_level" : 2,
+         "rating" : 3.9,
+         "reference" : "ChIJLzQCstVZCogRFiIJoxw3UAA",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 18
+      },
+      {
+         "formatted_address" : "4820 N University St, Peoria, IL 61614, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.746627,
+               "lng" : -89.61195810000001
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.74797822989272,
+                  "lng" : -89.61055382010728
+               },
+               "southwest" : {
+                  "lat" : 40.74527857010727,
+                  "lng" : -89.61325347989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "c8b89119544a3bb84c3f6dde9d51476ec0f344f5",
+         "name" : "Starbucks",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104191094924723310334/photos\"\u003eBrittany Wilson\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAPKdwYkOErN7kMR9s6y4f2bzs_N_Sr9HIyxciB1ILvTZFXnub1u51PerOmDYF00kvCXZw7xdcPuLajXlNN9s91q8eykmaxMnKVIuVy84nyCSDGEKpIutgNPeAW6ZpPY0rEhCsB-55NKm3jf72vx6SP1W-GhQdYSSr_2GKZ12a0mhTllGgw2XEsw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJTVOrFZpbCogRBugcZSze0yE",
+         "plus_code" : {
+            "compound_code" : "P9WQ+M6 Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGP9WQ+M6"
+         },
+         "price_level" : 2,
+         "rating" : 4.3,
+         "reference" : "ChIJTVOrFZpbCogRBugcZSze0yE",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 253
+      },
+      {
+         "formatted_address" : "401 Southwest Water Street #401, Peoria, IL 61602, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.6875532,
+               "lng" : -89.5922587
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.68873227989273,
+                  "lng" : -89.59073132010727
+               },
+               "southwest" : {
+                  "lat" : 40.68603262010728,
+                  "lng" : -89.59343097989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "f5006d6f120575a088ae90917e7550585d6d4ca5",
+         "name" : "Cafe 401",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101568565632873991079/photos\"\u003eTed Timmons\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAmxnxInPID7G16WFGA7cJ8GyY066lBVpgetL3py9rmRnJ8eMFkgHA3qvFq3pfhaxrwCkBUrO9eJWC93dQ0H8iK9IftpRbjdP3GFL2o1U6veY3Qum_IuSv304-9giBazpjEhClrcE42sRCc9KkfszhuERaGhTm5-8BAMjbMHxRw0d8N-OZoaVcmw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJEbLuKQ9ZCogR7Hi3jeHaCf0",
+         "plus_code" : {
+            "compound_code" : "MCQ5+23 Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGMCQ5+23"
+         },
+         "price_level" : 2,
+         "rating" : 4,
+         "reference" : "ChIJEbLuKQ9ZCogR7Hi3jeHaCf0",
+         "types" : [
+            "cafe",
+            "meal_takeaway",
+            "store",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+         ],
+         "user_ratings_total" : 30
+      },
+      {
+         "formatted_address" : "4525 N Sterling Ave, Peoria, IL 61615, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.743539,
+               "lng" : -89.632175
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.74488897989272,
+                  "lng" : -89.63063627010727
+               },
+               "southwest" : {
+                  "lat" : 40.74218932010728,
+                  "lng" : -89.63333592989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "f64c5ce8469d73a36d2a80cb655605e2741842aa",
+         "name" : "Dunkin' Donuts",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2322,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102104706373995265404/photos\"\u003eBryan Lam\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAADMQUssGulzsZx1eInmZ47eRttkv7vlEo2tviZfhk3cZ3yJNQ715W_DpyEFTFTrQgwv9Xu6dilSa161SeIFV7dOfzE-Rps7LvWSNYbzQHgEevu-YVJKizZpwtbhAPdA5MEhCivdMx4nng7mxmY_z7yaeKGhQbxLLguMyTejSYqXpnGWHmoA-T6g",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJGce9-HBcCogRlaIFxrtcSEY",
+         "plus_code" : {
+            "compound_code" : "P9V9+C4 Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGP9V9+C4"
+         },
+         "price_level" : 1,
+         "rating" : 3.9,
+         "reference" : "ChIJGce9-HBcCogRlaIFxrtcSEY",
+         "types" : [
+            "cafe",
+            "bakery",
+            "store",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+         ],
+         "user_ratings_total" : 157
+      },
+      {
+         "formatted_address" : "105 Lexington Drive, East Peoria, IL 61611, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.7401244,
+               "lng" : -89.6286729
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.74146912989272,
+                  "lng" : -89.62704747010729
+               },
+               "southwest" : {
+                  "lat" : 40.73876947010728,
+                  "lng" : -89.62974712989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "22d34c1ebdd01b957610a6db6f99a3aec8065a9e",
+         "name" : "Maui Wowi Hawaiian",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "place_id" : "ChIJ93XRPHRcCogRygp8PoCXdVU",
+         "plus_code" : {
+            "compound_code" : "P9RC+2G Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGP9RC+2G"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ93XRPHRcCogRygp8PoCXdVU",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 1
+      },
+      {
+         "formatted_address" : "1600 N Knoxville Ave, Peoria, IL 61603, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.7065108,
+               "lng" : -89.59352820000001
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.70786112989272,
+                  "lng" : -89.59240647010728
+               },
+               "southwest" : {
+                  "lat" : 40.70516147010728,
+                  "lng" : -89.59510612989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "88211579b2f3166ecff586de2a5e4910586166ec",
+         "name" : "Dunkin' Donuts",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 768,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109787427941570347525/photos\"\u003eDunkin&#39; Donuts\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAIPSleApomJ09oCNCZeQqlI4u5AIydJ_n5_BnN2ZYnXLvSggHJHSxFdc7Ad6GZwcppcP0dWylbM0elafN4k3EWq6NbUUCza0J1YwkHd1AkHJQiyWFoOoFCoTUgXgx223YEhDOFiyAds59YL-iYFHw7yKEGhRWeNbZht9PUzqGHAVtlvbKuQNcUA",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJX0ExQXpZCogRIKQkRudo9q0",
+         "plus_code" : {
+            "compound_code" : "PC44+JH Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGPC44+JH"
+         },
+         "price_level" : 1,
+         "rating" : 3.8,
+         "reference" : "ChIJX0ExQXpZCogRIKQkRudo9q0",
+         "types" : [
+            "cafe",
+            "bakery",
+            "store",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+         ],
+         "user_ratings_total" : 163
+      },
+      {
+         "formatted_address" : "1 College Dr, East Peoria, IL 61611, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.707405,
+               "lng" : -89.523821
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.70919687989272,
+                  "lng" : -89.52264232010728
+               },
+               "southwest" : {
+                  "lat" : 40.70649722010728,
+                  "lng" : -89.52534197989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "05b4a9e1a316ec279cb767f479442d40057ccf33",
+         "name" : "Café Brevé",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3036,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108924141327040944289/photos\"\u003eEric Hettel\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAWfpZETHvTjOUx0GlGbIHstEgLOZ7D9lMbmrkLTpehjtm6rdUA3sEwG_EE4EjGk8XMoCfafhrdgnjg2dsInpePGzIJ1ETfvua6ZT1kmL7QXd74KsIoZBIhz9bIp9IewLdEhBt6ApUfFqvhbRnjEybRAWmGhQ5X0_ZMMr0gv944hLXrK2CU4KoMw",
+               "width" : 4048
+            }
+         ],
+         "place_id" : "ChIJr1CkqjFXCogRtGerozkJSzU",
+         "plus_code" : {
+            "compound_code" : "PF4G+XF East Peoria, Illinois, USA",
+            "global_code" : "86GGPF4G+XF"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJr1CkqjFXCogRtGerozkJSzU",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 27
+      },
+      {
+         "formatted_address" : "303 S Main St, East Peoria, IL 61611, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.6644825,
+               "lng" : -89.58175639999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.66588692989271,
+                  "lng" : -89.58046027010727
+               },
+               "southwest" : {
+                  "lat" : 40.66318727010727,
+                  "lng" : -89.58315992989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "4e30b88ddf461d86eb9be9376b7b456aa3549b71",
+         "name" : "Dunkin' Donuts",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112332044287927640303/photos\"\u003eWill McMilleon\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA4Y9o2EWgBfHQVGsl-N575mwfLdOrHXxvoRXYera8a2SjrPf9fWDGeBBQeQlkLTYJoK4qR4fQ5OQ2Eag14iN0Hvb8SXAgrwlSiZYuipoVNvdxKVpRXqoQV5xtP-pUtcjzEhBgQkPDBxEDZHg9L8WxA0aSGhTb6RwffFqw_BOfHZ5x_XG2ivGK5w",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJwdvpCVpYCogRyMWKdjRBOwE",
+         "plus_code" : {
+            "compound_code" : "MC79+Q7 East Peoria, Illinois, USA",
+            "global_code" : "86GGMC79+Q7"
+         },
+         "price_level" : 1,
+         "rating" : 3.6,
+         "reference" : "ChIJwdvpCVpYCogRyMWKdjRBOwE",
+         "types" : [
+            "cafe",
+            "bakery",
+            "store",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+         ],
+         "user_ratings_total" : 68
+      },
+      {
+         "formatted_address" : "5001 N Big Hollow Rd, Peoria, IL 61615, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.74794050000001,
+               "lng" : -89.63529699999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.74946092989272,
+                  "lng" : -89.63394887010728
+               },
+               "southwest" : {
+                  "lat" : 40.74676127010728,
+                  "lng" : -89.63664852989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "edeb420901013d1681659ce3370058c11b5fbc51",
+         "name" : "Starbucks",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3036,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103169623007905366876/photos\"\u003eMatthew Jacobus\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAC9Xao75s5OCUFxj6h4dtQrJQnSWkVnUGXSQKAknMkFbONVnK9qX0c25xBOa0Gy_4zOHDl7sSONkQqdMxs1u9VlvJrIPv5158Pe1t3JB03ANUxgBIxEhWhV6SusnbFZiaEhCGP4oMa1jJGheTv7T-MC9wGhQQYUWWDpWvwXrm2RPIvMWXI8Ml-w",
+               "width" : 4048
+            }
+         ],
+         "place_id" : "ChIJ3f4MpWRcCogR9HrzR276R28",
+         "plus_code" : {
+            "compound_code" : "P9X7+5V Peoria, Peoria City Township, IL, USA",
+            "global_code" : "86GGP9X7+5V"
+         },
+         "price_level" : 2,
+         "rating" : 3.8,
+         "reference" : "ChIJ3f4MpWRcCogR9HrzR276R28",
+         "types" : [ "cafe", "store", "point_of_interest", "food", "establishment" ],
+         "user_ratings_total" : 16
+      }
+   ],
+   "status" : "OK"
+}
