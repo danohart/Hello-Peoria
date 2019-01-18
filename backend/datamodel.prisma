@@ -13,7 +13,6 @@ type Place {
   largeImage: String
   category: String
   path: Path
-  place_id: String
 }
 
 type Path {
