@@ -2,7 +2,7 @@
 
 type Mutation {
     createPlace(name: String, description: String, address: String, image: String, largeImage: String, category: String): Place!
-    # updatePlace(id: ID!, name: String, description: String, address: String, category: String): Place!
+    updatePlace(id: ID!, name: String, description: String, address: String, category: String): Place!
     deletePlace(id: ID!): Place
 }
 

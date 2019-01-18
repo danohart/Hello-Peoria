@@ -1,0 +1,694 @@
+{
+    "valueType": "nodes",
+    "values": [
+        {
+        "name": "Rhythm Kitchen Music Cafe",
+        "address": "305 Southwest Water Street, Peoria, IL 61602, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ5z4CEglZCogR9R5yPb9QBHI"
+        },
+        {
+        "name": "Biaggi's Ristorante Italiano",
+        "address": "2601 W Lake Ave, Peoria, IL 61615, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJx-Kp6m1cCogRFA8i1VRqNSw"
+        },
+        {
+        "name": "The Blue Duck Barbecue Tavern",
+        "address": "212 Southwest Water Street, Peoria, IL 61602, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJr1kXowlZCogR9_9WAZGzj8Q"
+        },
+        {
+        "name": "Johnny's Italian Steakhouse",
+        "address": "101 Holiday St, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJY_R1wv9YCogR8JVA-yP3s_A"
+        },
+        {
+        "name": "Hearth Restaurant",
+        "address": "4604 N Prospect Rd, Peoria Heights, IL 61616, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ-ZHukERaCogRNgvwembhP6A"
+        },
+        {
+        "name": "Smo-King Pit",
+        "address": "2200 W War Memorial Dr, Peoria, IL 61613, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJoTTdqHZcCogRVULx1JwlnMM"
+        },
+        {
+        "name": "Thanh Linh Restaurant",
+        "address": "1209 W Main St, Peoria, IL 61606, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJJ9YunEZZCogRV5DOiLttn_s"
+        },
+        {
+        "name": "Gebby's Family Restaurant",
+        "address": "726 E War Memorial Dr, Peoria Heights, IL 61616, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJD_XTljZaCogRwqXs4DY3DyM"
+        },
+        {
+        "name": "Jerusalem Restaurant",
+        "address": "B, 2027 W Farmington Rd, Peoria, IL 61604, United States",
+        "description": [
+            "meal_takeaway",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJF-6G2rJeCogRjUOBe8ZE5_8"
+        },
+        {
+        "name": "Childers Eatery",
+        "address": "3312 N University St, Peoria, IL 61604, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJWVwv3u5bCogRo8epadTxqqQ"
+        },
+        {
+        "name": "Two25",
+        "address": "225 NE Adams St, Peoria, IL 61602, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJRyACqQpZCogRHK68A6WfZhI"
+        },
+        {
+        "name": "Peoria Hofbrau",
+        "address": "2210 NE Jefferson St, Peoria, IL 61603, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJETyZv_NZCogRXpdzj-sz4FU"
+        },
+        {
+        "name": "Obed & Isaac's Microbrewery and Eatery",
+        "address": "321 NE Madison Ave, Peoria, IL 61603, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJxXD7anVZCogRK0zDfS0qArI"
+        },
+        {
+        "name": "One World",
+        "address": "1245 W Main St, Peoria, IL 61606, USA",
+        "description": [
+            "cafe",
+            "bakery",
+            "store",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJzVGDgkZZCogRkJGCaXW9eGo"
+        },
+        {
+        "name": "Five Guys",
+        "address": "2601 W Lake Ave, Peoria, IL 61615, USA",
+        "description": [
+            "meal_takeaway",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJx-Kp6m1cCogRakIQLJE2sY4"
+        },
+        {
+        "name": "Avanti's Ristorante",
+        "address": "1301 W Main St, Peoria, IL 61606, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ_dOIgEZZCogRLC3ingz24QI"
+        },
+        {
+        "name": "Hoops Pub & Pizza",
+        "address": "1029, 516 Main St, Peoria, IL 61602, United States",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJmbgrUQtZCogR3ia4_iNdjr8"
+        },
+        {
+        "name": "Haddad's Restaurant",
+        "address": "1010 W Main St, Peoria, IL 61606, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJtTSgW0FZCogRBezoBmI3Vvo"
+        },
+        {
+        "name": "Chick-fil-A",
+        "address": "Northwoods Mall pad, 4518 N Sterling Ave, Peoria, IL 61615, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJz4Xe5XBcCogRdF0iSZx5iME"
+        },
+        {
+        "name": "Golden Kitchen Restaurant",
+        "address": "3311 N Sterling Ave, Peoria, IL 61604, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJP9zbow9cCogR53qY5G9ygdk"
+        },
+        {
+        "name": "Jason's Deli",
+        "address": "112 Spinder Dr, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ97-S4FNYCogRXo979W6xmTk"
+        },
+        {
+        "name": "Kelleher's Irish Pub & Eatery",
+        "address": "619 Southwest Water Street, Peoria, IL 61602, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJcZ3Ang9ZCogR7-IIm2EQt_s"
+        },
+        {
+        "name": "Red Robin Gourmet Burgers and Brews",
+        "address": "314 West Washington Street, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJY0h1tlZYCogRZ0AWRC4wyMQ"
+        },
+        {
+        "name": "Lorena's Mexican Restaurant",
+        "address": "422 Riverside Dr, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJg_nLSqlZCogRVjiLdzaM4mk"
+        },
+        {
+        "name": "Sushigawa",
+        "address": "2601 W Lake Ave, Peoria, IL 61615, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJx-Kp6m1cCogRfRRj1lHmNXw"
+        },
+        {
+        "name": "Portillo's Hot Dogs",
+        "address": "4412 N Rockwood Dr, Peoria, IL 61615, USA",
+        "description": [
+            "meal_takeaway",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJLWiem3FcCogRhyXYw8E9qHo"
+        },
+        {
+        "name": "Jim's Steak House",
+        "address": "110 SW Jefferson Ave, Peoria, IL 61602, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJDfo8CwtZCogRn2Nasvtax0M"
+        },
+        {
+        "name": "Chili's Grill & Bar",
+        "address": "4825 N University St, Peoria, IL 61614, USA",
+        "description": [
+            "bar",
+            "meal_takeaway",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJJxEAZJpbCogR54wVbRd2Xo0"
+        },
+        {
+        "name": "Avanti's Ristorante",
+        "address": "2320 E Washington St, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ9y_pUp1XCogRRCXbBDbQn_M"
+        },
+        {
+        "name": "Edge By Chef Dustin Allen",
+        "address": "4500 N Prospect Rd, Peoria Heights, IL 61616, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ5SSoIwdbCogRoUi0LYnQLMQ"
+        },
+        {
+        "name": "El Mexicano Restaurant",
+        "address": "1520 NE Jefferson St, Peoria, IL 61603, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ9_toF5JZCogR-UodrXjHNZY"
+        },
+        {
+        "name": "Chipotle Mexican Grill",
+        "address": "4512 N Sterling Ave, Peoria, IL 61656, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJR-j773BcCogRff0-VcqCZm0"
+        },
+        {
+        "name": "Jonah's Seafood House",
+        "address": "2601 N Main St, East Peoria, IL 61611, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ2boTdF1XCogR5Mr6760Qf2o"
+        },
+        {
+        "name": "Chipotle Mexican Grill",
+        "address": "300 West Washington Street, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJoVklNVFYCogR5BQSA5bImKQ"
+        },
+        {
+        "name": "Noodles and Company",
+        "address": "358 West Washington Street, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "meal_takeaway",
+            "store",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJqfU0o1ZYCogR5Rak-Qajwic"
+        },
+        {
+        "name": "Wingstop",
+        "address": "1212 W Glen Ave, Peoria, IL 61614, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJV9chPppbCogR7rg0umQb1VM"
+        },
+        {
+        "name": "Avanti Ristorante",
+        "address": "4711 N Rockwood Dr, Peoria, IL 61615, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJv8N7m3pcCogRa88-cYJf43U"
+        },
+        {
+        "name": "Noodles and Company",
+        "address": "4712 N University St, Peoria, IL 61614, USA",
+        "description": [
+            "restaurant",
+            "meal_takeaway",
+            "store",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ0aM_u5BbCogRCR2MQFwCjZo"
+        },
+        {
+        "name": "Shogun Japanese Restaurant",
+        "address": "1000 Riverside Dr, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJL7rIsqhZCogRCMV0R1NLPs8"
+        },
+        {
+        "name": "Cracked Pepper",
+        "address": "1108 W Glen Ave, Peoria, IL 61614, USA",
+        "description": [
+            "bakery",
+            "store",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJtWUFvkdeCogRaWVg4KxBAVo"
+        },
+        {
+        "name": "Steak 'n Shake",
+        "address": "99 Conference Center Dr, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJN6wVJwdZCogRpHP4gfmb5EM"
+        },
+        {
+        "name": "Mariachi Mexican Restaurant Bar and Grill",
+        "address": "1818 W War Memorial Dr, Peoria, IL 61614, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ8xLtIotbCogRP3HPBhcmeuk"
+        },
+        {
+        "name": "La Gondola Spaghetti House",
+        "address": "700 E War Memorial Dr, Peoria, IL 61614, USA",
+        "description": [
+            "meal_takeaway",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJBeVkPjRaCogRJRxUa3smOaY"
+        },
+        {
+        "name": "Panda Express",
+        "address": "111 Spinder Dr, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJVzQatVZYCogR1oiXhlYMkKk"
+        },
+        {
+        "name": "Khoury's Cuisine",
+        "address": "3326 N University St, Peoria, IL 61604, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ7-2K6O5bCogRpUXhL8AKDbM"
+        },
+        {
+        "name": "Thyme Kitchen and Craft Beer",
+        "address": "736 SW Washington St, Peoria, IL 61602, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJKa0u-w9ZCogRMs_pWyO0Yqg"
+        },
+        {
+        "name": "Granite City Food & Brewery",
+        "address": "230 Conference Center Dr, East Peoria, IL 61611, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ-WLCOgRZCogRrDvq1lD13Kk"
+        },
+        {
+        "name": "Ming Shee Restaurant",
+        "address": "3510 N University St A, Peoria, IL 61604, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJzTR9nu5bCogRoYbGHXjUV6E"
+        },
+        {
+        "name": "Cummins Restaurant",
+        "address": "400 Riverside Dr, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJr_YQS6lZCogRZ_vMl3749-I"
+        },
+        {
+        "name": "QDOBA Mexican Eats",
+        "address": "1210 W Glen Ave, Peoria, IL 61614, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ3c0mPppbCogRutIPEcLPym8"
+        },
+        {
+        "name": "Thai Tyme Authentic Thai Cuisine",
+        "address": "1223 W Main St, Peoria, IL 61606, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJkRdAnkZZCogRsVa7ze5SCGk"
+        },
+        {
+        "name": "Chili's Grill & Bar",
+        "address": "800 Riverside Dr, East Peoria, IL 61611, USA",
+        "description": [
+            "bar",
+            "meal_takeaway",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJKSgdL69ZCogRwL37-aW6zak"
+        },
+        {
+        "name": "Table 19",
+        "address": "501 Main St, Peoria, IL 61602, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJqZTrWAtZCogRoMaR8mXURF8"
+        },
+        {
+        "name": "Jimador Authentic Mexican Cuisine",
+        "address": "1200 W Main St, Peoria, IL 61606, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJcYWNuUZZCogRgPjZ-8NYnmk"
+        },
+        {
+        "name": "Krispy Krunchy Chicken",
+        "address": "Peoria, IL 61603, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ50SlGoFZCogRGHbW9ScAiPU"
+        },
+        {
+        "name": "Veterans Pub & Pizza",
+        "address": "2525 NE Adams St, Peoria, IL 61603, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJeei19PZZCogRu6VPiJFWjiQ"
+        },
+        {
+        "name": "Red Lobster",
+        "address": "4625 N Sterling Ave, Peoria, IL 61615, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJAUN88XBcCogR3qzpzb8kS2w"
+        },
+        {
+        "name": "Subway Restaurants",
+        "address": "179 N Main St, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ1-pjyVFYCogRiTkhxDPlneE"
+        },
+        {
+        "name": "Slim Chickens",
+        "address": "205 River Road, East Peoria, IL 61611, USA",
+        "description": [
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJD4BcMqhZCogRafgp71TcOQM"
+        },
+        {
+        "name": "Lariat Steakhouse",
+        "address": "2232 W Glen Ave, Peoria, IL 61614, USA",
+        "description": [
+            "bar",
+            "restaurant",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "place_id": "ChIJ914suXlcCogRAN0HgPiG5iA"
+        }
+    ]
+}

@@ -24,7 +24,7 @@ class Places extends Component {
             <div>
                 <Query query={ALL_PLACES_QUERY} variables={{skip: this.props.page * perPage - perPage}}>
                     {({ data, error, loading }) => {
-                        if (loading) return <p>Loading...</p>;
+                        if (loading) return <p>Loading..`.</p>;
                         if (error) return <p>Error: {error.message}</p>
 
                         return (

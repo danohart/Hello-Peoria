@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import DeletePlace from './DeletePlace';
+import updatePlace from './UpdatePlace';
 
 class Place extends Component {
     static propTypes = {
@@ -21,7 +22,7 @@ class Place extends Component {
                 <div className="place card">
                     <div className="image">
                     <Link href={{pathname: '/place', query: { id: place.id },}}>
-                        <a>{place.image && <img src={place.image} alt={place.name} /> ? <img src={place.image} alt={place.name} /> : <img src={'https://source.unsplash.com/400x200/?' + place.category} alt={place.name} />}</a>
+                        <a>{place.image && <img src={place.image} alt={place.name} /> ? <img src={place.image} alt={place.name} /> : <img src={'https://source.unsplash.com/400x200/?' + place.description} alt={place.name} />}</a>
                     </Link>
                     </div>
                     
@@ -38,15 +39,17 @@ class Place extends Component {
                         <p className="address">{place.address}</p>
                         <div className="options">
                             <a target='_blank' href={'https://maps.google.com/?q=' + place.name + ' ' + place.address}>Map</a>
-                            <Link href={{pathname: '/place', query: { id: place.id },}}><a>Learn More</a></Link>
-                            <a className='isDisabled' title='Coming Soon'>Add To List +</a>
+                            <Link href={{pathname: '/place', query: { id: place.id },}}><a>More</a></Link>
+                            <a className='isDisabled' title='Coming Soon'>Add +</a>
                         </div>
                         
                     </div>
-                    {/* <div className="footer">
-                        <button>✏️ Edit</button>
+                    <div className="footer">
+                    <button><Link href={{ pathname: 'update', query: { id: place.id }, }}>
+                            <a>Edit ✏️</a>
+                        </Link></button>
                         <DeletePlace id={place.id}>❌ Delete</DeletePlace>
-                    </div> */}
+                    </div>
                 </div>
         );
     }

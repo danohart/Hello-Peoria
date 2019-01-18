@@ -202,15 +202,15 @@ header {
 
 .card-wrapper {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     overflow-x: auto;
     margin-bottom: 10px;
 
     .card {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        width: 28.6%;
+        justify-content: space-around;
+        width: 22%;
         margin: 14px;
         box-shadow: 1px 1px 20px rgba(0,0,0, 0.2);
         flex: 0 0 auto;
@@ -237,10 +237,10 @@ header {
 
         .inner {
             padding: 20px;
+            min-height: 260px;
 
             .place-category {
                 margin: 10px 0px;
-                min-height: 25px;
 
                 span {
                     text-transform: uppercase;
@@ -257,11 +257,14 @@ header {
                     }
                 }
             }
+
+            h2 {
+                font-size: 18px;
+            }
         }
 
         .image {
             width: 100%;
-            height: 200px;
             background: $light-gray;
             overflow: hidden; 
 
@@ -283,6 +286,7 @@ header {
 
         .address {
             font-weight: bold;
+            min-height: 60px;
         }
 
         .options {
@@ -353,6 +357,7 @@ header {
             background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
             width: 100%;
             padding: 20px 0px;
+            min-height: 20px;
 
             h2 {
                 font-weight: bold;
