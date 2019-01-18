@@ -6,3 +6,6 @@ haters/
 .build/
 layout.md
 variables.env
+backend/data/
+backend/export*
+GMaps-Restaurants/
