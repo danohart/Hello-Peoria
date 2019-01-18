@@ -1,7 +1,20 @@
+enum Permission {
+  ADMIN
+  USER
+  PLACECREATE
+  PLACEUPDATE
+  PLACEDELETE
+  PERMISSIONUPDATE
+}
+
 type User {
   id: ID! @unique
   name: String!
-  email: String!
+  email: String! @unique
+  password: String!
+  resetToken: String
+  resetTokenExpiry: Float
+  permissions: [Permission]
 }
 
 type Place {
@@ -13,6 +26,7 @@ type Place {
   largeImage: String
   category: String
   path: Path
+  place_id: String
 }
 
 type Path {

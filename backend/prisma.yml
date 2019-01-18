@@ -1,6 +1,5 @@
-#endpoint: ${env:PRISMA_ENDPOINT}
-#endpoint: https://hello-peoria-prod-19a7dc0bca.herokuapp.com/hello-peoria-prod/prod
-endpoint: https://hello-peoria-prod-19a7dc0bca.herokuapp.com/hello-peoria-prod/prod
+endpoint: ${env:PRISMA_ENDPOINT}
+# endpoint: https://hello-peoria-prod-19a7dc0bca.herokuapp.com/hello-peoria-prod/prod
 datamodel: datamodel.prisma
 secret: ${env:PRISMA_SECRET}
 hooks: 
