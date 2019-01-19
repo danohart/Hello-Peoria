@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import DeletePlace from './DeletePlace';
-import updatePlace from './UpdatePlace';
+import User from './User';
 
 class Place extends Component {
     static propTypes = {
@@ -44,12 +44,22 @@ class Place extends Component {
                         </div>
                         
                     </div>
-                    <div className="footer">
-                    <button><Link href={{ pathname: 'update', query: { id: place.id }, }}>
-                            <a>Edit ✏️</a>
-                        </Link></button>
-                        <DeletePlace id={place.id}>❌ Delete</DeletePlace>
-                    </div>
+                    <User>
+                        {({ data: { me } }) => (
+                            <div>
+                                {me && (
+                                    <div className="footer">
+                                        <button>
+                                            <Link href={{ pathname: 'update', query: { id: place.id }, }}>
+                                                <a>Edit ✏️</a>
+                                            </Link>
+                                        </button>
+                                        <DeletePlace id={place.id}>❌ Delete</DeletePlace>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                    </User>
                 </div>
         );
     }

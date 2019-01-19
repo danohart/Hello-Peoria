@@ -4,15 +4,13 @@ import gql from 'graphql-tag';
 import Error from './ErrorMessage'
 import { CURRENT_USER_QUERY } from './User';
 
-const SIGNUP_MUTATION = gql`
-    mutation SIGNUP_MUTATION(
+const SIGNIN_MUTATION = gql`
+    mutation SIGNIN_MUTATION(
         $email: String!,
-        $name: String!,
         $password: String!
     ) {
-        signup(
+        signin(
             email: $email,
-            name: $name,
             password: $password
         ) {
             id
@@ -22,7 +20,7 @@ const SIGNUP_MUTATION = gql`
     }
 `;
 
-class Signup extends Component {
+class Signin extends Component {
     state = {
         name: '',
         password: '',
@@ -34,23 +32,22 @@ class Signup extends Component {
 
     render() {
         return (
-            <div className="signup-form">
-                <h2>Register</h2>
-                <Mutation mutation={SIGNUP_MUTATION} variables={this.state} refetchQueries={[
-                    {query: CURRENT_USER_QUERY}
+            <div className="signin-form">
+                <h2>Sign In</h2>
+                <Mutation mutation={SIGNIN_MUTATION} variables={this.state} refetchQueries={[
+                    { query: CURRENT_USER_QUERY}
                 ]}>
                  {(signup, {error, loading}) => (
                     <form method="post" onSubmit={async e => {
                         e.preventDefault();
                         const res = await signup();
-                        this.setState({name: '', email: '', password: ''});
+                        this.setState({ email: '', password: ''});
                     }}>
                         <fieldset disabled={loading} aria-busy={loading}>
                             <Error error={error} />
                             <input type='text' name='email' placeholder='Email' value={this.state.email} onChange={this.saveToState} />
-                            <input type='text' name='name' placeholder='Name' value={this.state.name} onChange={this.saveToState} />
                             <input type='password' name='password' placeholder='Password' value={this.state.password} onChange={this.saveToState} />
-                            <button type="submit">Submit</button>
+                            <button type="submit">Sign In</button>
                         </fieldset>
                     </form>
                  )}
@@ -60,4 +57,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+export default Signin;

@@ -1,9 +1,12 @@
 import Signup from '../components/Signup';
+import Signin from '../components/Signin';
 
 const SignupPage = props => (
     <div>
-        <h1>Signup</h1>
-        <Signup />
+        {/* <Signup /> */}
+        <br/>
+        <hr />
+        <Signin />
     </div>
 );
 

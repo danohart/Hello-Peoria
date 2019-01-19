@@ -1,14 +1,21 @@
 # import * from './generated/prisma.graphql'
 
+type SuccessMessage {
+    message: String
+}
+
 type Mutation {
     createPlace(name: String, description: String, address: String, image: String, largeImage: String, category: String): Place!
     updatePlace(id: ID!, name: String, description: String, address: String, category: String): Place!
     deletePlace(id: ID!): Place
     signup(email: String!, password: String!, name: String!): User!
+    signin(email: String!, password: String!): User!
+    signout: SuccessMessage
 }
 
 type Query {
     places(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, first: Int): [Place]!
     place(where: PlaceWhereUniqueInput!): Place
     placesConnection(where: PlaceWhereInput): PlaceConnection!
+    me: User
 }
