@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import User from './User';
+import Signout from './Signout';
 
 const Nav = () => (
     <div className="nav">
@@ -12,6 +13,7 @@ const Nav = () => (
                     {me && (
                     <>
                         <div>{me.name}</div>
+                        <Signout />
                     </>
                     )}
                     {!me && (
