@@ -3,6 +3,9 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import Error from './ErrorMessage';
 import Head from 'next/head';
+import User from './User';
+import DeletePlace from './DeletePlace';
+import Link from 'next/link';
 
 const SINGLE_PLACE_QUERY = gql`
     query SINGLE_PLACE_QUERY($id: ID!) {
@@ -40,6 +43,22 @@ class SinglePlace extends Component {
                             <h1>{place.name}</h1>
                             <p>{place.description}</p>
                             <div className="address">{place.address}</div>
+                            <User>
+                                {({ data: { me } }) => (
+                                    <div>
+                                        {me && (
+                                            <div className="footer">
+                                                <button>
+                                                    <Link href={{ pathname: 'update', query: { id: place.id }, }}>
+                                                        <a>Edit ✏️</a>
+                                                    </Link>
+                                                </button>
+                                                <DeletePlace id={place.id}>❌ Delete</DeletePlace>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+                            </User>
                         </div>
                         <div className="map">
                             <iframe src={'https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=' + place.name + ' ' +place.address} width="600" height="450" frameBorder="0" allowFullScreen></iframe>
