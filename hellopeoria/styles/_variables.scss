@@ -33,6 +33,10 @@ $dark-gray: #555555;
     cursor: pointer;
     @include ease-transition;
 
+    &.loading {
+        opacity: 0.2;
+    }
+
     a {
         color: #FFFFFF;
         display: block;

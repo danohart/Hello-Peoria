@@ -47,7 +47,7 @@ class Signin extends Component {
                             <Error error={error} />
                             <input type='text' name='email' placeholder='Email' value={this.state.email} onChange={this.saveToState} />
                             <input type='password' name='password' placeholder='Password' value={this.state.password} onChange={this.saveToState} />
-                            <button type="submit">Sign In</button>
+                            <button type="submit" className={loading ? 'loading' : null}>Sign In</button>
                         </fieldset>
                     </form>
                  )}

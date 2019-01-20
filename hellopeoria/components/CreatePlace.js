@@ -104,7 +104,7 @@ class createPlace extends Component {
                             onChange={this.handleChange} />
                             
                             <br/>
-                            <button type="submit">Submit</button>
+                            <button type="submit" className={loading ? 'loading' : null}>Submit</button>
                         </fieldset>
                     </form>
                     )

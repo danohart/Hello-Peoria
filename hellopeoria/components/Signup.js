@@ -55,7 +55,7 @@ class Signup extends Component {
                             <input type='text' name='firstName' placeholder='First Name' value={this.state.firstName} onChange={this.saveToState} />
                             <input type='text' name='lastName' placeholder='Last Name' value={this.state.lastName} onChange={this.saveToState} />
                             <input type='password' name='password' placeholder='Password' value={this.state.password} onChange={this.saveToState} />
-                            <button type="submit">Submit</button>
+                            <button type='submit' className={loading ? 'loading' : null}>Submit</button>
                         </fieldset>
                     </form>
                  )}

@@ -13,6 +13,7 @@ const SINGLE_PLACE_QUERY = gql`
             description
             category
             address
+            
         }
     }
 `;
@@ -24,6 +25,7 @@ const UPDATE_PLACE_MUTATION = gql`
             $address: String
             $description: String
             $category: String
+            $path: String
             
         ) {
             updatePlace(
@@ -32,6 +34,7 @@ const UPDATE_PLACE_MUTATION = gql`
                 description: $description
                 address: $address
                 category: $category
+                path: $path
                 
             ) {
                 id
@@ -39,6 +42,9 @@ const UPDATE_PLACE_MUTATION = gql`
                 description
                 address
                 category
+                path {
+                    mainPath
+                }
             }
         
     }
@@ -86,6 +92,7 @@ class updatePlace extends Component {
 
     render() {
         return (
+            <div className='sub-containter'>
             <Query query={SINGLE_PLACE_QUERY} variables={{
                 id: this.props.id
             }}>
@@ -109,12 +116,16 @@ class updatePlace extends Component {
                                     {/* <input type="file" id="file" name="file" placeholder="Upload an image" required onChange={this.uploadFile} />
                                     {this.state.image ? <img src={this.state.image} alt="Upload image preview" /> : <img src='http://via.placeholder.com/150x150?text=Upload'/>} */}
 
-                                    <input type="text" id="category" name="category" placeholder="Category(one word)"
+                                    <input type="text" id="path" name="path" placeholder="Path (one word)"
+                                    defaultValue={data.place.path}
+                                    onChange={this.handleChange} />
+
+                                    <input type="text" id="category" name="category" placeholder="Category (one word)"
                                     defaultValue={data.place.category}
                                     onChange={this.handleChange} />
                                     
                                     <br/>
-                                    <button type="submit">Update Changes</button>
+                                    <button type="submit" className={loading ? 'loading' : null}>Updat{loading ? 'ing' : 'e'} Changes</button>
                                 </fieldset>
                             </form>
                             )
@@ -124,6 +135,7 @@ class updatePlace extends Component {
                 )
             }}
             </Query>
+            </div>
         );
     }
 }
