@@ -47,10 +47,15 @@ header {
     padding: 20px;
     min-height: 50px;
 
+    @include mobile {
+        flex-direction: column;
+    }
+
     .logo {
         width: 15%;
         @include mobile {
-            width: 21%;
+            width: 70%;
+            flex: 0 0 100%;
         }
 
         img {
@@ -65,7 +70,7 @@ header {
     position: relative;
 
     @include mobile {
-        width: 50%;
+        width: 80%;
     }
 
     .search-wrapper { 
@@ -198,6 +203,36 @@ header {
         align-items: center;
         padding: 20px 0px;
     }
+
+    .sub-containter {
+        width: 80%;
+        margin: 0px auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+
+        @include tablet {
+            flex-direction: column;
+            div {
+                margin-bottom: 20px;
+            }
+        }
+        @include mobile {
+            flex-direction: column;
+            div {
+                margin-bottom: 20px;
+            }
+        }
+
+        div {
+            width: 47%;
+            
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
 }
 
 .card-wrapper {
@@ -219,7 +254,7 @@ header {
         overflow: hidden;
 
         @include tablet {
-            width: 48.5%;
+            width: 28%;
         }
 
         @include mobile {
@@ -337,6 +372,7 @@ header {
         color: #FFFFFF;
         height: 400px;
         width: 22.6%;
+        position: relative;
 
         @include tablet {
             width: 48%;
@@ -358,6 +394,8 @@ header {
             width: 100%;
             padding: 20px 0px;
             min-height: 20px;
+            bottom: 0px;
+            position: absolute;
 
             h2 {
                 font-weight: bold;

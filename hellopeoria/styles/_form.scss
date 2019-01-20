@@ -3,9 +3,10 @@ fieldset {
 
     input {
         width: 100%;
-        padding: 10px 8px 10px 0px;
+        padding: 10px 8px 10px 6px;
         font-size: 14px;
         margin: 5px 0px;
+        border: 1px solid $light-gray;
     }
 
     input[type='checkbox'] {

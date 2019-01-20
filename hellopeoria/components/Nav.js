@@ -6,7 +6,7 @@ const Nav = () => (
     <div className="nav">
         <User>
             {({ data: { me } }) => (
-                <div>
+                <>
                     <Link href={{pathname: '/places',}}>
                         <a>Places</a>
                     </Link>
@@ -20,9 +20,8 @@ const Nav = () => (
                     <Link href="/signup">
                         <a>Sign In</a>
                     </Link>
-
                     )}
-                </div>
+                </>
             )}
         </User>
     </div>
