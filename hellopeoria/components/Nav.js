@@ -12,8 +12,15 @@ const Nav = () => (
                     </Link>
                     {me && (
                     <>
-                        <div>{me.name}</div>
-                        <Signout />
+                        <div className="account">
+                            <div className='account-name'>
+                                {me.firstName}
+                                <div className='account-details'>
+                                    <div className='account-signout'><Signout /></div>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </>
                     )}
                     {!me && (

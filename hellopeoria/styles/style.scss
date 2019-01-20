@@ -65,6 +65,23 @@ header {
     }
 }
 
+.account {
+    display: flex;
+    flex-direction: column;
+
+    .account-name {
+        position: relative;
+
+        .account-details {
+            position: absolute;
+            width: 120px;
+            right: 0px;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
 .search {
     width: 60%;
     position: relative;
