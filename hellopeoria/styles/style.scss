@@ -71,13 +71,23 @@ header {
 
     .account-name {
         position: relative;
+        @include ease-transition;
 
         .account-details {
             position: absolute;
             width: 120px;
             right: 0px;
-            display: flex;
+            display: none;
             justify-content: flex-end;
+            border: 1px solid $light-gray;
+            border-top: 0px;
+            padding-bottom: 5px;
+            @include ease-transition;
+        }
+        
+        &:hover .account-details {
+            display: flex;
+            @include ease-transition;
         }
     }
 }

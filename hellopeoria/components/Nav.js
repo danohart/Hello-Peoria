@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import User from './User';
 import Signout from './Signout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCircle } from '@fortawesome/free-regular-svg-icons'
 
 const Nav = () => (
     <div className="nav">
@@ -14,7 +16,7 @@ const Nav = () => (
                     <>
                         <div className="account">
                             <div className='account-name'>
-                                {me.firstName}
+                                <FontAwesomeIcon icon={faUserCircle} /> {me.firstName}
                                 <div className='account-details'>
                                     <div className='account-signout'><Signout /></div>
                                 </div>
