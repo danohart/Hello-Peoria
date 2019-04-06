@@ -9,7 +9,8 @@ enum Permission {
 
 type User {
   id: ID! @unique
-  name: String!
+  firstName: String!
+  lastName: String!
   email: String! @unique
   password: String!
   resetToken: String
@@ -22,10 +23,8 @@ type Place {
   name: String!
   address: String!
   description: String!
-  category: [Category]
-}
-
-type Category {
-  id: ID! @unique
-  type: String!
+  image: String
+  largeImage: String
+  category: String
+  place_id: String
 }
