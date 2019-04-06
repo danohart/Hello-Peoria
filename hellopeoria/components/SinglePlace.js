@@ -38,7 +38,7 @@ class SinglePlace extends Component {
                         </Head>
                         <div className="single-place">
                             <div className="image">
-                                {place.largeImage && <img src={place.largeImage} alt={place.name} /> ? <img src={place.largeImage} alt={place.name} /> : <img src={'https://source.unsplash.com/600x200/?' + place.category} alt={place.name} />}
+                                {place.largeImage && <img src={place.largeImage} alt={place.name} /> ? <img src={place.largeImage} alt={place.name} /> : <img src={'https://source.unsplash.com/600x200/?' + place.description} alt={place.name} />}
                             </div>
                             <h1>{place.name}</h1>
                             <p>{place.description}</p>
