@@ -12,7 +12,7 @@ const Nav = () => (
           <Link href={{ pathname: "/places" }}>
             <a>Places</a>
           </Link>
-          {me && (
+          {/* {me && (
             <>
               <div className="account">
                 <div className="account-name">
@@ -30,7 +30,7 @@ const Nav = () => (
             <Link href="/signup">
               <a>Sign In</a>
             </Link>
-          )}
+          )} */}
         </>
       )}
     </User>
