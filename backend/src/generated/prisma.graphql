@@ -1,5 +1,5 @@
-# source: https://hello-peoria-prod-19a7dc0bca.herokuapp.com/hello-peoria-prod/prod
-# timestamp: Sat Apr 06 2019 12:31:03 GMT-0500 (Central Daylight Time)
+# source: https://us1.prisma.sh/daniel-hart/hellopeoria/dev
+# timestamp: Sat Apr 06 2019 13:47:51 GMT-0500 (Central Daylight Time)
 
 type AggregatePlace {
   count: Int!
@@ -93,6 +93,7 @@ type PlaceConnection {
 }
 
 input PlaceCreateInput {
+  id: ID
   name: String!
   address: String!
   description: String!
@@ -581,6 +582,7 @@ type UserConnection {
 }
 
 input UserCreateInput {
+  id: ID
   firstName: String!
   lastName: String!
   email: String!
