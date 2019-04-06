@@ -27,9 +27,7 @@ class Place extends Component {
                 <img src={place.image} alt={place.name} />
               ) : (
                 <img
-                  src={
-                    "https://source.unsplash.com/400x200/?" + place.description
-                  }
+                  src={"https://source.unsplash.com/400x200/?" + place.category}
                   alt={place.name}
                 />
               )}
