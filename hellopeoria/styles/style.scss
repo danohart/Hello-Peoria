@@ -266,6 +266,7 @@ header {
   flex-wrap: wrap;
   overflow-x: auto;
   margin-bottom: 10px;
+  justify-content: center;
 
   .card {
     display: flex;
@@ -279,12 +280,17 @@ header {
     @include rounded-corners;
     overflow: hidden;
 
+    &:nth-child(4n) {
+      margin-right: 0px;
+    }
+
     @include tablet {
       width: 28%;
     }
 
     @include mobile {
       width: 100%;
+      margin: 0px;
     }
 
     &:hover {
@@ -328,6 +334,7 @@ header {
       width: 100%;
       background: $light-gray;
       overflow: hidden;
+      max-height: 140px;
 
       @include mobile {
         height: 150px;
