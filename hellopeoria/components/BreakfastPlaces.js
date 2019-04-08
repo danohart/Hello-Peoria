@@ -7,7 +7,7 @@ import { perPage } from "../config";
 
 const ALL_PLACES_QUERY = gql`
     query ($skip: Int = 0, $first: Int = ${perPage}) {
-        places( first: $first, skip: $skip, orderBy: name_ASC, where: {description: "Breakfast"}) {
+        places( first: $first, skip: $skip, orderBy: name_ASC, where: {description_contains: "breakfast"}) {
             id
             name
             description
