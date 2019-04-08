@@ -267,18 +267,21 @@ header {
   overflow-x: auto;
   margin-bottom: 10px;
   justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
 
   .card {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 22%;
+    width: 30%;
     margin: 14px;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
     flex: 0 0 auto;
     @include ease-transition;
     @include rounded-corners;
     overflow: hidden;
+    z-index: 10;
 
     @include tablet {
       width: 28%;
@@ -290,8 +293,8 @@ header {
     }
 
     &:hover {
-      box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
-      transform: scale(1.01);
+      box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.35);
+      transform: scale(1.004);
       @include mobile {
         box-shadow: 0px;
         transform: scale(1);
@@ -299,11 +302,9 @@ header {
     }
 
     .inner {
-      padding: 20px;
-      min-height: 260px;
-
       .place-category {
         margin: 10px 0px;
+        padding: 10px;
 
         span {
           text-transform: uppercase;
@@ -323,6 +324,7 @@ header {
 
       h2 {
         font-size: 18px;
+        padding: 10px 20px;
       }
     }
 
@@ -330,7 +332,7 @@ header {
       width: 100%;
       background: $light-gray;
       overflow: hidden;
-      max-height: 140px;
+      max-height: 200px;
 
       @include mobile {
         height: 150px;
@@ -344,20 +346,22 @@ header {
     }
 
     .description {
-      padding: 20px 0px;
-      min-height: 60px;
+      padding: 20px;
     }
 
     .address {
       font-weight: bold;
-      min-height: 60px;
+      padding: 20px;
+      background: lighten($secondary-color, 50%);
+      border-top: 1px solid $light-gray;
     }
 
     .options {
       display: flex;
       flex-direction: row;
       justify-content: left;
-      margin-top: 15px;
+      padding: 0px 20px;
+      background: lighten($secondary-color, 50%);
 
       a {
         background: $secondary-color;

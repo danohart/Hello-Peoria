@@ -18,6 +18,7 @@ class Place extends Component {
 
   render() {
     const { place } = this.props;
+
     return (
       <div className="place card">
         <div className="image">
@@ -36,15 +37,15 @@ class Place extends Component {
         </div>
 
         <div className="inner">
-          <div className="place-category">
-            {place.category ? <span>{place.category}</span> : null}
-          </div>
           <h2>
             <Link href={{ pathname: "/place", query: { id: place.id } }}>
               <a>{place.name}</a>
             </Link>
           </h2>
           <p className="description">{place.description}</p>
+          <div className="place-category">
+            {place.category ? <span>{place.category}</span> : null}
+          </div>
           <p className="address">{place.address}</p>
           <div className="options">
             <a
