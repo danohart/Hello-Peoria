@@ -280,10 +280,6 @@ header {
     @include rounded-corners;
     overflow: hidden;
 
-    &:nth-child(4n) {
-      margin-right: 0px;
-    }
-
     @include tablet {
       width: 28%;
     }
@@ -404,17 +400,18 @@ header {
     background-position: center;
     color: #ffffff;
     height: 400px;
-    width: 22.6%;
+    width: 22%;
     position: relative;
 
     @include tablet {
-      width: 48%;
+      width: 40%;
       height: 320px;
     }
 
     @include mobile {
-      width: 100%;
+      width: 45%;
       height: 280px;
+      margin: 10px 5px 0px 5px;
     }
 
     a {

@@ -1,71 +1,71 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300,400,400i,500,700,700i');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300,400,400i,500,700,700i");
 
-$primary-font: 'Roboto', sans-serif;
-$secondary-font: 'Roboto Slab', serif;
+$primary-font: "Roboto", sans-serif;
+$secondary-font: "Roboto Slab", serif;
 
-$primary-color: #6BC1F8;
-$secondary-color: #397FAB;
-$secondary-color-bold: #4AC55C;
+$primary-color: #6bc1f8;
+$secondary-color: #397fab;
+$secondary-color-bold: #4ac55c;
 
-$light-gray: #E2E2E2;
+$light-gray: #e2e2e2;
 $dark-gray: #555555;
 
 @mixin rounded-corners {
-    border-radius: 2px;
+  border-radius: 2px;
 }
 
 @mixin ease-transition {
-    transition: 0.455s ease all;
+  transition: 0.455s ease all;
 }
 
 @mixin button {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    color: #FFFFFF;
-    background: $secondary-color;
-    padding: 12px 20px;
-    border: 2px solid transparent;
-    @include rounded-corners;
-    margin-top: 5px;
-    cursor: pointer;
-    @include ease-transition;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background: $secondary-color;
+  padding: 12px 20px;
+  border: 2px solid transparent;
+  @include rounded-corners;
+  margin-top: 5px;
+  cursor: pointer;
+  @include ease-transition;
 
-    &.loading {
-        opacity: 0.2;
-    }
+  &.loading {
+    opacity: 0.2;
+  }
 
-    a {
-        color: #FFFFFF;
-        display: block;
-
-        &:hover {
-            color: $secondary-color;
-        }
-    }
+  a {
+    color: #ffffff;
+    display: block;
 
     &:hover {
-        background: transparent;
-        color: $secondary-color;
-        border: 2px solid $secondary-color;
+      color: $secondary-color;
     }
+  }
 
-    &.secondary {
-        background: transparent;
-        color: $secondary-color;
-        border: 2px solid $secondary-color;
+  &:hover {
+    background: transparent;
+    color: $secondary-color;
+    border: 2px solid $secondary-color;
+  }
 
-        &:hover {
-            color: #FFFFFF;
-            background: $secondary-color;
-        }
+  &.secondary {
+    background: transparent;
+    color: $secondary-color;
+    border: 2px solid $secondary-color;
+
+    &:hover {
+      color: #ffffff;
+      background: $secondary-color;
     }
+  }
 }
 
 a.button {
-    @include button;
+  @include button;
 }
 
 // Media Queries
@@ -74,10 +74,10 @@ $tablet-width: 767px;
 $desktop-width: 1024px;
 
 @mixin mobile {
-    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
-      @content;
-    }
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+    @content;
   }
+}
 
 @mixin tablet {
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
