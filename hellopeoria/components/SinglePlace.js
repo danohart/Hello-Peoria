@@ -38,6 +38,22 @@ class SinglePlace extends Component {
             <div className="single-place-wrapper">
               <Head>
                 <title>{place.name} // Hello Peoria</title>
+                {/*<!-- Google / Search Engine Tags -->*/}
+                <meta itemprop="name" content={place.name} />
+                <meta itemprop="description" content={place.description} />
+                <meta itemprop="image" content={place.largeImage} />
+
+                {/*<!-- Facebook Meta Tags -->*/}
+                <meta property="og:title" content={place.name} />
+                <meta property="og:description" content={place.description} />
+                <meta property="og:image" content={place.largeImage} />
+                <meta property="og:type" content="website" />
+
+                {/*<!-- Twitter Meta Tags -->*/}
+                <meta name="twitter:title" content={place.title} />
+                <meta name="twitter:description" content={place.description} />
+                <meta name="twitter:image" content={place.largeImage} />
+                <meta name="twitter:card" content="summary_large_image" />
               </Head>
               <div className="single-place">
                 <div className="image">
