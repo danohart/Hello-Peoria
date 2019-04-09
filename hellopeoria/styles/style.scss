@@ -301,13 +301,10 @@ header {
       position: relative;
 
       .addition-info {
-        position: absolute;
-        background: #ffffff;
-        width: 100%;
-
         .address {
-          font-weight: bold;
+          font-weight: 300;
           padding: 20px;
+          font-size: 14px;
         }
 
         .options {
@@ -398,6 +395,10 @@ header {
     .description {
       padding: 20px;
       min-height: 70px;
+
+      @include mobile {
+        min-height: 10px;
+      }
     }
 
     .footer {

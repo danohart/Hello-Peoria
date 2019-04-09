@@ -46,9 +46,21 @@ class Place extends Component {
         <div className="inner">
           <p className="description">{place.description}</p>
 
-          {/* <div className="addition-info">
-            <p className="address">{place.address}</p>
-            <div className="options">
+          <div className="addition-info">
+            <p className="address">
+              <a
+                target="_blank"
+                href={
+                  "https://maps.google.com/?q=" +
+                  place.name +
+                  " " +
+                  place.address
+                }
+              >
+                {place.address}
+              </a>
+            </p>
+            {/* <div className="options">
               <a
                 target="_blank"
                 href={
