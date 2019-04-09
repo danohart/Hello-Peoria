@@ -267,10 +267,10 @@ header {
   overflow-x: auto;
   margin-bottom: 10px;
   justify-content: center;
-  align-items: flex-start;
   overflow: visible;
 
   .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -289,7 +289,7 @@ header {
 
     @include mobile {
       width: 100%;
-      margin: 0px;
+      margin: 20px 0px 0px;
     }
 
     &:hover {
@@ -302,37 +302,84 @@ header {
     }
 
     .inner {
-      .place-category {
-        margin: 10px 0px;
-        padding: 10px;
+      .addition-info {
+        display: none;
 
-        span {
-          text-transform: uppercase;
-          background: $light-gray;
-          padding: 3px 6px;
-          width: initial;
-          font-size: 12px;
-          @include rounded-corners;
-          @include ease-transition;
+        .address {
+          font-weight: bold;
+          padding: 20px;
+        }
 
-          &:hover {
-            background: $dark-gray;
+        .options {
+          display: flex;
+          flex-direction: row;
+          justify-content: left;
+          padding: 0px 20px 20px 20px;
+
+          a {
+            background: $secondary-color;
+            display: block;
             color: #ffffff;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            margin: 0px 4px 0px 0px;
+            @include rounded-corners;
+
+            &.isDisabled {
+              background: $light-gray;
+              cursor: not-allowed;
+            }
           }
         }
-      }
-
-      h2 {
-        font-size: 18px;
-        padding: 10px 20px;
       }
     }
 
     .image {
       width: 100%;
-      background: $light-gray;
+      background-size: cover;
       overflow: hidden;
-      max-height: 200px;
+      height: 200px;
+      position: relative;
+
+      .title-wrapper {
+        background: linear-gradient(rgba(0, 0, 0, 0), black);
+        padding: 20px;
+        min-height: 30px;
+
+        a {
+          height: 100%;
+          display: block;
+        }
+
+        .place-category {
+          margin: 10px 0px;
+          padding: 10px 0px;
+
+          span {
+            text-transform: uppercase;
+            background: $light-gray;
+            padding: 3px 6px;
+            width: initial;
+            font-size: 12px;
+            @include rounded-corners;
+            @include ease-transition;
+            cursor: default;
+            color: #000000;
+
+            &:hover {
+              background: $dark-gray;
+              color: #ffffff;
+            }
+          }
+        }
+
+        h2 {
+          font-size: 22px;
+          color: #ffffff;
+          display: block;
+        }
+      }
 
       @include mobile {
         height: 150px;
@@ -347,37 +394,7 @@ header {
 
     .description {
       padding: 20px;
-    }
-
-    .address {
-      font-weight: bold;
-      padding: 20px;
-      background: lighten($secondary-color, 50%);
-      border-top: 1px solid $light-gray;
-    }
-
-    .options {
-      display: flex;
-      flex-direction: row;
-      justify-content: left;
-      padding: 0px 20px;
-      background: lighten($secondary-color, 50%);
-
-      a {
-        background: $secondary-color;
-        display: block;
-        color: #ffffff;
-        font-size: 14px;
-        text-transform: uppercase;
-        padding: 4px 8px;
-        margin: 0px 4px 0px 0px;
-        @include rounded-corners;
-
-        &.isDisabled {
-          background: $light-gray;
-          cursor: not-allowed;
-        }
-      }
+      min-height: 70px;
     }
 
     .footer {
@@ -393,6 +410,7 @@ header {
         width: 100%;
         border-radius: 0px;
         margin-right: 0px;
+        margin-top: 0px;
       }
     }
   }

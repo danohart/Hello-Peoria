@@ -18,55 +18,60 @@ class Place extends Component {
 
   render() {
     const { place } = this.props;
+    const placeBackground = place.image
+      ? place.image
+      : "https://source.unsplash.com/400x200/?" + place.category;
 
     return (
       <div className="place card">
-        <div className="image">
-          <Link href={{ pathname: "/place", query: { id: place.id } }}>
-            <a>
-              {place.image && <img src={place.image} alt={place.name} /> ? (
-                <img src={place.image} alt={place.name} />
-              ) : (
-                <img
-                  src={"https://source.unsplash.com/400x200/?" + place.category}
-                  alt={place.name}
-                />
-              )}
-            </a>
-          </Link>
-        </div>
+        <Link href={{ pathname: "/place", query: { id: place.id } }}>
+          <a>
+            <div
+              className="image"
+              style={{ backgroundImage: `url(${placeBackground})` }}
+            >
+              <div className="title-wrapper">
+                <div className="place-category">
+                  {place.category ? <span>{place.category}</span> : null}
+                </div>
+
+                <div className="title">
+                  <h2>{place.name}</h2>
+                </div>
+              </div>
+            </div>
+          </a>
+        </Link>
 
         <div className="inner">
-          <h2>
-            <Link href={{ pathname: "/place", query: { id: place.id } }}>
-              <a>{place.name}</a>
-            </Link>
-          </h2>
           <p className="description">{place.description}</p>
-          <div className="place-category">
-            {place.category ? <span>{place.category}</span> : null}
-          </div>
-          <p className="address">{place.address}</p>
-          <div className="options">
-            <a
-              target="_blank"
-              href={
-                "https://maps.google.com/?q=" + place.name + " " + place.address
-              }
-            >
-              Map
-            </a>
-            <Link href={{ pathname: "/place", query: { id: place.id } }}>
-              <a>More</a>
-            </Link>
-            <a className="isDisabled" title="Coming Soon">
-              Add +
-            </a>
+
+          <div className="addition-info">
+            <p className="address">{place.address}</p>
+            <div className="options">
+              <a
+                target="_blank"
+                href={
+                  "https://maps.google.com/?q=" +
+                  place.name +
+                  " " +
+                  place.address
+                }
+              >
+                Map
+              </a>
+              <Link href={{ pathname: "/place", query: { id: place.id } }}>
+                <a>More</a>
+              </Link>
+              <a className="isDisabled" title="Coming Soon">
+                Add +
+              </a>
+            </div>
           </div>
         </div>
         <User>
           {({ data: { me } }) => (
-            <div>
+            <>
               {me && (
                 <div className="footer">
                   <button>
@@ -79,7 +84,7 @@ class Place extends Component {
                   <DeletePlace id={place.id}>❌ Delete</DeletePlace>
                 </div>
               )}
-            </div>
+            </>
           )}
         </User>
       </div>
