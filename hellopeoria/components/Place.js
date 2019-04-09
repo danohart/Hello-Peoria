@@ -46,7 +46,7 @@ class Place extends Component {
         <div className="inner">
           <p className="description">{place.description}</p>
 
-          <div className="addition-info">
+          {/* <div className="addition-info">
             <p className="address">{place.address}</p>
             <div className="options">
               <a
@@ -66,7 +66,7 @@ class Place extends Component {
               <a className="isDisabled" title="Coming Soon">
                 Add +
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
         <User>
