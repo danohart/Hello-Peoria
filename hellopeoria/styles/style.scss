@@ -1,5 +1,5 @@
-@import "variables";
-@import "form";
+@import 'variables';
+@import 'form';
 
 * {
   margin: 0px;
@@ -335,6 +335,7 @@ header {
     .image {
       width: 100%;
       background-size: cover;
+      background-position: center;
       overflow: hidden;
       height: 200px;
       position: relative;

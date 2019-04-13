@@ -1,13 +1,23 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Link from "next/link";
-import DeletePlace from "./DeletePlace";
-import User from "./User";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'next/link';
+import DeletePlace from './DeletePlace';
+import User from './User';
 
 class Place extends Component {
   static propTypes = {
     place: PropTypes.object.isRequired
   };
+
+  placeBackground({ place } = this.props) {
+    if (!place.image) {
+      if (place.category === 'Coffee') {
+        return '/static/categories/coffee.jpg';
+      }
+      return 'https://source.unsplash.com/400x200/?' + place.category;
+    }
+    return place.image;
+  }
 
   constructor() {
     super();
@@ -18,17 +28,13 @@ class Place extends Component {
 
   render() {
     const { place } = this.props;
-    const placeBackground = place.image
-      ? place.image
-      : "https://source.unsplash.com/400x200/?" + place.category;
-
     return (
       <div className="place card">
-        <Link href={{ pathname: "/place", query: { id: place.id } }}>
+        <Link href={{ pathname: '/place', query: { id: place.id } }}>
           <a>
             <div
               className="image"
-              style={{ backgroundImage: `url(${placeBackground})` }}
+              style={{ backgroundImage: `url(${this.placeBackground()})` }}
             >
               <div className="title-wrapper">
                 <div className="place-category">
@@ -51,9 +57,9 @@ class Place extends Component {
               <a
                 target="_blank"
                 href={
-                  "https://maps.google.com/?q=" +
+                  'https://maps.google.com/?q=' +
                   place.name +
-                  " " +
+                  ' ' +
                   place.address
                 }
               >
@@ -88,7 +94,7 @@ class Place extends Component {
                 <div className="footer">
                   <button>
                     <Link
-                      href={{ pathname: "update", query: { id: place.id } }}
+                      href={{ pathname: 'update', query: { id: place.id } }}
                     >
                       <a>Edit ✏️</a>
                     </Link>
