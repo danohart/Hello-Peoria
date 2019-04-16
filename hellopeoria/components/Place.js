@@ -30,35 +30,35 @@ class Place extends Component {
     const { place } = this.props;
     return (
       <div className="place card">
-        {/* <Link href={{ pathname: '/place', query: { id: place.id } }}>
-          <a> */}
-        <div
-          className="image"
-          style={{ backgroundImage: `url(${this.placeBackground()})` }}
-        >
-          <div className="title-wrapper">
-            <div className="place-category">
-              {place.category ? (
-                <span>
-                  <Link
-                    href={{
-                      pathname: '/category',
-                      query: { category: place.category }
-                    }}
-                  >
-                    <a>{place.category}</a>
-                  </Link>
-                </span>
-              ) : null}
-            </div>
+        <Link href={{ pathname: '/place', query: { id: place.id } }}>
+          <a>
+            <div
+              className="image"
+              style={{ backgroundImage: `url(${this.placeBackground()})` }}
+            >
+              <div className="title-wrapper">
+                <div className="place-category">
+                  {place.category ? (
+                    <span>
+                      <Link
+                        href={{
+                          pathname: '/category',
+                          query: { category: place.category }
+                        }}
+                      >
+                        <a>{place.category}</a>
+                      </Link>
+                    </span>
+                  ) : null}
+                </div>
 
-            <div className="title">
-              <h2>{place.name}</h2>
+                <div className="title">
+                  <h2>{place.name}</h2>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        {/* </a>
-        </Link> */}
+          </a>
+        </Link>
 
         <div className="inner">
           <p className="description">{place.description}</p>
