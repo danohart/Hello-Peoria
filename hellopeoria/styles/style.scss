@@ -358,19 +358,21 @@ header {
           padding: 10px 0px;
 
           span {
-            text-transform: uppercase;
-            background: $light-gray;
-            padding: 3px 6px;
-            width: initial;
             font-size: 12px;
-            @include rounded-corners;
-            @include ease-transition;
-            cursor: default;
-            color: #000000;
 
-            &:hover {
-              background: $dark-gray;
-              color: #ffffff;
+            a {
+              text-transform: uppercase;
+              background: $light-gray;
+              padding: 3px 6px;
+              color: #000000;
+              @include rounded-corners;
+              @include ease-transition;
+              display: inline;
+
+              &:hover {
+                background: $dark-gray;
+                color: #ffffff;
+              }
             }
           }
         }
