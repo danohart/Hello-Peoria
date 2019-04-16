@@ -15,7 +15,7 @@ const Home = props => (
       </div>
 
       <div className="category card restaurant">
-        <Link href="/places">
+        <Link href="/category?category=Restaurant">
           <a>
             <div className="inner">
               <h2>Restaurants</h2>
