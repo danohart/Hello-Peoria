@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Mutation } from "react-apollo";
-import Router from "next/router";
-import gql from "graphql-tag";
-import Error from "./ErrorMessage";
-import { ALL_PLACES_QUERY } from "./Places";
+import React, { Component } from 'react';
+import { Mutation } from 'react-apollo';
+import Router from 'next/router';
+import gql from 'graphql-tag';
+import Error from './ErrorMessage';
+import { ALL_PLACES_QUERY } from './Places';
 
 const CREATE_PLACE_MUTATION = gql`
   mutation CREATE_PLACE_MUTATION(
@@ -13,6 +13,7 @@ const CREATE_PLACE_MUTATION = gql`
     $category: String
     $image: String
     $largeImage: String
+    $paths: String
   ) {
     createPlace(
       name: $name
@@ -21,6 +22,7 @@ const CREATE_PLACE_MUTATION = gql`
       category: $category
       image: $image
       largeImage: $largeImage
+      paths: $paths
     ) {
       id
       name
@@ -29,43 +31,45 @@ const CREATE_PLACE_MUTATION = gql`
       category
       image
       largeImage
+      paths
     }
   }
 `;
 
 class createPlace extends Component {
   state = {
-    name: "",
-    address: "",
-    description: "",
-    image: "",
-    largeImage: "",
-    category: ""
+    name: '',
+    address: '',
+    description: '',
+    image: '',
+    largeImage: '',
+    category: '',
+    paths: ''
   };
 
   handleChange = e => {
     const { name, type, value } = e.target;
-    const val = type == "number" ? parseFloat(value) : value;
+    const val = type == 'number' ? parseFloat(value) : value;
     this.setState({ [name]: val });
   };
 
   uploadFile = async e => {
-    console.log("Uploading file...");
+    console.log('Uploading file...');
     const files = e.target.files;
     const data = new FormData();
-    data.append("file", files[0]);
-    data.append("upload_preset", "hellopeoria");
+    data.append('file', files[0]);
+    data.append('upload_preset', 'hellopeoria');
 
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/danielhart/image/upload",
+      'https://api.cloudinary.com/v1_1/danielhart/image/upload',
       {
-        method: "POST",
+        method: 'POST',
         body: data
       }
     );
 
     const file = await res.json();
-    console.log("file:", file);
+    console.log('file:', file);
     this.setState({
       image: file.secure_url,
       largeImage: file.eager[0].secure_url
@@ -86,7 +90,7 @@ class createPlace extends Component {
               console.log(res);
               // Direct to Place URL
               Router.push({
-                pathname: "/places",
+                pathname: '/places',
                 query: { id: res.data.createPlace.id }
               });
             }}
@@ -151,8 +155,24 @@ class createPlace extends Component {
                 onChange={this.handleChange}
               />
 
+              <select
+                type="select"
+                id="path"
+                name="path"
+                onChange={this.handleChange}
+              >
+                <option>Free</option>
+                <option>Family</option>
+                <option>Sightseeing</option>
+                <option>Night life</option>
+                <option>Local</option>
+                <option>Foodie</option>
+                <option>Outdoor/Adventure</option>
+                <option>Events</option>
+              </select>
+
               <br />
-              <button type="submit" className={loading ? "loading" : null}>
+              <button type="submit" className={loading ? 'loading' : null}>
                 Submit
               </button>
             </fieldset>

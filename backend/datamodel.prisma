@@ -27,4 +27,5 @@ type Place {
   largeImage: String
   category: String
   place_id: String
+  paths: String
 }

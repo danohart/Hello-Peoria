@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Mutation, Query } from "react-apollo";
-import Router from "next/router";
-import gql from "graphql-tag";
-import Error from "./ErrorMessage";
-import { ALL_PLACES_QUERY } from "./Places";
+import React, { Component } from 'react';
+import { Mutation, Query } from 'react-apollo';
+import Router from 'next/router';
+import gql from 'graphql-tag';
+import Error from './ErrorMessage';
+import { ALL_PLACES_QUERY } from './Places';
 
 const SINGLE_PLACE_QUERY = gql`
   query SINGLE_PLACE_QUERY($id: ID!) {
@@ -13,6 +13,7 @@ const SINGLE_PLACE_QUERY = gql`
       description
       category
       address
+      paths
     }
   }
 `;
@@ -24,6 +25,7 @@ const UPDATE_PLACE_MUTATION = gql`
     $address: String
     $description: String
     $category: String
+    $paths: String
   ) {
     updatePlace(
       id: $id
@@ -31,12 +33,14 @@ const UPDATE_PLACE_MUTATION = gql`
       description: $description
       address: $address
       category: $category
+      paths: $paths
     ) {
       id
       name
       description
       address
       category
+      paths
     }
   }
 `;
@@ -46,7 +50,7 @@ class updatePlace extends Component {
 
   handleChange = e => {
     const { name, type, value } = e.target;
-    const val = type == "number" ? parseFloat(value) : value;
+    const val = type == 'number' ? parseFloat(value) : value;
     this.setState({ [name]: val });
   };
 
@@ -150,12 +154,29 @@ class updatePlace extends Component {
                         onChange={this.handleChange}
                       />
 
+                      <select
+                        type="select"
+                        id="paths"
+                        name="paths"
+                        onChange={this.handleChange}
+                        defaultValue={data.place.paths}
+                      >
+                        <option value="Free">Free</option>
+                        <option value="Family">Family</option>
+                        <option value="Sightseeing">Sightseeing</option>
+                        <option value="Nightlife">Nightlife</option>
+                        <option value="Local">Local</option>
+                        <option value="Foodie">Foodie</option>
+                        <option value="Outdoor">Outdoor/Adventure</option>
+                        <option value="Events">Events</option>
+                      </select>
+
                       <br />
                       <button
                         type="submit"
-                        className={loading ? "loading" : null}
+                        className={loading ? 'loading' : null}
                       >
-                        Updat{loading ? "ing" : "e"} Changes
+                        Updat{loading ? 'ing' : 'e'} Changes
                       </button>
                     </fieldset>
                   </form>

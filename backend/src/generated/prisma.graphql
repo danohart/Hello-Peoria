@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Fri Apr 12 2019 14:05:35 GMT-0400 (Eastern Daylight Time)
+# timestamp: Wed Apr 17 2019 09:07:56 GMT-0500 (Central Daylight Time)
 
 type AggregatePlace {
   count: Int!
@@ -80,6 +80,7 @@ type Place implements Node {
   largeImage: String
   category: String
   place_id: String
+  paths: String
 }
 
 """A connection to a list of items."""
@@ -100,6 +101,7 @@ input PlaceCreateInput {
   largeImage: String
   category: String
   place_id: String
+  paths: String
 }
 
 """An edge in a connection."""
@@ -128,6 +130,8 @@ enum PlaceOrderByInput {
   category_DESC
   place_id_ASC
   place_id_DESC
+  paths_ASC
+  paths_DESC
   updatedAt_ASC
   updatedAt_DESC
   createdAt_ASC
@@ -143,6 +147,7 @@ type PlacePreviousValues {
   largeImage: String
   category: String
   place_id: String
+  paths: String
 }
 
 type PlaceSubscriptionPayload {
@@ -192,6 +197,7 @@ input PlaceUpdateInput {
   largeImage: String
   category: String
   place_id: String
+  paths: String
 }
 
 input PlaceUpdateManyMutationInput {
@@ -202,6 +208,7 @@ input PlaceUpdateManyMutationInput {
   largeImage: String
   category: String
   place_id: String
+  paths: String
 }
 
 input PlaceWhereInput {
@@ -533,6 +540,46 @@ input PlaceWhereInput {
 
   """All values not ending with the given string."""
   place_id_not_ends_with: String
+  paths: String
+
+  """All values that are not equal to given value."""
+  paths_not: String
+
+  """All values that are contained in given list."""
+  paths_in: [String!]
+
+  """All values that are not contained in given list."""
+  paths_not_in: [String!]
+
+  """All values less than the given value."""
+  paths_lt: String
+
+  """All values less than or equal the given value."""
+  paths_lte: String
+
+  """All values greater than the given value."""
+  paths_gt: String
+
+  """All values greater than or equal the given value."""
+  paths_gte: String
+
+  """All values containing the given string."""
+  paths_contains: String
+
+  """All values not containing the given string."""
+  paths_not_contains: String
+
+  """All values starting with the given string."""
+  paths_starts_with: String
+
+  """All values not starting with the given string."""
+  paths_not_starts_with: String
+
+  """All values ending with the given string."""
+  paths_ends_with: String
+
+  """All values not ending with the given string."""
+  paths_not_ends_with: String
 }
 
 input PlaceWhereUniqueInput {

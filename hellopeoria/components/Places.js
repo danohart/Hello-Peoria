@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Query } from "react-apollo";
-import gql from "graphql-tag";
-import Place from "./Place";
-import Pagination from "./Pagination";
-import { perPage } from "../config";
+import React, { Component } from 'react';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
+import Place from './Place';
+import Pagination from './Pagination';
+import { perPage } from '../config';
 
 const ALL_PLACES_QUERY = gql`
     query ($skip: Int = 0, $first: Int = ${perPage}) {
@@ -14,6 +14,7 @@ const ALL_PLACES_QUERY = gql`
             address
             image
             category
+            paths
         }
     }
 `;
