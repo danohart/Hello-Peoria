@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import Router from 'next/router';
 import DeletePlace from './DeletePlace';
 import User from './User';
 
@@ -28,37 +29,42 @@ class Place extends Component {
 
   render() {
     const { place } = this.props;
+
     return (
       <div className="place card">
-        <Link href={{ pathname: '/place', query: { id: place.id } }}>
-          <a>
-            <div
-              className="image"
-              style={{ backgroundImage: `url(${this.placeBackground()})` }}
-            >
-              <div className="title-wrapper">
-                <div className="place-category">
-                  {place.category ? (
-                    <span>
-                      <Link
-                        href={{
-                          pathname: '/category',
-                          query: { category: place.category }
-                        }}
-                      >
-                        <a>{place.category}</a>
-                      </Link>
-                    </span>
-                  ) : null}
-                </div>
-
-                <div className="title">
-                  <h2>{place.name}</h2>
-                </div>
-              </div>
-            </div>
-          </a>
+        <Link
+          href={{
+            pathname: '/place',
+            query: { id: place.id }
+          }}
+        >
+          <a className="featured-link" />
         </Link>
+        <div
+          className="image"
+          style={{ backgroundImage: `url(${this.placeBackground()})` }}
+        >
+          <div className="title-wrapper">
+            <div className="place-category">
+              {place.category ? (
+                <span>
+                  <Link
+                    href={{
+                      pathname: '/category',
+                      query: { category: place.category }
+                    }}
+                  >
+                    <a>{place.category}</a>
+                  </Link>
+                </span>
+              ) : null}
+            </div>
+
+            <div className="title">
+              <h2>{place.name}</h2>
+            </div>
+          </div>
+        </div>
 
         <div className="inner">
           <p className="description">{place.description}</p>
