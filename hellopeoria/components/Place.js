@@ -32,18 +32,18 @@ class Place extends Component {
 
     return (
       <div className="place card">
-        <Link
-          href={{
-            pathname: '/place',
-            query: { id: place.id }
-          }}
-        >
-          <a className="featured-link" />
-        </Link>
         <div
           className="image"
           style={{ backgroundImage: `url(${this.placeBackground()})` }}
         >
+          <Link
+            href={{
+              pathname: '/place',
+              query: { id: place.id }
+            }}
+          >
+            <a className="featured-link" />
+          </Link>
           <div className="title-wrapper">
             <div className="place-category">
               {place.category ? (

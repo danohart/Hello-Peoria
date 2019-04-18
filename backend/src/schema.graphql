@@ -31,6 +31,13 @@ type Mutation {
   ): User!
   signin(email: String!, password: String!): User!
   signout: SuccessMessage
+  requestReset(email: String!): SuccessMessage
+  resetPassword(
+    resetToken: String!
+    password: String!
+    confirmPassword: String!
+  ): User!
+  updatePermissions(permissions: [Permission], userId: ID!): User
 }
 
 type Query {
@@ -43,4 +50,12 @@ type Query {
   place(where: PlaceWhereUniqueInput!): Place
   placesConnection(where: PlaceWhereInput): PlaceConnection!
   me: User
+}
+
+type User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  permissions: [Permission!]
 }
