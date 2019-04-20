@@ -3,7 +3,7 @@ const { Prisma } = require('prisma-binding');
 
 const db = new Prisma({
   typeDefs: 'src/generated/prisma.graphql',
-  endpoint: process.env.DOCKER_ENDPOINT,
+  endpoint: process.env.PRISMA_ENDPOINT_PROD,
   secret: process.env.PRISMA_SECRET,
   debug: false
 });
