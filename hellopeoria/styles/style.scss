@@ -594,3 +594,18 @@ header {
     padding: 10px 15px;
   }
 }
+
+.users-wrapper {
+  .user-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: $secondary-color-bold;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

@@ -22,7 +22,14 @@ const Mutations = {
   },
 
   updatePlace(parent, args, ctx, info) {
-    // first take a copy of the updates
+    // Check if they have perms
+    const hasPermissions = ctx.request.user.permissions.some(permission =>
+      ['ADMIN', 'PLACEUPDATE'].includes(permission)
+    );
+    if (!hasPermissions) {
+      throw new Error("You don't have permission to do that!");
+    }
+    // Then take a copy of the updates
     const updates = { ...args };
     // remove the ID from the updates
     delete updates.id;
@@ -41,8 +48,15 @@ const Mutations = {
   async deletePlace(parent, args, ctx, info) {
     const where = { id: args.id };
     // Find the Place
-    const place = await ctx.db.query.place({ where }, `{id name}`);
-    // Check if they own the place, or have perms
+    const place = await ctx.db.query.place({ where }, `{ id name }`);
+    // Check if they have perms
+    const hasPermissions = ctx.request.user.permissions.some(permission =>
+      ['ADMIN', 'PLACEDELETE'].includes(permission)
+    );
+
+    if (!hasPermissions) {
+      throw new Error("You don't have permission to do that!");
+    }
 
     // Delete it!
     return ctx.db.mutation.deletePlace({ where }, info);
@@ -183,21 +197,21 @@ const Mutations = {
       info
     );
     // 3. Check if they have permissions to do this
-    // hasPermission(currentUser, ['ADMIN', 'PERMISSIONUPDATE']);
-    // // 4. Update the permissions
-    // return ctx.db.mutation.updateUser(
-    //   {
-    //     data: {
-    //       permissions: {
-    //         set: args.permissions
-    //       }
-    //     },
-    //     where: {
-    //       id: args.userId
-    //     }
-    //   },
-    //   info
-    // );
+    hasPermission(currentUser, ['ADMIN', 'PERMISSIONUPDATE']);
+    // 4. Update the permissions
+    return ctx.db.mutation.updateUser(
+      {
+        data: {
+          permissions: {
+            set: args.permissions
+          }
+        },
+        where: {
+          id: args.userId
+        }
+      },
+      info
+    );
   }
 };
 

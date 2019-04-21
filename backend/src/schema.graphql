@@ -50,6 +50,7 @@ type Query {
   place(where: PlaceWhereUniqueInput!): Place
   placesConnection(where: PlaceWhereInput): PlaceConnection!
   me: User
+  users: [User]!
 }
 
 type User {
