@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 const Meta = props => (
   <Head>
@@ -6,7 +6,11 @@ const Meta = props => (
     <meta charSet="utf-8" />
     <link rel="stylesheet" type="text/css" href="static/nprogress.css" />
     <link rel="shortcut icon" href="/static/favicon.png" />
-    <title>Hello Peoria</title>
+    <title>Hello Peoria // What to do in Peoria, IL right now</title>
+    <meta
+      name="description"
+      content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
+    />
   </Head>
 );
 
