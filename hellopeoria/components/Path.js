@@ -3,9 +3,9 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Place from './Place';
 
-const CATEGORY_PLACES_QUERY = gql`
-  query($category: String!) {
-    places(orderBy: name_ASC, where: { category: $category }) {
+const PATH_PLACES_QUERY = gql`
+  query($path: String!) {
+    places(orderBy: name_ASC, where: { paths: $path }) {
       id
       name
       description
@@ -17,14 +17,11 @@ const CATEGORY_PLACES_QUERY = gql`
   }
 `;
 
-class CategoryPlaces extends Component {
+class PathPlaces extends Component {
   render() {
     return (
       <div>
-        <Query
-          query={CATEGORY_PLACES_QUERY}
-          variables={{ category: this.props.category }}
-        >
+        <Query query={PATH_PLACES_QUERY} variables={{ path: this.props.paths }}>
           {({ data, error, loading }) => {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error: {error.message}</p>;
@@ -43,5 +40,5 @@ class CategoryPlaces extends Component {
   }
 }
 
-export default CategoryPlaces;
-export { CATEGORY_PLACES_QUERY };
+export default PathPlaces;
+export { PATH_PLACES_QUERY };

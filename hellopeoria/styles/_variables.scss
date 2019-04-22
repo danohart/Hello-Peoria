@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300,400,400i,500,700,700i");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300,400,400i,500,700,700i');
 
-$primary-font: "Roboto", sans-serif;
-$secondary-font: "Roboto Slab", serif;
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Roboto Slab', serif;
 
 $primary-color: #6bc1f8;
 $secondary-color: #397fab;
@@ -9,6 +9,15 @@ $secondary-color-bold: #4ac55c;
 
 $light-gray: #e2e2e2;
 $dark-gray: #555555;
+
+$free: #555555;
+$family: #e2e2e2;
+$sightseeing: #aa5739;
+$nightlife: #29526c;
+$local: #5a849e;
+$foodie: #26764f;
+$outdoor: #aa7839;
+$events: #e79070;
 
 @mixin rounded-corners {
   border-radius: 2px;

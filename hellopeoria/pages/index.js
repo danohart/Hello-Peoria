@@ -48,10 +48,49 @@ const Home = props => (
       </div>
     </div>
 
-    <div align="center">
-      <Link href="/places">
-        <button>More</button>
-      </Link>
+    <h2 align="center">Pick Your Path</h2>
+
+    <div className="paths-wrapper">
+      {/* <div className="path free">
+        <Link href="/path?paths=Free">
+          <a>Free</a>
+        </Link>
+      </div> */}
+      <div className="path family">
+        <Link href="/path?paths=Family">
+          <a>Family</a>
+        </Link>
+      </div>
+      {/* <div className="path sightseeing">
+        <Link href="/path?paths=Sightseeing">
+          <a>Sightseeing</a>
+        </Link>
+      </div> */}
+      <div className="path nightlife">
+        <Link href="/path?paths=Nightlife">
+          <a>Night Life</a>
+        </Link>
+      </div>
+      <div className="path local">
+        <Link href="/path?paths=Local">
+          <a>Local</a>
+        </Link>
+      </div>
+      <div className="path foodie">
+        <Link href="/path?paths=Foodie">
+          <a>Foodie</a>
+        </Link>
+      </div>
+      {/* <div className="path outdoor">
+        <Link href="/path?paths=Outdoor">
+          <a>Outdoor</a>
+        </Link>
+      </div> */}
+      {/* <div className="path events">
+        <Link href="/path?paths=Events">
+          <a>Events</a>
+        </Link>
+      </div> */}
     </div>
   </div>
 );

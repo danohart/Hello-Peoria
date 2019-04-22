@@ -32,6 +32,7 @@ class Place extends Component {
 
     return (
       <div className="place card">
+        <div className={place.paths.toLowerCase() + ' path'} />
         <div
           className="image"
           style={{ backgroundImage: `url(${this.placeBackground()})` }}

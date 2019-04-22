@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
-import Error from "./ErrorMessage";
-import Head from "next/head";
-import User from "./User";
-import DeletePlace from "./DeletePlace";
-import Link from "next/link";
+import React, { Component } from 'react';
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
+import Error from './ErrorMessage';
+import Head from 'next/head';
+import User from './User';
+import DeletePlace from './DeletePlace';
+import Link from 'next/link';
 
 const SINGLE_PLACE_QUERY = gql`
   query SINGLE_PLACE_QUERY($id: ID!) {
@@ -16,6 +16,7 @@ const SINGLE_PLACE_QUERY = gql`
       description
       category
       largeImage
+      paths
     }
   }
 `;
@@ -64,7 +65,7 @@ class SinglePlace extends Component {
                   ) : (
                     <img
                       src={
-                        "https://source.unsplash.com/600x200/?" +
+                        'https://source.unsplash.com/600x200/?' +
                         place.description
                       }
                       alt={place.name}
@@ -82,7 +83,7 @@ class SinglePlace extends Component {
                           <button>
                             <Link
                               href={{
-                                pathname: "update",
+                                pathname: 'update',
                                 query: { id: place.id }
                               }}
                             >
@@ -99,9 +100,9 @@ class SinglePlace extends Component {
               <div className="map">
                 <iframe
                   src={
-                    "https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=" +
+                    'https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=' +
                     place.name +
-                    " " +
+                    ' ' +
                     place.address
                   }
                   width="600"
