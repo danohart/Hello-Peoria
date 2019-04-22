@@ -4,7 +4,7 @@ const Home = props => (
   <div>
     <div className="card-wrapper">
       <div className="category card coffee">
-        <Link href="/coffee-places">
+        <Link href="/category?category=Coffee">
           <a>
             <div className="inner">
               <h2>Coffee</h2>
@@ -26,7 +26,7 @@ const Home = props => (
       </div>
 
       <div className="category card bar">
-        <Link href="/bar-places">
+        <Link href="/category?category=Bar">
           <a>
             <div className="inner">
               <h2>Bars</h2>
