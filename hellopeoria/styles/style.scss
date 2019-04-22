@@ -308,6 +308,7 @@ header {
       right: -52px;
       z-index: 10;
       transform: rotate(40deg);
+      box-shadow: 1px 1px 12px #00000075;
 
       &.free {
         background: $free;
@@ -544,6 +545,9 @@ header {
   .path {
     @include button;
     margin: 10px 10px;
+    @include mobile {
+      width: 25%;
+    }
 
     &:hover {
       color: #ffffff;

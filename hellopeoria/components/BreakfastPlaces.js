@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Query } from "react-apollo";
-import gql from "graphql-tag";
-import Place from "./Place";
-import { perPage } from "../config";
+import React, { Component } from 'react';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
+import Place from './Place';
+import { perPage } from '../config';
 
 const ALL_PLACES_QUERY = gql`
   query {
@@ -13,6 +13,7 @@ const ALL_PLACES_QUERY = gql`
       address
       image
       category
+      paths
     }
   }
 `;
