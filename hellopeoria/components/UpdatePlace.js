@@ -106,12 +106,15 @@ class updatePlace extends Component {
                 {(updatePlace, { loading, error }) => (
                   <form onSubmit={e => this.updatePlace(e, updatePlace)}>
                     <h2>Update a Place</h2>
+                    <br />
                     <Error error={error} />
+                    <br />
                     <fieldset
                       disabled={loading}
                       aria-busy={loading}
                       className="upload-form"
                     >
+                      <label>Name</label>
                       <input
                         type="text"
                         id="name"
@@ -121,7 +124,7 @@ class updatePlace extends Component {
                         defaultValue={data.place.name}
                         onChange={this.handleChange}
                       />
-
+                      <label>Address</label>
                       <input
                         type="text"
                         id="address"
@@ -131,7 +134,7 @@ class updatePlace extends Component {
                         defaultValue={data.place.address}
                         onChange={this.handleChange}
                       />
-
+                      <label>Description</label>
                       <input
                         type="text"
                         id="description"
@@ -144,7 +147,7 @@ class updatePlace extends Component {
 
                       {/* <input type="file" id="file" name="file" placeholder="Upload an image" required onChange={this.uploadFile} />
                                     {this.state.image ? <img src={this.state.image} alt="Upload image preview" /> : <img src='http://via.placeholder.com/150x150?text=Upload'/>} */}
-
+                      <label>Category(one word)</label>
                       <input
                         type="text"
                         id="category"
@@ -153,7 +156,7 @@ class updatePlace extends Component {
                         defaultValue={data.place.category}
                         onChange={this.handleChange}
                       />
-
+                      <label>Path</label>
                       <select
                         type="select"
                         id="paths"

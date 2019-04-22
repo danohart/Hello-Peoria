@@ -607,5 +607,10 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    div {
+      width: 10%;
+      overflow: auto;
+    }
   }
 }

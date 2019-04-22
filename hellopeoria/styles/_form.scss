@@ -1,17 +1,32 @@
 fieldset {
-    border: 0px;
+  border: 0px;
 
-    input {
-        width: 100%;
-        padding: 10px 8px 10px 6px;
-        font-size: 14px;
-        margin: 5px 0px;
-        border: 1px solid $light-gray;
-    }
+  input {
+    width: 100%;
+    padding: 10px 8px 10px 6px;
+    font-size: 14px;
+    margin: 10px 0px;
+    border: 1px solid $light-gray;
+  }
 
-    input[type='checkbox'] {
-        width: initial;
-        margin: 4px;
-        display: inline;
-    }
+  input[type='checkbox'] {
+    width: initial;
+    margin: 4px;
+    display: inline;
+  }
+
+  label {
+    margin: 10px 0px;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10px 8px 10px 6px;
+    font-size: 14px;
+    margin: 5px 0px;
+    border: 1px solid $light-gray;
+    display: block;
+  }
 }
