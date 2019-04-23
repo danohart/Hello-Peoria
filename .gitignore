@@ -8,3 +8,4 @@ layout.md
 variables.env
 *.zip
 backend/export-*
+backend/now.json
