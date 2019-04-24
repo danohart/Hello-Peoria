@@ -40,9 +40,9 @@ class SinglePlace extends Component {
               <Head>
                 <title>{place.name} // Hello Peoria</title>
                 {/*<!-- Google / Search Engine Tags -->*/}
-                <meta itemprop="name" content={place.name} />
-                <meta itemprop="description" content={place.description} />
-                <meta itemprop="image" content={place.largeImage} />
+                <meta itemProp="name" content={place.name} />
+                <meta itemProp="description" content={place.description} />
+                <meta itemProp="image" content={place.largeImage} />
 
                 {/*<!-- Facebook Meta Tags -->*/}
                 <meta property="og:title" content={place.name} />
