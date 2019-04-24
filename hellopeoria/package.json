@@ -11,7 +11,7 @@
     "heroku-postbuild": "next build"
   },
   "engines": {
-    "node": ">=11"
+    "node": "11"
   },
   "author": "",
   "license": "ISC",
