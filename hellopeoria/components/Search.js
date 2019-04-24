@@ -1,10 +1,10 @@
-import React from "react";
-import Downshift, { resetIdCounter } from "downshift";
-import Router from "next/router";
-import { ApolloConsumer } from "react-apollo";
-import gql from "graphql-tag";
-import debounce from "lodash.debounce";
-import Link from "next/link";
+import React from 'react';
+import Downshift, { resetIdCounter } from 'downshift';
+import Router from 'next/router';
+import { ApolloConsumer } from 'react-apollo';
+import gql from 'graphql-tag';
+import debounce from 'lodash.debounce';
+import Link from 'next/link';
 
 const SEARCH_PLACES_QUERY = gql`
   query SEARCH_PLACES_QUERY($searchTerm: String!) {
@@ -26,7 +26,7 @@ const SEARCH_PLACES_QUERY = gql`
 
 function routeToPlace(place) {
   Router.push({
-    pathname: "/place",
+    pathname: '/place',
     query: {
       id: place.id
     }
@@ -58,7 +58,7 @@ class AutoComplete extends React.Component {
       <div className="search">
         <Downshift
           onChange={routeToPlace}
-          placeToString={place => (place === null ? "" : place.name)}
+          placeToString={place => (place === null ? '' : place.name)}
         >
           {({ getInputProps, isOpen, inputValue }) => (
             <div>
@@ -66,11 +66,11 @@ class AutoComplete extends React.Component {
                 {client => (
                   <input
                     {...getInputProps({
-                      type: "search",
+                      type: 'search',
                       placeholder: 'Try "Coffee"',
-                      name: "search",
-                      id: "search",
-                      className: this.state.loading ? "Loading..." : "",
+                      name: 'search',
+                      id: 'search',
+                      className: this.state.loading ? 'Loading...' : '',
                       onChange: e => {
                         e.persist();
                         this.onChange(e, client);
@@ -84,7 +84,7 @@ class AutoComplete extends React.Component {
                   <div>
                     {this.state.places.map((place, index) => (
                       <Link
-                        href={{ pathname: "/place", query: { id: place.id } }}
+                        href={{ pathname: '/place', query: { id: place.id } }}
                         key={place.id}
                       >
                         <a>
