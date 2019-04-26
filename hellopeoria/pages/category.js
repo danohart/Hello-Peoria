@@ -5,7 +5,7 @@ const Category = props => (
   <div>
     <Head>
       <title>
-        {props.query.category} - Hello Peoria // What to do in Peoria, IL right
+        {props.query.category}s - Hello Peoria // What to do in Peoria, IL right
         now
       </title>
       <meta
