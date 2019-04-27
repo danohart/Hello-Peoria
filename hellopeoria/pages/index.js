@@ -1,11 +1,25 @@
+import React, { Component } from 'react';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
+import Place from '../components/Place';
 import Link from 'next/link';
 
-import React, { Component } from 'react';
+const HOME_PLACES_QUERY = gql`
+  query($path: String!, $itemNumber: Int = 8) {
+    places(first: $itemNumber, orderBy: name_ASC, where: { paths: $path }) {
+      id
+      name
+      image
+      category
+      paths
+    }
+  }
+`;
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="homepage">
         <div className="card-wrapper">
           <div className="category card coffee">
             <Link href="/category?category=Coffee">
@@ -96,6 +110,72 @@ class Home extends Component {
         </Link>
       </div> */}
         </div>
+        <Query query={HOME_PLACES_QUERY} variables={{ path: 'Foodie' }}>
+          {({ data, error, loading }) => {
+            if (loading) return <p>Loading...</p>;
+            if (error) return <p>Error: {error.message}</p>;
+
+            return (
+              <>
+                <h2>Foodie</h2>
+                <div className="card-wrapper home">
+                  {data.places.map(place => (
+                    <Place place={place} key={place.id} />
+                  ))}
+                  <button>
+                    <Link href="/path?paths=Foodie">
+                      <a>More</a>
+                    </Link>
+                  </button>
+                </div>
+              </>
+            );
+          }}
+        </Query>
+        <Query query={HOME_PLACES_QUERY} variables={{ path: 'Free' }}>
+          {({ data, error, loading }) => {
+            if (loading) return <p>Loading...</p>;
+            if (error) return <p>Error: {error.message}</p>;
+
+            return (
+              <>
+                <h2>Free</h2>
+                <div className="card-wrapper home">
+                  {data.places.map(place => (
+                    <Place place={place} key={place.id} />
+                  ))}
+                  <button>
+                    <Link href="/path?paths=Free">
+                      <a>More</a>
+                    </Link>
+                  </button>
+                </div>
+              </>
+            );
+          }}
+        </Query>
+        <Query query={HOME_PLACES_QUERY} variables={{ path: 'Nightlife' }}>
+          {({ data, error, loading }) => {
+            if (loading) return <p>Loading...</p>;
+            if (error) return <p>Error: {error.message}</p>;
+
+            return (
+              <>
+                <h2>Nightlife</h2>
+                <div className="card-wrapper home">
+                  {data.places.map(place => (
+                    <Place place={place} key={place.id} />
+                  ))}
+                  <button>
+                    <Link href="/path?paths=Nightlife">
+                      <a>More</a>
+                    </Link>
+                  </button>
+                </div>
+              </>
+            );
+          }}
+        </Query>
       </div>
     );
   }

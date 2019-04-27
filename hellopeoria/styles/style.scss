@@ -551,6 +551,30 @@ header {
   }
 }
 
+.homepage {
+  .card-wrapper.home {
+    position: relative;
+    flex-wrap: nowrap;
+    overflow: auto;
+    justify-content: left;
+    padding: 10px 0px 50px 0px;
+
+    .card {
+      width: 25%;
+
+      @include mobile {
+        width: 40%;
+        margin-right: 10px;
+      }
+
+      .inner,
+      .footer {
+        display: none;
+      }
+    }
+  }
+}
+
 .paths-wrapper {
   display: flex;
   flex-direction: row;
