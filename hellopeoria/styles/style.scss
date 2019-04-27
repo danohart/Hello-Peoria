@@ -565,13 +565,13 @@ header {
       @include mobile {
         width: 40%;
         margin-right: 10px;
-      }
 
-      .image {
-        height: 200px;
+        .image {
+          height: 200px;
 
-        .title-wrapper h2 {
-          font-size: 18px;
+          .title-wrapper h2 {
+            font-size: 18px;
+          }
         }
       }
 
