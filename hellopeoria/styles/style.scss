@@ -567,6 +567,14 @@ header {
         margin-right: 10px;
       }
 
+      .image {
+        height: 200px;
+
+        .title-wrapper h2 {
+          font-size: 18px;
+        }
+      }
+
       .inner,
       .footer {
         display: none;
