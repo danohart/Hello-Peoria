@@ -52,11 +52,11 @@ const Home = props => (
     <h2 align="center">Pick Your Path</h2>
 
     <div className="paths-wrapper">
-      {/* <div className="path free">
+      <div className="path free">
         <Link href="/path?paths=Free">
           <a>Free</a>
         </Link>
-      </div> */}
+      </div>
       <div className="path family">
         <Link href="/path?paths=Family">
           <a>Family</a>
