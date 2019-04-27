@@ -20,6 +20,7 @@ const SEARCH_PLACES_QUERY = gql`
       image
       name
       description
+      category
     }
   }
 `;
@@ -90,7 +91,19 @@ class AutoComplete extends React.Component {
                         <a>
                           <div className="search-item" key={place.id}>
                             <div className="image">
-                              <img src={place.image} />
+                              {place.image && (
+                                <img src={place.image} alt={place.name} />
+                              ) ? (
+                                <img src={place.image} alt={place.name} />
+                              ) : (
+                                <img
+                                  src={
+                                    'https://source.unsplash.com/600x200/?' +
+                                    place.category
+                                  }
+                                  alt={place.name}
+                                />
+                              )}
                             </div>
                             <div className="name">
                               {place.name}
