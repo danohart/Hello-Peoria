@@ -11,7 +11,10 @@ const Meta = props => (
       itemProp="description"
       content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
     />
-    <meta itemProp="image" content="/static/images/logo.png" />
+    <meta
+      itemProp="image"
+      content="http://hellopeoria.co/static/images/logo.png"
+    />
     <meta
       name="description"
       content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
@@ -25,7 +28,10 @@ const Meta = props => (
       property="og:description"
       content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
     />
-    <meta property="og:image" content="/static/images/logo.png" />
+    <meta
+      property="og:image"
+      content="http://hellopeoria.co/static/images/logo.png"
+    />
     <meta property="og:type" content="website" />
 
     {/*<!-- Twitter Meta Tags -->*/}
@@ -37,7 +43,10 @@ const Meta = props => (
       name="twitter:description"
       content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
     />
-    <meta name="twitter:image" content="/static/images/logo.png" />
+    <meta
+      name="twitter:image"
+      content="http://hellopeoria.co/static/images/logo.png"
+    />
     <meta name="twitter:card" content="summary_large_image" />
   </Head>
 );
