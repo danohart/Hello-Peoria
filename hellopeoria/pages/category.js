@@ -10,7 +10,7 @@ const Category = props => (
       </title>
       <meta
         name="description"
-        content={props.query.category + 'in Peoria, IL'}
+        content={props.query.category + ' in Peoria, IL'}
       />
     </Head>
     <h1 className="page-header">{props.query.category}s</h1>

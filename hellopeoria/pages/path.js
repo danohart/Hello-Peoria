@@ -5,7 +5,7 @@ const Path = props => (
   <div>
     <Head>
       <title>{props.query.paths} - Hello Peoria // Places in Peoria, IL</title>
-      <meta name="description" content={props.query.paths + 'in Peoria, IL'} />
+      <meta name="description" content={props.query.paths + ' in Peoria, IL'} />
     </Head>
     <h1 className="page-header">{props.query.paths}</h1>
     <PathPlaces paths={props.query.paths} />
