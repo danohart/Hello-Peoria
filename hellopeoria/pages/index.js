@@ -136,7 +136,11 @@ class Home extends Component {
           <div className="ad-inner">
             <h3>View All Places</h3>
             <div>See the full list of all the places to visit in Peoria.</div>
-            <button>See All</button>
+            <button>
+              <Link href="/places">
+                <a>See All</a>
+              </Link>
+            </button>
           </div>
         </div>
         <Query query={HOME_PLACES_QUERY} variables={{ path: 'Free' }}>

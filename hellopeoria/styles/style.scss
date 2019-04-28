@@ -267,15 +267,19 @@ header {
       font-size: 1em;
       padding: 30px;
     }
-  }
 
-  button {
-    @include button;
-    background: $secondary-color-bold;
+    button {
+      @include button;
+      background: $secondary-color-bold;
 
-    &:hover {
-      color: #ffffff;
-      border-color: #ffffff;
+      &:hover {
+        color: #ffffff;
+        border-color: #ffffff;
+      }
+
+      a:hover {
+        color: #ffffff;
+      }
     }
   }
 }
