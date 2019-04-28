@@ -132,6 +132,13 @@ class Home extends Component {
             );
           }}
         </Query>
+        <div className="advert">
+          <div className="ad-inner">
+            <h3>View All Places</h3>
+            <div>See the full list of all the places to visit in Peoria.</div>
+            <button>See All</button>
+          </div>
+        </div>
         <Query query={HOME_PLACES_QUERY} variables={{ path: 'Free' }}>
           {({ data, error, loading }) => {
             if (loading) return <p>Loading...</p>;

@@ -3,7 +3,6 @@ import Search from './Search';
 import Link from 'next/link';
 import NProgress from 'nprogress';
 import Router from 'next/router';
-import Head from 'next/head';
 
 Router.onRouteChangeStart = () => {
   NProgress.start();

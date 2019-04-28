@@ -5,6 +5,8 @@ import { ApolloConsumer } from 'react-apollo';
 import gql from 'graphql-tag';
 import debounce from 'lodash.debounce';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const SEARCH_PLACES_QUERY = gql`
   query SEARCH_PLACES_QUERY($searchTerm: String!) {
@@ -126,6 +128,9 @@ class AutoComplete extends React.Component {
             </div>
           )}
         </Downshift>
+        <div className="search-button">
+          <FontAwesomeIcon icon={faSearch} />
+        </div>
       </div>
     );
   }
