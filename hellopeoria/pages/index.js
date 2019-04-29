@@ -117,7 +117,7 @@ class Home extends Component {
 
             return (
               <>
-                <h2>Foodie</h2>
+                <h2 className="path-title">Foodie</h2>
                 <div className="card-wrapper home">
                   {data.places.map(place => (
                     <Place place={place} key={place.id} />
@@ -150,7 +150,7 @@ class Home extends Component {
 
             return (
               <>
-                <h2>Free</h2>
+                <h2 className="path-title">Free</h2>
                 <div className="card-wrapper home">
                   {data.places.map(place => (
                     <Place place={place} key={place.id} />
@@ -172,7 +172,7 @@ class Home extends Component {
 
             return (
               <>
-                <h2>Nightlife</h2>
+                <h2 className="path-title">Nightlife</h2>
                 <div className="card-wrapper home">
                   {data.places.map(place => (
                     <Place place={place} key={place.id} />
