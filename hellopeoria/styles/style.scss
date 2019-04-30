@@ -364,6 +364,13 @@ header {
       }
     }
 
+    .favorite {
+      position: absolute;
+      z-index: 10;
+      top: 0px;
+      left: 0px;
+    }
+
     .path {
       position: absolute;
       width: 100px;
