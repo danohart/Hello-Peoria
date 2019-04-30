@@ -4,7 +4,7 @@
   "description": "A guide to Peoria Illinois",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 7777",
+    "dev": "node server.js",
     "build": "next build",
     "start": "next start -p $PORT",
     "test": "NODE_ENV=test jest --watch",
@@ -29,6 +29,7 @@
     "downshift": "^2.2.3",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
+    "express": "^4.16.4",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.9.2",
     "lodash.debounce": "^4.0.8",

@@ -44,6 +44,7 @@ class Place extends Component {
               pathname: '/place',
               query: { id: place.id }
             }}
+            // as={`/place/${place.name}`.toLowerCase()}
           >
             <a className="featured-link" />
           </Link>
@@ -56,6 +57,7 @@ class Place extends Component {
                       pathname: '/category',
                       query: { category: place.category }
                     }}
+                    as={`/category/${place.category}`.toLowerCase()}
                   >
                     <a>{place.category}</a>
                   </Link>
