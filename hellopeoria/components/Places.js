@@ -7,8 +7,8 @@ import Pagination from './Pagination';
 import { perPage } from '../config';
 
 const fsAPI =
-  'https://api.foursquare.com/v2/venues/explore?client_id=P3XHTKCOSQYABBPNBFSJASP5LI5QPC1SONB1HKM2VERTGBHP&client_secret=3RYP3G3BF1VAD4GDCY3XIY5EUWJSC3OPVXX5FZ2NZTPGHK4A&v=20180323&limit=40&near=Peoria&query=';
-const default_query = 'Restaurants';
+  'https://api.foursquare.com/v2/venues/search?client_id=P3XHTKCOSQYABBPNBFSJASP5LI5QPC1SONB1HKM2VERTGBHP&client_secret=3RYP3G3BF1VAD4GDCY3XIY5EUWJSC3OPVXX5FZ2NZTPGHK4A&v=20180323&limit=9&near=Peoria&query=';
+const default_query = 'coffee';
 
 const ALL_PLACES_QUERY = gql`
     query ($skip: Int = 0, $first: Int = ${perPage}) {
@@ -38,7 +38,7 @@ class Places extends Component {
       .then(function(response) {
         return response.json();
       })
-      .then(data => this.setState({ fsPlaces: data.response.groups[0].items }));
+      .then(data => this.setState({ fsPlaces: data.response.venues }));
   }
 
   render() {
@@ -48,33 +48,41 @@ class Places extends Component {
       <div>
         <div className="card-wrapper">
           {fsPlaces.map(place => (
-            <div className="place card" key={place.venue.id}>
+            <div className="place card" key={place.id}>
               <div
                 className="image"
                 style={{
-                  backgroundImage: `url(https://source.unsplash.com/400x200/?${
-                    place.venue.categories[0].shortName
-                  })`
+                  backgroundImage: `url(https://source.unsplash.com/400x200/?${place.categories[0].shortName.split(
+                    ' '
+                  )})`
                 }}
               >
                 <div className="title-wrapper">
                   <div className="place-category">
                     <span>
                       <Link href="#">
-                        <a>{place.venue.categories[0].shortName}</a>
+                        <a>{place.categories[0].shortName}</a>
                       </Link>
                     </span>
                   </div>
                   <div className="title">
-                    <h2>{place.venue.name}</h2>
+                    <h2>{place.name}</h2>
                   </div>
                 </div>
               </div>
               <div className="inner">
-                <p className="description">{place.venue.categories[0].name}</p>
+                <p className="description">{place.categories[0].name}</p>
 
                 <div className="addition-info">
-                  <p className="address">{place.venueaddress}</p>
+                  <p className="address">
+                    {place.location.address}, Peoria, IL
+                    <img
+                      src={
+                        place.categories[0].icon.prefix +
+                        place.categories[0].icon.suffix
+                      }
+                    />
+                  </p>
                 </div>
               </div>
             </div>
