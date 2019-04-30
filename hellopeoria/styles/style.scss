@@ -369,6 +369,16 @@ header {
       z-index: 10;
       top: 0px;
       left: 0px;
+      color: #ffffff;
+      padding: 7px;
+      font-size: 25px;
+
+      .true a {
+        color: $secondary-color-bold;
+      }
+      .false a {
+        color: #ffffff;
+      }
     }
 
     .path {

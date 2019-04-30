@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import DeletePlace from './DeletePlace';
 import User from './User';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 class Place extends Component {
   static propTypes = {
@@ -22,8 +24,16 @@ class Place extends Component {
   constructor() {
     super();
     this.state = {
-      photo: []
+      photo: [],
+      userFavorite: false
     };
+    this.handleFavoriting = this.handleFavoriting.bind(this);
+  }
+
+  handleFavoriting() {
+    this.setState(state => ({
+      userFavorite: !state.userFavorite
+    }));
   }
 
   render() {
@@ -36,7 +46,17 @@ class Place extends Component {
         )}
         <User>
           {({ data: { me } }) => (
-            <>{me && <div className="favorite">Star</div>}</>
+            <>
+              {me && (
+                <div className="favorite">
+                  <div className={this.state.userFavorite ? 'true' : 'false'}>
+                    <a onClick={this.handleFavoriting}>
+                      <FontAwesomeIcon icon={faStar} />
+                    </a>
+                  </div>
+                </div>
+              )}
+            </>
           )}
         </User>
         <div
