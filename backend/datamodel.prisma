@@ -16,6 +16,7 @@ type User {
   resetToken: String
   resetTokenExpiry: Float
   permissions: [Permission]
+  favorites: [Place]
 }
 
 type Place {

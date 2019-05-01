@@ -11,7 +11,7 @@ body {
   padding: 0px;
   font-family: $primary-font;
   max-width: 1600px;
-  transition: 0.455s ease all;
+  @include ease-transition;
 }
 
 img {
@@ -375,9 +375,11 @@ header {
 
       .true a {
         color: $secondary-color-bold;
+        @include ease-transition;
       }
       .false a {
         color: #ffffff;
+        @include ease-transition;
       }
     }
 
