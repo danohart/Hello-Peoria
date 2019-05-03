@@ -6,10 +6,6 @@ import Place from './Place';
 import Pagination from './Pagination';
 import { perPage } from '../config';
 
-const fsAPI =
-  'https://api.foursquare.com/v2/venues/search?client_id=P3XHTKCOSQYABBPNBFSJASP5LI5QPC1SONB1HKM2VERTGBHP&client_secret=3RYP3G3BF1VAD4GDCY3XIY5EUWJSC3OPVXX5FZ2NZTPGHK4A&v=20180323&limit=9&near=Peoria&query=';
-const default_query = 'coffee';
-
 const ALL_PLACES_QUERY = gql`
     query ($skip: Int = 0, $first: Int = ${perPage}) {
         places(first: $first, skip: $skip, orderBy: name_ASC) {
@@ -27,26 +23,12 @@ const ALL_PLACES_QUERY = gql`
 class Places extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      fsPlaces: []
-    };
-  }
-
-  componentDidMount() {
-    fetch(fsAPI + default_query)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(data => this.setState({ fsPlaces: data.response.venues }));
   }
 
   render() {
-    const { fsPlaces } = this.state;
-
     return (
       <div>
-        <div className="card-wrapper">
+        {/* <div className="card-wrapper">
           {fsPlaces.map(place => (
             <div className="place card" key={place.id}>
               <div
@@ -87,7 +69,7 @@ class Places extends Component {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
         <Query
           query={ALL_PLACES_QUERY}
           variables={{ skip: this.props.page * perPage - perPage }}
