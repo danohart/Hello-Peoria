@@ -4,7 +4,6 @@ import gql from 'graphql-tag';
 import Place from './Place';
 import Pagination from './Pagination';
 import { perPage } from '../config';
-import Meta from './Meta';
 
 const ALL_PLACES_QUERY = gql`
     query ($skip: Int = 0, $first: Int = ${perPage}) {
@@ -24,7 +23,6 @@ class Places extends Component {
   render() {
     return (
       <div>
-        <Meta />
         <Query
           query={ALL_PLACES_QUERY}
           variables={{ skip: this.props.page * perPage - perPage }}

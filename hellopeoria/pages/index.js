@@ -3,7 +3,6 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Place from '../components/Place';
 import Link from 'next/link';
-import Meta from '../components/Meta';
 
 const HOME_PLACES_QUERY = gql`
   query($path: String!, $itemNumber: Int = 8) {
@@ -21,7 +20,6 @@ class Home extends Component {
   render() {
     return (
       <div className="homepage">
-        <Meta />
         <div className="card-wrapper">
           <div className="category card coffee">
             <Link href="/category?category=Coffee">
