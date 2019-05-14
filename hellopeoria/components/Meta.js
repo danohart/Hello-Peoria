@@ -10,17 +10,14 @@ const Meta = props => (
     <meta
       itemProp="description"
       content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
-      key="description"
     />
     <meta
       itemProp="image"
       content="http://hellopeoria.co/static/images/logo.png"
-      key="image"
     />
     <meta
       name="description"
       content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
-      key="description"
     />
     {/*<!-- Facebook Meta Tags -->*/}
     <meta
