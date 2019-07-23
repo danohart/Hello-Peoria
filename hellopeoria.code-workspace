@@ -1,16 +1,18 @@
 {
-	"folders": [
-		{
-			"path": "hellopeoria"
-		}
-	],
-	"settings": {
-		"workbench.colorCustomizations": {
-			"titleBar.activeForeground": "#000",
-			"titleBar.inactiveForeground": "#000000CC",
-			"titleBar.activeBackground": "#6BC1F8",
-			"titleBar.inactiveBackground": "#509fcf"
-		}
-	}
+  "folders": [
+    {
+      "path": "hellopeoria"
+    },
+    {
+      "path": "backend"
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "titleBar.activeForeground": "#000",
+      "titleBar.inactiveForeground": "#000000CC",
+      "titleBar.activeBackground": "#6BC1F8",
+      "titleBar.inactiveBackground": "#509fcf"
+    }
+  }
 }
-  

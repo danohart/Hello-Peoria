@@ -8,18 +8,20 @@ enum Permission {
 }
 
 type User {
-  id: ID! @unique
+  id: ID! @id
   firstName: String!
   lastName: String!
   email: String! @unique
   password: String!
   resetToken: String
   resetTokenExpiry: Float
-  permissions: [Permission]
+  permissions: [Permission] @scalarList(strategy: RELATION)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
 
 type Place {
-  id: ID! @unique
+  id: ID! @id
   name: String!
   address: String!
   description: String!
@@ -28,4 +30,6 @@ type Place {
   category: String
   place_id: String
   paths: String
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
