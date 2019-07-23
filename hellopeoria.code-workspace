@@ -13,6 +13,7 @@
       "titleBar.inactiveForeground": "#000000CC",
       "titleBar.activeBackground": "#6BC1F8",
       "titleBar.inactiveBackground": "#509fcf"
-    }
+    },
+    "prettier.singleQuote": true
   }
 }
