@@ -3,6 +3,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Place from '../components/Place';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const HOME_PLACES_QUERY = gql`
   query($path: String!, $itemNumber: Int = 8) {
@@ -20,6 +21,37 @@ class Home extends Component {
   render() {
     return (
       <div className="homepage">
+        <Head>
+          {/*<!-- Facebook Meta Tags -->*/}
+          <meta
+            property="og:title"
+            content="Hello Peoria // What to do in Peoria, IL right now"
+          />
+          <meta
+            property="og:description"
+            content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
+          />
+          <meta
+            property="og:image"
+            content="http://hellopeoria.co/static/images/logo.png"
+          />
+          <meta property="og:type" content="website" />
+
+          {/*<!-- Twitter Meta Tags -->*/}
+          <meta
+            name="twitter:title"
+            content="Hello Peoria // What to do in Peoria, IL right now"
+          />
+          <meta
+            name="twitter:description"
+            content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
+          />
+          <meta
+            name="twitter:image"
+            content="http://hellopeoria.co/static/images/logo.png"
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Head>
         <div className="card-wrapper">
           <div className="category card coffee">
             <Link href="/category?category=Coffee">

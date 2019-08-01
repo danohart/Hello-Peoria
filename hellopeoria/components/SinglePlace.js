@@ -27,7 +27,7 @@ class SinglePlace extends Component {
       <Query
         query={SINGLE_PLACE_QUERY}
         variables={{
-          id: this.props.id
+          id: this.props.id,
         }}
       >
         {({ error, loading, data }) => {
@@ -47,13 +47,13 @@ class SinglePlace extends Component {
                 {/*<!-- Facebook Meta Tags -->*/}
                 <meta property="og:title" content={place.name} />
                 <meta property="og:description" content={place.description} />
-                <meta property="og:image" content={place.largeImage} />
+                <meta property="og:image" content={place.image} />
                 <meta property="og:type" content="website" />
 
                 {/*<!-- Twitter Meta Tags -->*/}
                 <meta name="twitter:title" content={place.title} />
                 <meta name="twitter:description" content={place.description} />
-                <meta name="twitter:image" content={place.largeImage} />
+                <meta name="twitter:image" content={place.image} />
                 <meta name="twitter:card" content="summary_large_image" />
               </Head>
               <div className="single-place">
@@ -84,7 +84,7 @@ class SinglePlace extends Component {
                             <Link
                               href={{
                                 pathname: 'update',
-                                query: { id: place.id }
+                                query: { id: place.id },
                               }}
                             >
                               <a>Edit ✏️</a>

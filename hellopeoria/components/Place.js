@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import Router from 'next/router';
 import DeletePlace from './DeletePlace';
 import User from './User';
 
 class Place extends Component {
   static propTypes = {
-    place: PropTypes.object.isRequired
+    place: PropTypes.object.isRequired,
   };
 
   placeBackground({ place } = this.props) {
@@ -23,7 +22,7 @@ class Place extends Component {
   constructor() {
     super();
     this.state = {
-      photo: []
+      photo: [],
     };
   }
 
@@ -42,7 +41,7 @@ class Place extends Component {
           <Link
             href={{
               pathname: '/place',
-              query: { id: place.id }
+              query: { id: place.id },
             }}
           >
             <a className="featured-link" />
@@ -54,7 +53,7 @@ class Place extends Component {
                   <Link
                     href={{
                       pathname: '/category',
-                      query: { category: place.category }
+                      query: { category: place.category },
                     }}
                   >
                     <a>{place.category}</a>
