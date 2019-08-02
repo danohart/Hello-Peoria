@@ -33,7 +33,7 @@ class Home extends Component {
           />
           <meta
             property="og:image"
-            content="http://hellopeoria.co/static/images/logo.png"
+            content="http://hellopeoria.co/static/images/hello-peoria-il.png"
           />
           <meta property="og:type" content="website" />
 
@@ -48,7 +48,7 @@ class Home extends Component {
           />
           <meta
             name="twitter:image"
-            content="http://hellopeoria.co/static/images/logo.png"
+            content="http://hellopeoria.co/static/images/hello-peoria-il.png"
           />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
