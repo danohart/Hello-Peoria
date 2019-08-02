@@ -79,8 +79,8 @@ class updatePlace extends Component {
     const res = await updatPlaceMutation({
       variables: {
         id: this.props.id,
-        ...this.state
-      }
+        ...this.state,
+      },
     });
   };
 
@@ -90,11 +90,11 @@ class updatePlace extends Component {
         <Query
           query={SINGLE_PLACE_QUERY}
           variables={{
-            id: this.props.id
+            id: this.props.id,
           }}
         >
           {({ data, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <p>Please wait...</p>;
             if (!data.place)
               return (
                 <p>

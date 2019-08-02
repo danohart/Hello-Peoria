@@ -26,7 +26,7 @@ class CategoryPlaces extends Component {
           variables={{ category: this.props.category }}
         >
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <p>Please wait...</p>;
             if (error) return <p>Error: {error.message}</p>;
 
             return (

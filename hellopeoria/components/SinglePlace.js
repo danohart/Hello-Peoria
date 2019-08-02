@@ -32,7 +32,7 @@ class SinglePlace extends Component {
       >
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
-          if (loading) return <p>Loading...</p>;
+          if (loading) return <p>Please wait...</p>;
           if (!data.place) return <p>No place found</p>;
           const place = data.place;
           return (

@@ -144,7 +144,7 @@ class Home extends Component {
         </div>
         <Query query={HOME_PLACES_QUERY} variables={{ path: 'Foodie' }}>
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <p>Please wait...</p>;
             if (error) return <p>Error: {error.message}</p>;
 
             return (
@@ -177,7 +177,7 @@ class Home extends Component {
         </div>
         <Query query={HOME_PLACES_QUERY} variables={{ path: 'Free' }}>
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <p>Please wait...</p>;
             if (error) return <p>Error: {error.message}</p>;
 
             return (
@@ -199,7 +199,7 @@ class Home extends Component {
         </Query>
         <Query query={HOME_PLACES_QUERY} variables={{ path: 'Nightlife' }}>
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <p>Please wait...</p>;
             if (error) return <p>Error: {error.message}</p>;
 
             return (

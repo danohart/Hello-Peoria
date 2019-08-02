@@ -31,15 +31,15 @@ function routeToPlace(place) {
   Router.push({
     pathname: '/place',
     query: {
-      id: place.id
-    }
+      id: place.id,
+    },
   });
 }
 
 class AutoComplete extends React.Component {
   state = {
     places: [],
-    loading: false
+    loading: false,
   };
 
   onChange = debounce(async (e, client) => {
@@ -48,11 +48,11 @@ class AutoComplete extends React.Component {
     // Manually query apollo client
     const res = await client.query({
       query: SEARCH_PLACES_QUERY,
-      variables: { searchTerm: e.target.value }
+      variables: { searchTerm: e.target.value },
     });
     this.setState({
       places: res.data.places,
-      loading: false
+      loading: false,
     });
   }, 350);
   render() {
@@ -73,11 +73,11 @@ class AutoComplete extends React.Component {
                       placeholder: 'Try "Coffee"',
                       name: 'search',
                       id: 'search',
-                      className: this.state.loading ? 'Loading...' : '',
+                      className: this.state.loading ? 'Please wait...' : '',
                       onChange: e => {
                         e.persist();
                         this.onChange(e, client);
-                      }
+                      },
                     })}
                   />
                 )}
