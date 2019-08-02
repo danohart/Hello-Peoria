@@ -7,7 +7,11 @@ import Head from 'next/head';
 
 const HOME_PLACES_QUERY = gql`
   query($path: String!, $itemNumber: Int = 8) {
-    places(first: $itemNumber, orderBy: name_ASC, where: { paths: $path }) {
+    places(
+      first: $itemNumber
+      orderBy: description_DESC
+      where: { paths: $path }
+    ) {
       id
       name
       image
