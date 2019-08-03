@@ -3,8 +3,6 @@ import Page from '../components/Page';
 import { ApolloProvider } from 'react-apollo';
 import withData from '../lib/withData';
 
-import Meta from '../components/Meta';
-
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
@@ -21,7 +19,6 @@ class MyApp extends App {
     return (
       <Container>
         <ApolloProvider client={apollo}>
-          <Meta />
           <Page>
             <Component {...pageProps} />
           </Page>

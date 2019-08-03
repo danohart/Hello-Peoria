@@ -25,50 +25,6 @@ class Home extends Component {
   render() {
     return (
       <div className="homepage">
-        <Head>
-          <title>Hello Peoria // What to do in Peoria, IL right now</title>
-          <meta
-            itemProp="description"
-            content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
-          />
-          <meta
-            itemProp="image"
-            content="http://hellopeoria.co/static/images/logo.png"
-          />
-          <meta
-            name="description"
-            content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
-          />
-          {/*<!-- Facebook Meta Tags -->*/}
-          <meta
-            property="og:title"
-            content="Hello Peoria // What to do in Peoria, IL right now"
-          />
-          <meta
-            property="og:description"
-            content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
-          />
-          <meta
-            property="og:image"
-            content="http://hellopeoria.co/static/images/hello-peoria-il.png"
-          />
-          <meta property="og:type" content="website" />
-
-          {/*<!-- Twitter Meta Tags -->*/}
-          <meta
-            name="twitter:title"
-            content="Hello Peoria // What to do in Peoria, IL right now"
-          />
-          <meta
-            name="twitter:description"
-            content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
-          />
-          <meta
-            name="twitter:image"
-            content="http://hellopeoria.co/static/images/hello-peoria-il.png"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-        </Head>
         <div className="card-wrapper">
           <div className="category card coffee">
             <Link href="/category?category=Coffee">
