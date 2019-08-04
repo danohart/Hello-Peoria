@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import Loading from './Loading';
+import { FB_API } from '../env';
 import Moment from 'react-moment';
 import 'moment-timezone';
 
@@ -76,6 +77,9 @@ class Events extends Component {
             <div className="description">
               {event.description.substring(0, 180)}...
             </div>
+            <Link href={`https://facebook.com/event/` + event.id}>
+              <a className="button full-size">Learn More</a>
+            </Link>
           </div>
         ))}
       </div>
