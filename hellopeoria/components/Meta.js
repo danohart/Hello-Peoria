@@ -23,14 +23,17 @@ const Meta = props => (
     <meta
       property="og:title"
       content="Hello Peoria // What to do in Peoria, IL right now"
+      key="ogtitle"
     />
     <meta
       property="og:description"
       content="Restaurants, Bars, and Events in Peoria. Find out cool things to see and do in Peoria, IL"
+      key="ogdescription"
     />
     <meta
       property="og:image"
       content="http://hellopeoria.co/static/images/hello-peoria-il.png"
+      key="ogimage"
     />
     <meta property="og:type" content="website" />
 

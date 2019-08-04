@@ -39,6 +39,7 @@ class SinglePlace extends Component {
             <div className="single-place-wrapper">
               <Head>
                 <title>{place.name} // Hello Peoria</title>
+                <meta name="description" content={place.description} />
                 {/*<!-- Google / Search Engine Tags -->*/}
                 <meta itemProp="name" content={place.name} />
                 <meta itemProp="description" content={place.description} />
@@ -52,8 +53,12 @@ class SinglePlace extends Component {
                 />
 
                 {/*<!-- Facebook Meta Tags -->*/}
-                <meta property="og:title" content={place.name} />
-                <meta property="og:description" content={place.description} />
+                <meta property="og:title" content={place.name} key="ogtitle" />
+                <meta
+                  property="og:description"
+                  content={place.description}
+                  key="ogdescription"
+                />
                 <meta
                   property="og:image"
                   content={
@@ -61,6 +66,7 @@ class SinglePlace extends Component {
                       ? place.largeImage
                       : 'https://source.unsplash.com/600x200/?' + place.category
                   }
+                  key="ogimage"
                 />
 
                 <meta property="og:type" content="website" />
