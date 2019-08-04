@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Mutation, Query } from 'react-apollo';
 import Router from 'next/router';
 import gql from 'graphql-tag';
+import Loading from './Loading';
 import Error from './ErrorMessage';
 import { ALL_PLACES_QUERY } from './Places';
 
@@ -94,7 +95,7 @@ class updatePlace extends Component {
           }}
         >
           {({ data, loading }) => {
-            if (loading) return <p>Please wait...</p>;
+            if (loading) return <Loading />;
             if (!data.place)
               return (
                 <p>

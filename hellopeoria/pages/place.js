@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import Loading from '../components/Loading';
 import Error from '../components/ErrorMessage';
 import Head from 'next/head';
 import User from '../components/User';
@@ -32,7 +33,7 @@ class SinglePlace extends Component {
       >
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
-          if (loading) return <p>Please wait...</p>;
+          if (loading) return <Loading />;
           if (!data.place) return <p>No place found</p>;
           const place = data.place;
           return (

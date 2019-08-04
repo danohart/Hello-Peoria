@@ -5,6 +5,7 @@ import Error from './ErrorMessage';
 import Head from 'next/head';
 import User from './User';
 import DeletePlace from './DeletePlace';
+import Loading from './Loading';
 import Link from 'next/link';
 
 const SINGLE_PLACE_QUERY = gql`
@@ -32,7 +33,7 @@ class SinglePlace extends Component {
       >
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
-          if (loading) return <p>Please wait...</p>;
+          if (loading) return <Loading />;
           if (!data.place) return <p>No place found</p>;
           const place = data.place;
           return (
