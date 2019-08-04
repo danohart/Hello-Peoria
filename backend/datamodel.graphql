@@ -28,3 +28,17 @@ type Place {
   category: String
   place_id: String
 }
+
+type Event {
+  id: ID! @unique
+  name: String!
+  address: String!
+  description: String!
+  image: String
+  largeImage: String
+  category: String
+  paths: String
+  time: DateTime!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
