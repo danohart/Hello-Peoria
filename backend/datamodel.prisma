@@ -33,3 +33,18 @@ type Place {
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
+
+type Event {
+  id: ID! @id
+  name: String!
+  organization: String
+  address: String!
+  description: String!
+  image: String
+  largeImage: String
+  category: String
+  paths: String
+  time: DateTime!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
