@@ -51,6 +51,7 @@ type Query {
   placesConnection(where: PlaceWhereInput): PlaceConnection!
   me: User
   users: [User]!
+  event: Event
 }
 
 type User {

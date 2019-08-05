@@ -2,51 +2,17 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import Loading from './Loading';
-import { FB_API } from '../env';
 import Moment from 'react-moment';
 import 'moment-timezone';
 
 class Events extends Component {
-  constructor() {
-    super();
-    this.state = {
-      events: [],
-      isLoading: true,
-    };
-  }
-
-  fetchFBEvents() {
-    fetch(
-      `https://graph.facebook.com/v4.0/1353765521380739/events?fields=cover,name,place,description,start_time&access_token=` +
-        FB_API
-    )
-      .then(function(response) {
-        return response.json();
-      })
-      .then(eventData => {
-        this.setState({
-          events: eventData.data,
-          isLoading: false,
-        });
-      })
-      .catch(err => {
-        console.log('ERROR: ' + err);
-      });
-  }
-
-  componentDidMount() {
-    this.fetchFBEvents();
-  }
   render() {
-    const { events } = this.state;
-    console.log('FBEvents', events);
     return (
       <div className="card-wrapper">
         <Head>
           <title>Events in Peoria, IL // Hello Peoria</title>
         </Head>
-        {this.state.isLoading === true ? <Loading /> : ''}
-        {this.state.events.map(event => (
+        {/* {this.state.events.map(event => (
           <div className="card" key={event.id}>
             <div className="date">
               <h3>
@@ -81,7 +47,7 @@ class Events extends Component {
               <a className="button full-size">Learn More</a>
             </Link>
           </div>
-        ))}
+        ))} */}
       </div>
     );
   }

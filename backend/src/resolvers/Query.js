@@ -1,5 +1,10 @@
 const { forwardTo } = require('prisma-binding');
 const { hasPermission } = require('../utils');
+require('dotenv');
+const fetch = require('node-fetch');
+
+const FB_FIELDS = 'cover,name,place,description,start_time';
+const FB_API = `https://graph.facebook.com/v4.0/1353765521380739/events?access_token=` + process.env.FACEBOOK_ACCESS_TOKEN + `&fields=${FB_FIELDS}`;
 
 const Query = {
   places: forwardTo('db'),
@@ -26,7 +31,15 @@ const Query = {
 
     //3. If they do, query all users
     return ctx.db.query.users({}, info);
-  }
+  },
+
+   async event (parent, args) {
+    // const { id } = args
+    const response = await fetch(FB_API);
+    const fbEvent = await response.json();
+    return fbEvent;
+  },
+  
 };
 
 module.exports = Query;
