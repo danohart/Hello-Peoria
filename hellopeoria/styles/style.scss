@@ -524,6 +524,7 @@ header {
       font-size: 0.8em;
       background-color: $secondary-color-bold;
       padding: 5px 10px;
+      @include rounded-corners;
     }
 
     .description {
