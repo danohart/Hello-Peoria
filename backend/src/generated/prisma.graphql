@@ -1,5 +1,5 @@
-# source: https://us1.prisma.sh/daniel-hart/hellopeoria/dev
-# timestamp: Tue Aug 06 2019 10:35:49 GMT-0500 (Central Daylight Time)
+# source: https://hello-peoria-prod-19a7dc0bca.herokuapp.com/hello-peoria-prod/prod
+# timestamp: Tue Aug 06 2019 11:13:30 GMT-0500 (Central Daylight Time)
 
 type AggregateEvent {
   count: Int!
@@ -36,7 +36,6 @@ type EventConnection {
 }
 
 input EventCreateInput {
-  id: ID
   data: Json
 }
 
@@ -54,6 +53,10 @@ enum EventOrderByInput {
   id_DESC
   data_ASC
   data_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  createdAt_ASC
+  createdAt_DESC
 }
 
 type EventPreviousValues {
@@ -255,7 +258,6 @@ type PlaceConnection {
 }
 
 input PlaceCreateInput {
-  id: ID
   name: String!
   address: String!
   description: String!
@@ -888,7 +890,6 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  id: ID
   firstName: String!
   lastName: String!
   email: String!

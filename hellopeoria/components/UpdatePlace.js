@@ -15,6 +15,7 @@ const SINGLE_PLACE_QUERY = gql`
       category
       address
       paths
+      tags
     }
   }
 `;
