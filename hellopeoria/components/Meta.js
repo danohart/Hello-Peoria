@@ -13,7 +13,7 @@ const Meta = props => (
     />
     <meta
       itemProp="image"
-      content="http://hellopeoria.co/static/images/logo.png"
+      content="http://hellopeoria.co/static/images/hello-peoria-il.png"
     />
     <meta
       name="description"
