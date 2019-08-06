@@ -27,13 +27,20 @@ a {
   color: $primary-color;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   margin: 10px 0px;
 }
 
 h2 {
   font-family: $secondary-font;
   font-weight: lighter;
+}
+
+ul,
+ol {
+  margin-left: 2em;
 }
 
 button {
