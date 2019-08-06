@@ -18,6 +18,11 @@ const ALL_EVENTS_QUERY = gql`
 class Events extends Component {
   render() {
     return (
+      <>
+      <Head>
+        <title>Events happening in Peoria, IL // Hello Peoria</title>
+        <meta name="description" content="What to do in Peoria today and this month. Events in Peoria, IL" />
+      </Head>
       <Query query={ALL_EVENTS_QUERY}>
         {({ data, error, loading }) => {
           if (loading) return <Loading />;
@@ -25,13 +30,6 @@ class Events extends Component {
           console.log(data);
           return (
             <div className="card-wrapper">
-              <Head>
-                <title>Events happening in Peoria, IL // Hello Peoria</title>
-                <meta
-                  name="description"
-                  content="What to do in Peoria today and this month. Events in Peoria, IL"
-                />
-              </Head>
               {data.event.data.map(event => (
                 <div className="card" key={event.id}>
                   <div className="date">
@@ -74,6 +72,7 @@ class Events extends Component {
           );
         }}
       </Query>
+      </>
     );
   }
 }
