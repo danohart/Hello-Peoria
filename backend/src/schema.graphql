@@ -13,6 +13,7 @@ type Mutation {
     largeImage: String
     category: String
     paths: String
+    tags: String
   ): Place!
   updatePlace(
     id: ID!
@@ -21,6 +22,7 @@ type Mutation {
     address: String
     category: String
     paths: String
+    tags: String
   ): Place!
   deletePlace(id: ID!): Place
   signup(
