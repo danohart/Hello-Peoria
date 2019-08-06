@@ -27,6 +27,7 @@ const UPDATE_PLACE_MUTATION = gql`
     $description: String
     $category: String
     $paths: String
+    $tags: String
   ) {
     updatePlace(
       id: $id
@@ -35,6 +36,7 @@ const UPDATE_PLACE_MUTATION = gql`
       address: $address
       category: $category
       paths: $paths
+      tags: $tags
     ) {
       id
       name
@@ -42,6 +44,7 @@ const UPDATE_PLACE_MUTATION = gql`
       address
       category
       paths
+      tags
     }
   }
 `;
@@ -174,6 +177,15 @@ class updatePlace extends Component {
                         <option value="Outdoor">Outdoor/Adventure</option>
                         <option value="Events">Events</option>
                       </select>
+                      <label>Tags(separated by space)</label>
+                      <input
+                        type="text"
+                        id="tags"
+                        name="tags"
+                        placeholder="Tags"
+                        defaultValue={data.place.tags}
+                        onChange={this.handleChange}
+                      />
 
                       <br />
                       <button
