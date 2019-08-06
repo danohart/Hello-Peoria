@@ -30,6 +30,7 @@ type Place {
   category: String
   place_id: String
   paths: String
+  tags: String
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

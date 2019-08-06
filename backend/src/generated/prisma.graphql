@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/daniel-hart/hellopeoria/dev
-# timestamp: Mon Aug 05 2019 15:50:13 GMT-0500 (Central Daylight Time)
+# timestamp: Tue Aug 06 2019 10:35:49 GMT-0500 (Central Daylight Time)
 
 type AggregateEvent {
   count: Int!
@@ -239,6 +239,7 @@ type Place implements Node {
   category: String
   place_id: String
   paths: String
+  tags: String
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -263,6 +264,7 @@ input PlaceCreateInput {
   category: String
   place_id: String
   paths: String
+  tags: String
 }
 
 """An edge in a connection."""
@@ -293,6 +295,8 @@ enum PlaceOrderByInput {
   place_id_DESC
   paths_ASC
   paths_DESC
+  tags_ASC
+  tags_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -309,6 +313,7 @@ type PlacePreviousValues {
   category: String
   place_id: String
   paths: String
+  tags: String
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -361,6 +366,7 @@ input PlaceUpdateInput {
   category: String
   place_id: String
   paths: String
+  tags: String
 }
 
 input PlaceUpdateManyMutationInput {
@@ -372,6 +378,7 @@ input PlaceUpdateManyMutationInput {
   category: String
   place_id: String
   paths: String
+  tags: String
 }
 
 input PlaceWhereInput {
@@ -743,6 +750,46 @@ input PlaceWhereInput {
 
   """All values not ending with the given string."""
   paths_not_ends_with: String
+  tags: String
+
+  """All values that are not equal to given value."""
+  tags_not: String
+
+  """All values that are contained in given list."""
+  tags_in: [String!]
+
+  """All values that are not contained in given list."""
+  tags_not_in: [String!]
+
+  """All values less than the given value."""
+  tags_lt: String
+
+  """All values less than or equal the given value."""
+  tags_lte: String
+
+  """All values greater than the given value."""
+  tags_gt: String
+
+  """All values greater than or equal the given value."""
+  tags_gte: String
+
+  """All values containing the given string."""
+  tags_contains: String
+
+  """All values not containing the given string."""
+  tags_not_contains: String
+
+  """All values starting with the given string."""
+  tags_starts_with: String
+
+  """All values not starting with the given string."""
+  tags_not_starts_with: String
+
+  """All values ending with the given string."""
+  tags_ends_with: String
+
+  """All values not ending with the given string."""
+  tags_not_ends_with: String
   createdAt: DateTime
 
   """All values that are not equal to given value."""

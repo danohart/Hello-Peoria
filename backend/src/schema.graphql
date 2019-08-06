@@ -53,11 +53,3 @@ type Query {
   users: [User]!
   event: Event
 }
-
-type User {
-  id: ID!
-  firstName: String!
-  lastName: String!
-  email: String!
-  permissions: [Permission!]
-}
