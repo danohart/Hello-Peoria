@@ -334,6 +334,22 @@ header {
   }
 }
 
+.footer {
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    padding: 0px 10px;
+    border-right: 1px solid #000000;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
 .card-wrapper {
   display: flex;
   flex-wrap: wrap;

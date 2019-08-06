@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { initGA, logPageView } from '../lib/analytics';
 import Header from './Header';
+import Footer from './Footer';
 import Meta from '../components/Meta';
 
 // Styles
@@ -20,6 +21,7 @@ class Page extends Component {
         <Meta />
         <Header />
         <div className="main">{this.props.children}</div>
+        <Footer />
       </div>
     );
   }
