@@ -6,9 +6,9 @@ class Footer extends Component {
     return (
       <div className="footer">
         <div className="copyright">
-          &copy; Hello Peoria &bull; {new Date().getFullYear()}
+          &copy; Hello Peoria &bull; 2017 - {new Date().getFullYear()}
         </div>
-        <div>
+        <div className="terms-privacy">
           <Link href="/terms-privacy">
             <a> Terms & Privacy Policy</a>
           </Link>
