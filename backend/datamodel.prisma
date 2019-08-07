@@ -8,7 +8,7 @@ enum Permission {
 }
 
 type User {
-  id: ID! @unique
+  id: ID! @id
   firstName: String!
   lastName: String!
   email: String! @unique
@@ -21,7 +21,7 @@ type User {
 }
 
 type Place {
-  id: ID! @unique
+  id: ID! @id
   name: String!
   address: String!
   description: String!
@@ -36,6 +36,11 @@ type Place {
 }
 
 type Event {
-  id: ID! @unique
+  id: ID! @id
+  data: Json
+}
+
+type FsqInfo {
+  id: ID! @id
   data: Json
 }
