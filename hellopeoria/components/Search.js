@@ -15,6 +15,7 @@ const SEARCH_PLACES_QUERY = gql`
         OR: [
           { name_contains: $searchTerm }
           { description_contains: $searchTerm }
+          { tags_contains: $searchTerm }
         ]
       }
     ) {

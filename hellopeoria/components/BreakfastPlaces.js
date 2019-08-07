@@ -7,10 +7,15 @@ import { perPage } from '../config';
 
 const ALL_PLACES_QUERY = gql`
   query {
-    places(orderBy: name_ASC, where: {
-      OR:  [{ description_contains: "breakfast" }, { tags_contains: "breakfast" }] 
-      
-    }) {
+    places(
+      orderBy: name_ASC
+      where: {
+        OR: [
+          { description_contains: "breakfast" }
+          { tags_contains: "breakfast" }
+        ]
+      }
+    ) {
       id
       name
       description
