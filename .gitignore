@@ -10,3 +10,5 @@ variables.env
 backend/export-*
 backend/now.json
 backend/data/*
+*.env
+hellopeoria/env.js

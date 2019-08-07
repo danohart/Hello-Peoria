@@ -46,6 +46,12 @@ $events: #e79070;
     opacity: 0.2;
   }
 
+  &.full-size {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+  }
+
   a {
     color: #ffffff;
     display: block;

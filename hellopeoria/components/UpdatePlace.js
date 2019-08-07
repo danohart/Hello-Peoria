@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Mutation, Query } from 'react-apollo';
 import Router from 'next/router';
 import gql from 'graphql-tag';
+import Loading from './Loading';
 import Error from './ErrorMessage';
 import { ALL_PLACES_QUERY } from './Places';
 
@@ -14,6 +15,7 @@ const SINGLE_PLACE_QUERY = gql`
       category
       address
       paths
+      tags
     }
   }
 `;
@@ -26,6 +28,7 @@ const UPDATE_PLACE_MUTATION = gql`
     $description: String
     $category: String
     $paths: String
+    $tags: String
   ) {
     updatePlace(
       id: $id
@@ -34,6 +37,7 @@ const UPDATE_PLACE_MUTATION = gql`
       address: $address
       category: $category
       paths: $paths
+      tags: $tags
     ) {
       id
       name
@@ -41,6 +45,7 @@ const UPDATE_PLACE_MUTATION = gql`
       address
       category
       paths
+      tags
     }
   }
 `;
@@ -79,8 +84,8 @@ class updatePlace extends Component {
     const res = await updatPlaceMutation({
       variables: {
         id: this.props.id,
-        ...this.state
-      }
+        ...this.state,
+      },
     });
   };
 
@@ -90,11 +95,11 @@ class updatePlace extends Component {
         <Query
           query={SINGLE_PLACE_QUERY}
           variables={{
-            id: this.props.id
+            id: this.props.id,
           }}
         >
           {({ data, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <Loading />;
             if (!data.place)
               return (
                 <p>
@@ -173,6 +178,15 @@ class updatePlace extends Component {
                         <option value="Outdoor">Outdoor/Adventure</option>
                         <option value="Events">Events</option>
                       </select>
+                      <label>Tags(separated by space)</label>
+                      <input
+                        type="text"
+                        id="tags"
+                        name="tags"
+                        placeholder="Tags"
+                        defaultValue={data.place.tags}
+                        onChange={this.handleChange}
+                      />
 
                       <br />
                       <button

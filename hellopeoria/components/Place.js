@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import Router from 'next/router';
 import DeletePlace from './DeletePlace';
 import User from './User';
 
@@ -23,9 +22,7 @@ class Place extends Component {
   constructor() {
     super();
     this.state = {
-      photo: [],
-      fsPlaces: [],
-      isLoading: true
+      photo: []
     };
   }
 

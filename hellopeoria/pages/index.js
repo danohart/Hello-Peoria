@@ -3,10 +3,15 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Place from '../components/Place';
 import Link from 'next/link';
+import Loading from '../components/Loading';
 
 const HOME_PLACES_QUERY = gql`
   query($path: String!, $itemNumber: Int = 8) {
-    places(first: $itemNumber, orderBy: name_ASC, where: { paths: $path }) {
+    places(
+      first: $itemNumber
+      orderBy: description_DESC
+      where: { paths: $path }
+    ) {
       id
       name
       image
@@ -112,7 +117,7 @@ class Home extends Component {
         </div>
         <Query query={HOME_PLACES_QUERY} variables={{ path: 'Foodie' }}>
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <Loading />;
             if (error) return <p>Error: {error.message}</p>;
 
             return (
@@ -145,7 +150,7 @@ class Home extends Component {
         </div>
         <Query query={HOME_PLACES_QUERY} variables={{ path: 'Free' }}>
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <Loading />;
             if (error) return <p>Error: {error.message}</p>;
 
             return (
@@ -167,7 +172,7 @@ class Home extends Component {
         </Query>
         <Query query={HOME_PLACES_QUERY} variables={{ path: 'Nightlife' }}>
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <Loading />;
             if (error) return <p>Error: {error.message}</p>;
 
             return (

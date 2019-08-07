@@ -3,6 +3,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Link from 'next/link';
 import Place from './Place';
+import Loading from './Loading';
 import Pagination from './Pagination';
 import { perPage } from '../config';
 
@@ -75,7 +76,7 @@ class Places extends Component {
           variables={{ skip: this.props.page * perPage - perPage }}
         >
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <Loading />;
             if (error) return <p>Error: {error.message}</p>;
 
             return (

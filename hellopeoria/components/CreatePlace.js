@@ -14,6 +14,7 @@ const CREATE_PLACE_MUTATION = gql`
     $image: String
     $largeImage: String
     $paths: String
+    $tags: String
   ) {
     createPlace(
       name: $name
@@ -23,6 +24,7 @@ const CREATE_PLACE_MUTATION = gql`
       image: $image
       largeImage: $largeImage
       paths: $paths
+      tags: $tags
     ) {
       id
       name
@@ -32,6 +34,7 @@ const CREATE_PLACE_MUTATION = gql`
       image
       largeImage
       paths
+      tags
     }
   }
 `;
@@ -170,6 +173,15 @@ class createPlace extends Component {
                 <option>Outdoor/Adventure</option>
                 <option>Events</option>
               </select>
+
+              <input
+                type="text"
+                id="tags"
+                name="tags"
+                placeholder="Tags"
+                value={this.state.tags}
+                onChange={this.handleChange}
+              />
 
               <br />
               <button type="submit" className={loading ? 'loading' : null}>
