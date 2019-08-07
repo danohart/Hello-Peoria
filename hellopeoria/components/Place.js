@@ -26,34 +26,8 @@ class Place extends Component {
     };
   }
 
-  fetchFsPlaces() {
-    fetch(
-      'https://api.foursquare.com/v2/venues/explore?client_id=P3XHTKCOSQYABBPNBFSJASP5LI5QPC1SONB1HKM2VERTGBHP&client_secret=3RYP3G3BF1VAD4GDCY3XIY5EUWJSC3OPVXX5FZ2NZTPGHK4A&v=20180323&limit=1&near=Peoria&query=' +
-        this.props.place.name
-    )
-      .then(function(response) {
-        return response.json();
-      })
-      .then(data => {
-        this.setState({
-          fsPlaces: data.response.groups[0].items[0].venue,
-          isLoading: false
-        });
-      })
-      .catch(err => {
-        console.log('ERROR: ' + err);
-      });
-  }
-
-  componentDidMount() {
-    this.fetchFsPlaces();
-  }
-
   render() {
     const { place } = this.props;
-    const { isLoading, fsPlaces } = this.state;
-
-    console.log('foursquare', fsPlaces);
 
     return (
       <div className="place card">
@@ -100,11 +74,6 @@ class Place extends Component {
           <p className="description">{place.description}</p>
 
           <div className="addition-info">
-            {isLoading ? (
-              <h2>Loading...</h2>
-            ) : (
-              <h2>{this.state.fsPlaces.name}</h2>
-            )}
             <p className="address">
               <a
                 target="_blank"

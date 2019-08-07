@@ -40,7 +40,7 @@ type Event {
   data: Json
 }
 
-type FsqInfo {
+type FsqData {
   id: ID! @id
   data: Json
 }

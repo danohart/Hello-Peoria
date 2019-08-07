@@ -11,9 +11,11 @@ const FB_API =
   `&fields=${FB_FIELDS}`;
 
 // Foursquare Places API constants
-const FSQ_ID = process.env.FSQ_ID;
-const FSQ_SECRET = process.env.FSQ_SECRET;
-const FSQ_API = `https://api.foursquare.com/v2/venues/search?client_id=${FSQ_ID}&client_secret=${FSQ_SECRET}&query=coffee`;
+const FSQ_API = `https://api.foursquare.com/v2/venues/search?client_id=${
+  process.env.FSQ_ID
+}&client_secret=${
+  process.env.FSQ_SECRET
+}&v=20190807&intent=search&near=Chicago&query=coffee`;
 
 const Query = {
   places: forwardTo('db'),
@@ -42,16 +44,13 @@ const Query = {
     return ctx.db.query.users({}, info);
   },
   // Facebook Graph API for events
-  async event(parent, args) {
-    // const { id } = args
+  async event() {
     const response = await fetch(FB_API);
     const fbEvent = await response.json();
     return fbEvent;
   },
   // Foursquare Places API
-
-  async fsqInfo(parent, args) {
-    // const { id } = args
+  async fsqPlace() {
     const response = await fetch(FSQ_API);
     const fsqInfo = await response.json();
     return fsqInfo;

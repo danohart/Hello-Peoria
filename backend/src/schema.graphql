@@ -54,5 +54,5 @@ type Query {
   me: User
   users: [User]!
   event: Event
-  fsqInfo: FsqInfo
+  fsqPlace: FsqData
 }

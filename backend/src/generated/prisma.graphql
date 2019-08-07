@@ -1,11 +1,11 @@
 # source: https://us1.prisma.sh/daniel-hart/hellopeoria/dev
-# timestamp: Wed Aug 07 2019 10:16:50 GMT-0500 (Central Daylight Time)
+# timestamp: Wed Aug 07 2019 13:49:40 GMT-0500 (Central Daylight Time)
 
 type AggregateEvent {
   count: Int!
 }
 
-type AggregateFsqInfo {
+type AggregateFsqData {
   count: Int!
 }
 
@@ -167,63 +167,63 @@ input EventWhereUniqueInput {
   id: ID
 }
 
-type FsqInfo implements Node {
+type FsqData implements Node {
   id: ID!
   data: Json
 }
 
 """A connection to a list of items."""
-type FsqInfoConnection {
+type FsqDataConnection {
   """Information to aid in pagination."""
   pageInfo: PageInfo!
 
   """A list of edges."""
-  edges: [FsqInfoEdge]!
-  aggregate: AggregateFsqInfo!
+  edges: [FsqDataEdge]!
+  aggregate: AggregateFsqData!
 }
 
-input FsqInfoCreateInput {
+input FsqDataCreateInput {
   id: ID
   data: Json
 }
 
 """An edge in a connection."""
-type FsqInfoEdge {
+type FsqDataEdge {
   """The item at the end of the edge."""
-  node: FsqInfo!
+  node: FsqData!
 
   """A cursor for use in pagination."""
   cursor: String!
 }
 
-enum FsqInfoOrderByInput {
+enum FsqDataOrderByInput {
   id_ASC
   id_DESC
   data_ASC
   data_DESC
 }
 
-type FsqInfoPreviousValues {
+type FsqDataPreviousValues {
   id: ID!
   data: Json
 }
 
-type FsqInfoSubscriptionPayload {
+type FsqDataSubscriptionPayload {
   mutation: MutationType!
-  node: FsqInfo
+  node: FsqData
   updatedFields: [String!]
-  previousValues: FsqInfoPreviousValues
+  previousValues: FsqDataPreviousValues
 }
 
-input FsqInfoSubscriptionWhereInput {
+input FsqDataSubscriptionWhereInput {
   """Logical AND on all given filters."""
-  AND: [FsqInfoSubscriptionWhereInput!]
+  AND: [FsqDataSubscriptionWhereInput!]
 
   """Logical OR on all given filters."""
-  OR: [FsqInfoSubscriptionWhereInput!]
+  OR: [FsqDataSubscriptionWhereInput!]
 
   """Logical NOT on all given filters combined by AND."""
-  NOT: [FsqInfoSubscriptionWhereInput!]
+  NOT: [FsqDataSubscriptionWhereInput!]
 
   """
   The subscription event gets dispatched when it's listed in mutation_in
@@ -244,26 +244,26 @@ input FsqInfoSubscriptionWhereInput {
   The subscription event gets only dispatched when some of the field names included in this list have been updated
   """
   updatedFields_contains_some: [String!]
-  node: FsqInfoWhereInput
+  node: FsqDataWhereInput
 }
 
-input FsqInfoUpdateInput {
+input FsqDataUpdateInput {
   data: Json
 }
 
-input FsqInfoUpdateManyMutationInput {
+input FsqDataUpdateManyMutationInput {
   data: Json
 }
 
-input FsqInfoWhereInput {
+input FsqDataWhereInput {
   """Logical AND on all given filters."""
-  AND: [FsqInfoWhereInput!]
+  AND: [FsqDataWhereInput!]
 
   """Logical OR on all given filters."""
-  OR: [FsqInfoWhereInput!]
+  OR: [FsqDataWhereInput!]
 
   """Logical NOT on all given filters combined by AND."""
-  NOT: [FsqInfoWhereInput!]
+  NOT: [FsqDataWhereInput!]
   id: ID
 
   """All values that are not equal to given value."""
@@ -306,7 +306,7 @@ input FsqInfoWhereInput {
   id_not_ends_with: ID
 }
 
-input FsqInfoWhereUniqueInput {
+input FsqDataWhereUniqueInput {
   id: ID
 }
 
@@ -323,27 +323,27 @@ type Mutation {
   createUser(data: UserCreateInput!): User!
   createPlace(data: PlaceCreateInput!): Place!
   createEvent(data: EventCreateInput!): Event!
-  createFsqInfo(data: FsqInfoCreateInput!): FsqInfo!
+  createFsqData(data: FsqDataCreateInput!): FsqData!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   updatePlace(data: PlaceUpdateInput!, where: PlaceWhereUniqueInput!): Place
   updateEvent(data: EventUpdateInput!, where: EventWhereUniqueInput!): Event
-  updateFsqInfo(data: FsqInfoUpdateInput!, where: FsqInfoWhereUniqueInput!): FsqInfo
+  updateFsqData(data: FsqDataUpdateInput!, where: FsqDataWhereUniqueInput!): FsqData
   deleteUser(where: UserWhereUniqueInput!): User
   deletePlace(where: PlaceWhereUniqueInput!): Place
   deleteEvent(where: EventWhereUniqueInput!): Event
-  deleteFsqInfo(where: FsqInfoWhereUniqueInput!): FsqInfo
+  deleteFsqData(where: FsqDataWhereUniqueInput!): FsqData
   upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
   upsertPlace(where: PlaceWhereUniqueInput!, create: PlaceCreateInput!, update: PlaceUpdateInput!): Place!
   upsertEvent(where: EventWhereUniqueInput!, create: EventCreateInput!, update: EventUpdateInput!): Event!
-  upsertFsqInfo(where: FsqInfoWhereUniqueInput!, create: FsqInfoCreateInput!, update: FsqInfoUpdateInput!): FsqInfo!
+  upsertFsqData(where: FsqDataWhereUniqueInput!, create: FsqDataCreateInput!, update: FsqDataUpdateInput!): FsqData!
   updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
   updateManyPlaces(data: PlaceUpdateManyMutationInput!, where: PlaceWhereInput): BatchPayload!
   updateManyEvents(data: EventUpdateManyMutationInput!, where: EventWhereInput): BatchPayload!
-  updateManyFsqInfoes(data: FsqInfoUpdateManyMutationInput!, where: FsqInfoWhereInput): BatchPayload!
+  updateManyFsqDatas(data: FsqDataUpdateManyMutationInput!, where: FsqDataWhereInput): BatchPayload!
   deleteManyUsers(where: UserWhereInput): BatchPayload!
   deleteManyPlaces(where: PlaceWhereInput): BatchPayload!
   deleteManyEvents(where: EventWhereInput): BatchPayload!
-  deleteManyFsqInfoes(where: FsqInfoWhereInput): BatchPayload!
+  deleteManyFsqDatas(where: FsqDataWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -997,15 +997,15 @@ type Query {
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   places(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Place]!
   events(where: EventWhereInput, orderBy: EventOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Event]!
-  fsqInfoes(where: FsqInfoWhereInput, orderBy: FsqInfoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FsqInfo]!
+  fsqDatas(where: FsqDataWhereInput, orderBy: FsqDataOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FsqData]!
   user(where: UserWhereUniqueInput!): User
   place(where: PlaceWhereUniqueInput!): Place
   event(where: EventWhereUniqueInput!): Event
-  fsqInfo(where: FsqInfoWhereUniqueInput!): FsqInfo
+  fsqData(where: FsqDataWhereUniqueInput!): FsqData
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
   placesConnection(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PlaceConnection!
   eventsConnection(where: EventWhereInput, orderBy: EventOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): EventConnection!
-  fsqInfoesConnection(where: FsqInfoWhereInput, orderBy: FsqInfoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FsqInfoConnection!
+  fsqDatasConnection(where: FsqDataWhereInput, orderBy: FsqDataOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FsqDataConnection!
 
   """Fetches an object given its ID"""
   node(
@@ -1018,7 +1018,7 @@ type Subscription {
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
   place(where: PlaceSubscriptionWhereInput): PlaceSubscriptionPayload
   event(where: EventSubscriptionWhereInput): EventSubscriptionPayload
-  fsqInfo(where: FsqInfoSubscriptionWhereInput): FsqInfoSubscriptionPayload
+  fsqData(where: FsqDataSubscriptionWhereInput): FsqDataSubscriptionPayload
 }
 
 type User implements Node {
