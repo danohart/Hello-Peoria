@@ -10,13 +10,14 @@ const HOME_PLACES_QUERY = gql`
     places(
       first: $itemNumber
       orderBy: description_DESC
-      where: { paths: $path }
+      where: { AND: [{ paths: $path }, { tags_contains: "featured" }] }
     ) {
       id
       name
       image
       category
       paths
+      tags
     }
   }
 `;

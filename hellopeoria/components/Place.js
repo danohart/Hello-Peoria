@@ -14,7 +14,17 @@ class Place extends Component {
       if (place.category === 'Coffee') {
         return '/static/categories/coffee.jpg';
       }
-      return 'https://source.unsplash.com/400x200/?' + place.category;
+      if (place.tags) {
+        const tag = place.tags.split(', ');
+        return (
+          'https://source.unsplash.com/400x200/?' +
+          tag[Math.floor(Math.random() * tag.length)]
+            .replace(/\s+/g, '-')
+            .toLowerCase()
+        );
+      } else {
+        return 'https://source.unsplash.com/400x200/?' + place.category;
+      }
     }
     return place.image;
   }

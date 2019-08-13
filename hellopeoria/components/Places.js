@@ -16,6 +16,7 @@ const ALL_PLACES_QUERY = gql`
             image
             category
             paths
+            tags
         }
     }
 `;
