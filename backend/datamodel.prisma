@@ -42,5 +42,20 @@ type Event {
 
 type FsqData {
   id: ID! @id
-  data: Json
+  name: String
+  location: Address
+  categories: Category
+}
+
+type Address {
+  id: ID! @id
+  address: String
+  city: String
+  state: String
+  postalCode: String
+}
+
+type Category {
+  id: ID! @id
+  name: String
 }
