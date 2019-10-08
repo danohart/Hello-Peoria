@@ -37,12 +37,17 @@ const Query = {
     return ctx.db.query.users({}, info);
   },
   // Foursquare Places API
-  async fsqPlace() {
+  fsqPlace(args) {
+    const { searchTerm } = args;
     // Foursquare Places API constants
-    const FSQ_API = `https://api.foursquare.com/v2/venues/search?client_id=${process.env.FSQ_ID}&client_secret=${process.env.FSQ_SECRET}&v=20191007&intent=search&near=Chicago&query=coffee`;
-    const response = await fetch(FSQ_API);
-    const fsqInfo = await response.json();
-    return fsqInfo.response.venues;
+    const FSQ_API = `https://api.foursquare.com/v2/venues/search?client_id=${process.env.FSQ_ID}&client_secret=${process.env.FSQ_SECRET}&v=20191007&intent=search&near=Chicago&query=${searchTerm}`;
+    // const response = await fetch(FSQ_API);
+    // const fsqInfo = await response.json();
+    return fetch(FSQ_API).then(res =>
+      res.json().then(function(data) {
+        console.log(data);
+      })
+    );
   },
   // Facebook Graph API for events
   async event() {
