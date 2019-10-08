@@ -10,9 +10,6 @@ const FB_API =
   process.env.FACEBOOK_ACCESS_TOKEN +
   `&fields=${FB_FIELDS}`;
 
-// Foursquare Places API constants
-const FSQ_API = `https://api.foursquare.com/v2/venues/search?client_id=${process.env.FSQ_ID}&client_secret=${process.env.FSQ_SECRET}&v=20190807&intent=search&near=Chicago&query=coffee`;
-
 const Query = {
   places: forwardTo('db'),
   place: forwardTo('db'),
@@ -39,17 +36,19 @@ const Query = {
     //3. If they do, query all users
     return ctx.db.query.users({}, info);
   },
+  // Foursquare Places API
+  async fsqPlace() {
+    // Foursquare Places API constants
+    const FSQ_API = `https://api.foursquare.com/v2/venues/search?client_id=${process.env.FSQ_ID}&client_secret=${process.env.FSQ_SECRET}&v=20191007&intent=search&near=Chicago&query=coffee`;
+    const response = await fetch(FSQ_API);
+    const fsqInfo = await response.json();
+    return fsqInfo.response.venues;
+  },
   // Facebook Graph API for events
   async event() {
     const response = await fetch(FB_API);
     const fbEvent = await response.json();
     return fbEvent;
-  },
-  // Foursquare Places API
-  async fsqPlace() {
-    const response = await fetch(FSQ_API);
-    const fsqInfo = await response.json();
-    return fsqInfo.response.venues;
   },
 };
 

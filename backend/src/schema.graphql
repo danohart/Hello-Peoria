@@ -54,5 +54,5 @@ type Query {
   me: User
   users: [User]!
   event: Event
-  fsqPlace: [FsqData]
+  fsqPlace(where: FsqDataWhereInput, orderBy: FsqDataOrderByInput): [FsqData]
 }
