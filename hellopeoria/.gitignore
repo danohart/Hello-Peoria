@@ -9,5 +9,3 @@ variables.env
 backend/data/
 backend/export*
 GMaps-Restaurants/
-
-.vercel
