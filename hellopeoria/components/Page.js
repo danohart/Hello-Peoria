@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { initGA, logPageView } from '../lib/analytics';
 import Header from './Header';
+import Alert from './Alert';
 import Footer from './Footer';
 import Meta from '../components/Meta';
 
@@ -19,8 +20,9 @@ class Page extends Component {
     return (
       <div>
         <Meta />
+        <Alert />
         <Header />
-        <div className="main">{this.props.children}</div>
+        <div className='main'>{this.props.children}</div>
         <Footer />
       </div>
     );

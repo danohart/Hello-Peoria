@@ -10,6 +10,9 @@ $secondary-color-bold: #4ac55c;
 $light-gray: #e2e2e2;
 $dark-gray: #555555;
 
+$black: #000000;
+$white: #ffffff;
+
 $free: #555555;
 $family: #e2e2e2;
 $sightseeing: #aa5739;
@@ -85,6 +88,7 @@ $events: #e79070;
 
 a.button {
   @include button;
+  display: block;
 }
 
 // Media Queries
