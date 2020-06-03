@@ -11,7 +11,7 @@
     "heroku-postbuild": "next build"
   },
   "engines": {
-    "node": "11"
+    "node": "12"
   },
   "author": "",
   "license": "ISC",
@@ -35,7 +35,7 @@
     "lodash.debounce": "^4.0.8",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
-    "next": "^8",
+    "next": "^9",
     "next-with-apollo": "^3.4.0",
     "node": "^11.15.0",
     "node-sass": "^4.12.0",
