@@ -4,20 +4,22 @@ import { Query } from 'react-apollo';
 import Loading from '../components/Loading';
 import Error from '../components/ErrorMessage';
 import Head from 'next/head';
-import User from '../components/User';
-import DeletePlace from '../components/DeletePlace';
-import Link from 'next/link';
 
 const SINGLE_PLACE_QUERY = gql`
   query SINGLE_PLACE_QUERY($id: ID!) {
-    place(where: { id: $id }) {
+    PeoriaPlace(where: { id: $id }) {
       id
       name
-      address
+      address {
+        formattedAddress
+      }
+      image
+      altAddress
       description
-      category
-      largeImage
-      paths
+      mainCategory {
+        name
+      }
+      path
     }
   }
 `;
@@ -34,63 +36,71 @@ class SinglePlace extends Component {
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
           if (loading) return <Loading />;
-          if (!data.place) return <p>No place found</p>;
-          const place = data.place;
+          if (!data.PeoriaPlace) return <p>No place found</p>;
+          const place = data.PeoriaPlace;
+
+          function determineImage() {
+            if (!place.mainCategory)
+              return 'https://source.unsplash.com/600x200/?' + place.category;
+            if (place.mainCategory)
+              return (
+                'https://source.unsplash.com/600x200/?' +
+                place.mainCategory.name
+              );
+            return place.image;
+          }
+
+          function determineAddress() {
+            if (place.address && place.address.formattedAddress)
+              return place.address.formattedAddress;
+            if (!place.address) return place.altAddress;
+          }
           return (
-            <div className="single-place-wrapper">
+            <div className='single-place-wrapper'>
               <Head>
                 <title>{place.name} // Hello Peoria</title>
-                <meta name="description" content={place.description} />
+                <meta name='description' content={place.description} />
                 {/*<!-- Google / Search Engine Tags -->*/}
-                <meta itemProp="name" content={place.name} />
-                <meta itemProp="description" content={place.description} />
-                <meta
-                  itemProp="image"
-                  content={
-                    place.largeImage && place.largeImage
-                      ? place.largeImage
-                      : 'https://source.unsplash.com/600x200/?' + place.category
-                  }
-                />
+                <meta itemProp='name' content={place.name} />
+                <meta itemProp='description' content={place.description} />
+                <meta itemProp='image' content={determineImage()} />
 
                 {/*<!-- Facebook Meta Tags -->*/}
-                <meta property="og:title" content={place.name} key="ogtitle" />
+                <meta property='og:title' content={place.name} key='ogtitle' />
                 <meta
-                  property="og:description"
+                  property='og:description'
                   content={place.description}
-                  key="ogdescription"
+                  key='ogdescription'
                 />
                 <meta
-                  property="og:image"
+                  property='og:image'
                   content={
                     place.largeImage && place.largeImage
                       ? place.largeImage
                       : 'https://source.unsplash.com/600x200/?' + place.category
                   }
-                  key="ogimage"
+                  key='ogimage'
                 />
 
-                <meta property="og:type" content="website" />
+                <meta property='og:type' content='website' />
 
                 {/*<!-- Twitter Meta Tags -->*/}
-                <meta name="twitter:title" content={place.title} />
-                <meta name="twitter:description" content={place.description} />
+                <meta name='twitter:title' content={place.title} />
+                <meta name='twitter:description' content={place.description} />
                 <meta
-                  name="twitter:image"
+                  name='twitter:image'
                   content={
                     place.largeImage && place.largeImage
                       ? place.largeImage
                       : 'https://source.unsplash.com/600x200/?' + place.category
                   }
                 />
-                <meta name="twitter:card" content="summary_large_image" />
+                <meta name='twitter:card' content='summary_large_image' />
               </Head>
-              <div className="single-place">
-                <div className="image">
-                  {place.largeImage && (
-                    <img src={place.largeImage} alt={place.name} />
-                  ) ? (
-                    <img src={place.largeImage} alt={place.name} />
+              <div className='single-place'>
+                <div className='image'>
+                  {place.image && <img src={place.image} alt={place.name} /> ? (
+                    <img src={place.image} alt={place.name} />
                   ) : (
                     <img
                       src={
@@ -103,40 +113,22 @@ class SinglePlace extends Component {
                 </div>
                 <h1>{place.name}</h1>
                 <p>{place.description}</p>
-                <div className="address">{place.address}</div>
-                <User>
-                  {({ data: { me } }) => (
-                    <div>
-                      {me && (
-                        <div className="footer">
-                          <button>
-                            <Link
-                              href={{
-                                pathname: 'update',
-                                query: { id: place.id },
-                              }}
-                            >
-                              <a>Edit ✏️</a>
-                            </Link>
-                          </button>
-                          <DeletePlace id={place.id}>❌ Delete</DeletePlace>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </User>
+                <div className='address'>{determineAddress()}</div>
               </div>
-              <div className="map">
+              <div className='map'>
                 {place.category === 'Mural' ? (
                   <iframe
                     src={
                       'https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=' +
-                      place.address +
-                      'Peoria, IL'
+                      place.address
+                        ? place.address.formattedAddress
+                        : place.altAddress
+                        ? place.altAddress
+                        : null + 'Peoria, IL'
                     }
-                    width="600"
-                    height="450"
-                    frameBorder="0"
+                    width='600'
+                    height='450'
+                    frameBorder='0'
                     allowFullScreen
                   />
                 ) : (
@@ -145,11 +137,11 @@ class SinglePlace extends Component {
                       'https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=' +
                       place.name +
                       ' ' +
-                      place.address
+                      determineAddress()
                     }
-                    width="600"
-                    height="450"
-                    frameBorder="0"
+                    width='600'
+                    height='450'
+                    frameBorder='0'
                     allowFullScreen
                   />
                 )}

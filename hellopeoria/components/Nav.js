@@ -1,18 +1,14 @@
-import Link from "next/link";
-import User from "./User";
-import Signout from "./Signout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 
 const Nav = () => (
-  <div className="nav">
-    <User>
-      {({ data: { me } }) => (
-        <>
-          <Link href={{ pathname: "/places" }}>
-            <a>Places</a>
-          </Link>
-          {/* {me && (
+  <div className='nav'>
+    <>
+      <Link href={{ pathname: '/places' }}>
+        <a>Places</a>
+      </Link>
+      {/* {me && (
             <>
               <div className="account">
                 <div className="account-name">
@@ -31,9 +27,7 @@ const Nav = () => (
               <a>Sign In</a>
             </Link>
           )} */}
-        </>
-      )}
-    </User>
+    </>
   </div>
 );
 

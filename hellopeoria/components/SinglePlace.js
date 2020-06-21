@@ -3,21 +3,24 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import Error from './ErrorMessage';
 import Head from 'next/head';
-import User from './User';
 import DeletePlace from './DeletePlace';
 import Loading from './Loading';
 import Link from 'next/link';
 
 const SINGLE_PLACE_QUERY = gql`
   query SINGLE_PLACE_QUERY($id: ID!) {
-    place(where: { id: $id }) {
+    PeoriaPlace(where: { id: $id }) {
       id
       name
-      address
+      address {
+        formattedAddress
+      }
+      altAddress
       description
-      category
-      largeImage
-      paths
+      mainCategory {
+        name
+      }
+      path
     }
   }
 `;
@@ -34,31 +37,31 @@ class SinglePlace extends Component {
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
           if (loading) return <Loading />;
-          if (!data.place) return <p>No place found</p>;
-          const place = data.place;
+          if (!data.Place) return <p>No place found</p>;
+          const place = data.Place;
           return (
-            <div className="single-place-wrapper">
+            <div className='single-place-wrapper'>
               <Head>
                 <title>{place.name} // Hello Peoria</title>
                 {/*<!-- Google / Search Engine Tags -->*/}
-                <meta itemProp="name" content={place.name} />
-                <meta itemProp="description" content={place.description} />
-                <meta itemProp="image" content={place.largeImage} />
+                <meta itemProp='name' content={place.name} />
+                <meta itemProp='description' content={place.description} />
+                <meta itemProp='image' content={place.largeImage} />
 
                 {/*<!-- Facebook Meta Tags -->*/}
-                <meta property="og:title" content={place.name} />
-                <meta property="og:description" content={place.description} />
-                <meta property="og:image" content={place.image} />
-                <meta property="og:type" content="website" />
+                <meta property='og:title' content={place.name} />
+                <meta property='og:description' content={place.description} />
+                <meta property='og:image' content={place.image} />
+                <meta property='og:type' content='website' />
 
                 {/*<!-- Twitter Meta Tags -->*/}
-                <meta name="twitter:title" content={place.title} />
-                <meta name="twitter:description" content={place.description} />
-                <meta name="twitter:image" content={place.image} />
-                <meta name="twitter:card" content="summary_large_image" />
+                <meta name='twitter:title' content={place.title} />
+                <meta name='twitter:description' content={place.description} />
+                <meta name='twitter:image' content={place.image} />
+                <meta name='twitter:card' content='summary_large_image' />
               </Head>
-              <div className="single-place">
-                <div className="image">
+              <div className='single-place'>
+                <div className='image'>
                   {place.largeImage && (
                     <img src={place.largeImage} alt={place.name} />
                   ) ? (
@@ -75,30 +78,9 @@ class SinglePlace extends Component {
                 </div>
                 <h1>{place.name}</h1>
                 <p>{place.description}</p>
-                <div className="address">{place.address}</div>
-                <User>
-                  {({ data: { me } }) => (
-                    <div>
-                      {me && (
-                        <div className="footer">
-                          <button>
-                            <Link
-                              href={{
-                                pathname: 'update',
-                                query: { id: place.id },
-                              }}
-                            >
-                              <a>Edit ✏️</a>
-                            </Link>
-                          </button>
-                          <DeletePlace id={place.id}>❌ Delete</DeletePlace>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </User>
+                <div className='address'>{place.address}</div>
               </div>
-              <div className="map">
+              <div className='map'>
                 <iframe
                   src={
                     'https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=' +
@@ -106,9 +88,9 @@ class SinglePlace extends Component {
                     ' ' +
                     place.address
                   }
-                  width="600"
-                  height="450"
-                  frameBorder="0"
+                  width='600'
+                  height='450'
+                  frameBorder='0'
                   allowFullScreen
                 />
               </div>

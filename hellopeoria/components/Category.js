@@ -6,14 +6,22 @@ import Loading from './Loading';
 
 const CATEGORY_PLACES_QUERY = gql`
   query($category: String!) {
-    places(orderBy: name_ASC, where: { category: $category }) {
+    allPeoriaPlaces(
+      sortBy: name_ASC
+      where: { mainCategory: { name: $category } }
+    ) {
       id
       name
       description
-      address
+      address {
+        formattedAddress
+      }
+      altAddress
       image
-      category
-      paths
+      mainCategory {
+        name
+      }
+      path
     }
   }
 `;
@@ -24,15 +32,18 @@ class CategoryPlaces extends Component {
       <div>
         <Query
           query={CATEGORY_PLACES_QUERY}
-          variables={{ category: this.props.category }}
+          variables={{
+            category:
+              this.props.category === 'Coffee' ? 'Cafe' : this.props.category,
+          }}
         >
           {({ data, error, loading }) => {
             if (loading) return <Loading />;
             if (error) return <p>Error: {error.message}</p>;
 
             return (
-              <div className="card-wrapper">
-                {data.places.map(place => (
+              <div className='card-wrapper'>
+                {data.allPeoriaPlaces.map((place) => (
                   <Place place={place} key={place.id} />
                 ))}
               </div>

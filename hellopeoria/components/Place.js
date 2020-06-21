@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import DeletePlace from './DeletePlace';
-import User from './User';
 
 class Place extends Component {
   static propTypes = {
@@ -11,7 +9,10 @@ class Place extends Component {
 
   placeBackground({ place } = this.props) {
     if (!place.image) {
-      if (place.category === 'Coffee') {
+      if (!place.mainCategory) {
+        return place.category;
+      }
+      if (place.mainCategory.name === 'Cafe') {
         return '/static/categories/coffee.jpg';
       }
       if (place.tags) {
@@ -23,7 +24,9 @@ class Place extends Component {
             .toLowerCase()
         );
       } else {
-        return 'https://source.unsplash.com/400x200/?' + place.category;
+        return (
+          'https://source.unsplash.com/400x200/?' + place.mainCategory.name
+        );
       }
     }
     return place.image;
@@ -40,12 +43,12 @@ class Place extends Component {
     const { place } = this.props;
 
     return (
-      <div className="place card">
-        {!place.paths ? null : (
-          <div className={place.paths.toLowerCase() + ' path'} />
+      <div className='place card'>
+        {!place.path ? null : (
+          <div className={place.path.toLowerCase() + ' path'} />
         )}
         <div
-          className="image"
+          className='image'
           style={{ backgroundImage: `url(${this.placeBackground()})` }}
         >
           <Link
@@ -54,46 +57,60 @@ class Place extends Component {
               query: { id: place.id },
             }}
           >
-            <a className="featured-link" />
+            <a className='featured-link' />
           </Link>
-          <div className="title-wrapper">
-            <div className="place-category">
-              {place.category ? (
+          <div className='title-wrapper'>
+            <div className='place-category'>
+              {place.mainCategory ? (
                 <span>
                   <Link
                     href={{
                       pathname: '/category',
-                      query: { category: place.category },
+                      query: { category: place.mainCategory.name },
                     }}
                   >
-                    <a>{place.category}</a>
+                    <a>{place.mainCategory.name}</a>
                   </Link>
                 </span>
               ) : null}
             </div>
 
-            <div className="title">
+            <div className='title'>
               <h2>{place.name}</h2>
             </div>
           </div>
         </div>
 
-        <div className="inner">
-          <p className="description">{place.description}</p>
+        <div className='inner'>
+          <p className='description'>{place.description}</p>
 
-          <div className="addition-info">
-            <p className="address">
-              <a
-                target="_blank"
-                href={
-                  'https://maps.google.com/?q=' +
-                  place.name +
-                  ' ' +
-                  place.address
-                }
-              >
-                {place.address}
-              </a>
+          <div className='addition-info'>
+            <p className='address'>
+              {place.address ? (
+                <a
+                  target='_blank'
+                  href={
+                    'https://maps.google.com/?q=' +
+                    place.name +
+                    ' ' +
+                    place.address.formattedAddress
+                  }
+                >
+                  {place.address.formattedAddress}
+                </a>
+              ) : place.altAddress ? (
+                <a
+                  target='_blank'
+                  href={
+                    'https://maps.google.com/?q=' +
+                    place.name +
+                    ' ' +
+                    place.altAddress
+                  }
+                >
+                  {place.altAddress}
+                </a>
+              ) : null}
             </p>
             {/* <div className="options">
               <a
@@ -116,24 +133,6 @@ class Place extends Component {
             </div> */}
           </div>
         </div>
-        <User>
-          {({ data: { me } }) => (
-            <>
-              {me && (
-                <div className="footer">
-                  <button>
-                    <Link
-                      href={{ pathname: 'update', query: { id: place.id } }}
-                    >
-                      <a>Edit ✏️</a>
-                    </Link>
-                  </button>
-                  <DeletePlace id={place.id}>❌ Delete</DeletePlace>
-                </div>
-              )}
-            </>
-          )}
-        </User>
       </div>
     );
   }

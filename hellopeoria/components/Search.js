@@ -10,7 +10,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const SEARCH_PLACES_QUERY = gql`
   query SEARCH_PLACES_QUERY($searchTerm: String!) {
-    places(
+    allPeoriaPlaces(
       where: {
         OR: [
           { name_contains: $searchTerm }
@@ -23,6 +23,9 @@ const SEARCH_PLACES_QUERY = gql`
       image
       name
       description
+      mainCategory {
+        name
+      }
       category
     }
   }
@@ -52,22 +55,22 @@ class AutoComplete extends React.Component {
       variables: { searchTerm: e.target.value },
     });
     this.setState({
-      places: res.data.places,
+      places: res.data.allPeoriaPlaces,
       loading: false,
     });
   }, 350);
   render() {
     resetIdCounter();
     return (
-      <div className="search">
+      <div className='search'>
         <Downshift
           onChange={routeToPlace}
-          placeToString={place => (place === null ? '' : place.name)}
+          placeToString={(place) => (place === null ? '' : place.name)}
         >
           {({ getInputProps, isOpen, inputValue }) => (
             <div>
               <ApolloConsumer>
-                {client => (
+                {(client) => (
                   <input
                     {...getInputProps({
                       type: 'search',
@@ -75,7 +78,7 @@ class AutoComplete extends React.Component {
                       name: 'search',
                       id: 'search',
                       className: this.state.loading ? 'Please wait...' : '',
-                      onChange: e => {
+                      onChange: (e) => {
                         e.persist();
                         this.onChange(e, client);
                       },
@@ -84,7 +87,7 @@ class AutoComplete extends React.Component {
                 )}
               </ApolloConsumer>
               {isOpen && (
-                <div className="search-wrapper">
+                <div className='search-wrapper'>
                   <div>
                     {this.state.places.map((place, index) => (
                       <Link
@@ -92,25 +95,23 @@ class AutoComplete extends React.Component {
                         key={place.id}
                       >
                         <a>
-                          <div className="search-item" key={place.id}>
-                            <div className="image">
-                              {place.image && (
-                                <img src={place.image} alt={place.name} />
-                              ) ? (
+                          <div className='search-item' key={place.id}>
+                            <div className='image'>
+                              {place.image ? (
                                 <img src={place.image} alt={place.name} />
                               ) : (
                                 <img
                                   src={
                                     'https://source.unsplash.com/600x200/?' +
-                                    place.category
+                                    place.mainCategory.name
                                   }
                                   alt={place.name}
                                 />
                               )}
                             </div>
-                            <div className="name">
+                            <div className='name'>
                               {place.name}
-                              <div className="description">
+                              <div className='description'>
                                 {place.description}
                               </div>
                             </div>
@@ -119,7 +120,7 @@ class AutoComplete extends React.Component {
                       </Link>
                     ))}
                     {!this.state.places.length && !this.state.loading && (
-                      <div className="search-item">
+                      <div className='search-item'>
                         Nothing Found for {inputValue}
                       </div>
                     )}
@@ -129,7 +130,7 @@ class AutoComplete extends React.Component {
             </div>
           )}
         </Downshift>
-        <div className="search-button">
+        <div className='search-button'>
           <FontAwesomeIcon icon={faSearch} />
         </div>
       </div>

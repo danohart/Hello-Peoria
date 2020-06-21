@@ -7,8 +7,8 @@ import { perPage } from '../config';
 
 const ALL_PLACES_QUERY = gql`
   query {
-    places(
-      orderBy: name_ASC
+    allPeoriaPlaces(
+      sortBy: name_ASC
       where: {
         OR: [
           { description_contains: "breakfast" }
@@ -19,10 +19,15 @@ const ALL_PLACES_QUERY = gql`
       id
       name
       description
-      address
+      address {
+        formattedAddress
+      }
+      altAddress
       image
-      category
-      paths
+      mainCategory {
+        name
+      }
+      path
     }
   }
 `;
@@ -40,8 +45,8 @@ class BreakfastPlaces extends Component {
             if (error) return <p>Error: {error.message}</p>;
 
             return (
-              <div className="card-wrapper">
-                {data.places.map(place => (
+              <div className='card-wrapper'>
+                {data.allPeoriaPlaces.map((place) => (
                   <Place place={place} key={place.id} />
                 ))}
               </div>

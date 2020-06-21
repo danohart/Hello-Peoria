@@ -8,14 +8,19 @@ import { perPage } from '../config';
 
 const ALL_PLACES_QUERY = gql`
     query ($skip: Int = 0, $first: Int = ${perPage}) {
-        places(first: $first, skip: $skip, orderBy: name_ASC) {
+        allPeoriaPlaces(first: $first, skip: $skip, sortBy: name_ASC) {
             id
             name
             description
-            address
+            address {
+              formattedAddress
+            }
+            altAddress
             image
-            category
-            paths
+            mainCategory {
+              name
+            }
+            path
             tags
         }
     }
@@ -34,15 +39,15 @@ class Places extends Component {
             if (error) return <p>Error: {error.message}</p>;
 
             return (
-              <div className="card-wrapper">
-                {data.places.map(place => (
+              <div className='card-wrapper'>
+                {data.allPeoriaPlaces.map((place) => (
                   <Place place={place} key={place.id} />
                 ))}
               </div>
             );
           }}
         </Query>
-        <Pagination page={this.props.page} />
+        {/* <Pagination page={this.props.page} /> */}
       </div>
     );
   }

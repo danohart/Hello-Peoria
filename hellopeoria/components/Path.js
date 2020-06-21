@@ -5,15 +5,25 @@ import Place from './Place';
 import Loading from './Loading';
 
 const PATH_PLACES_QUERY = gql`
-  query($path: String!) {
-    places(orderBy: name_ASC, where: { paths: $path }) {
+  query($path: PathNameType!) {
+    allPeoriaPlaces(
+      sortBy: name_ASC
+      where: { AND: [{ mainPath: { name: $path } }] }
+    ) {
       id
       name
       description
-      address
+      address {
+        formattedAddress
+      }
+      altAddress
       image
-      category
-      paths
+      mainCategory {
+        name
+      }
+      mainPath {
+        name
+      }
     }
   }
 `;
@@ -28,8 +38,8 @@ class PathPlaces extends Component {
             if (error) return <p>Error: {error.message}</p>;
 
             return (
-              <div className="card-wrapper">
-                {data.places.map(place => (
+              <div className='card-wrapper'>
+                {data.allPeoriaPlaces.map((place) => (
                   <Place place={place} key={place.id} />
                 ))}
               </div>
