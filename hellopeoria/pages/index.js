@@ -25,7 +25,9 @@ const HOME_PLACES_QUERY = gql`
       mainPath {
         name
       }
-      path
+      mainPath {
+        name
+      }
       tags
     }
   }

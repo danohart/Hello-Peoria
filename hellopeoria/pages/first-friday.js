@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import Place from './Place';
+import Place from '../components/Place';
 import Loading from './Loading';
 import { perPage } from '../config';
 
 const ALL_PLACES_QUERY = gql`
   query {
-    allPeoriaPlaces(
-      sortBy: name_ASC
-      where: {
-        OR: [
-          { description_contains: "breakfast" }
-          { tags_contains: "breakfast" }
-        ]
-      }
-    ) {
+    allPeoriaPlaces(sortBy: name_ASC, where: { OR: [{ firstFriday: true }] }) {
       id
       name
       description
@@ -34,14 +26,11 @@ const ALL_PLACES_QUERY = gql`
   }
 `;
 
-class BreakfastPlaces extends Component {
+class FirstFriday extends Component {
   render() {
     return (
       <div>
-        <Query
-          query={ALL_PLACES_QUERY}
-          variables={{ skip: this.props.page * perPage - perPage }}
-        >
+        <Query query={ALL_PLACES_QUERY}>
           {({ data, error, loading }) => {
             if (loading) return <Loading />;
             if (error) return <p>Error: {error.message}</p>;
@@ -60,5 +49,4 @@ class BreakfastPlaces extends Component {
   }
 }
 
-export default BreakfastPlaces;
-export { ALL_PLACES_QUERY };
+export default FirstFriday;

@@ -21,7 +21,9 @@ const CATEGORY_PLACES_QUERY = gql`
       mainCategory {
         name
       }
-      path
+      mainPath {
+        name
+      }
     }
   }
 `;

@@ -9,19 +9,21 @@ import { perPage } from '../config';
 const ALL_PLACES_QUERY = gql`
     query ($skip: Int = 0, $first: Int = ${perPage}) {
         allPeoriaPlaces(first: $first, skip: $skip, sortBy: name_ASC) {
-            id
+          id
+          name
+          description
+          address {
+            formattedAddress
+          }
+          altAddress
+          image
+          mainCategory {
             name
-            description
-            address {
-              formattedAddress
-            }
-            altAddress
-            image
-            mainCategory {
-              name
-            }
-            path
-            tags
+          }
+          mainPath { 
+            name 
+          }
+          tags
         }
     }
 `;

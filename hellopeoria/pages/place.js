@@ -19,7 +19,9 @@ const SINGLE_PLACE_QUERY = gql`
       mainCategory {
         name
       }
-      path
+      mainPath {
+        name
+      }
     }
   }
 `;
