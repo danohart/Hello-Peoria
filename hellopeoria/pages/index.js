@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import Place from '../components/Place';
 import Link from 'next/link';
 import Loading from '../components/Loading';
+import Meta from '../components/Meta';
 
 const HOME_PLACES_QUERY = gql`
   query($path: PathNameType, $itemNumber: Int = 8) {
@@ -25,9 +26,6 @@ const HOME_PLACES_QUERY = gql`
       mainPath {
         name
       }
-      mainPath {
-        name
-      }
       tags
     }
   }
@@ -37,6 +35,7 @@ class Home extends Component {
   render() {
     return (
       <div className='homepage'>
+        <Meta />
         <div className='card-wrapper'>
           <div className='category card coffee'>
             <Link href='/category?category=Coffee'>

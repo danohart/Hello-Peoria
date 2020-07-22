@@ -7,35 +7,32 @@ import Pagination from './Pagination';
 import { perPage } from '../config';
 
 const ALL_PLACES_QUERY = gql`
-    query ($skip: Int = 0, $first: Int = ${perPage}) {
-        allPeoriaPlaces(first: $first, skip: $skip, sortBy: name_ASC) {
-          id
-          name
-          description
-          address {
-            formattedAddress
-          }
-          altAddress
-          image
-          mainCategory {
-            name
-          }
-          mainPath { 
-            name 
-          }
-          tags
-        }
+  query {
+    allPeoriaPlaces(sortBy: name_ASC) {
+      id
+      name
+      description
+      address {
+        formattedAddress
+      }
+      altAddress
+      image
+      mainCategory {
+        name
+      }
+      mainPath {
+        name
+      }
+      tags
     }
+  }
 `;
 
 class Places extends Component {
   render() {
     return (
       <div>
-        <Query
-          query={ALL_PLACES_QUERY}
-          variables={{ skip: this.props.page * perPage - perPage }}
-        >
+        <Query query={ALL_PLACES_QUERY}>
           {({ data, error, loading }) => {
             if (loading) return <Loading />;
             if (error) return <p>Error: {error.message}</p>;

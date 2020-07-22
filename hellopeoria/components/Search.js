@@ -13,9 +13,9 @@ const SEARCH_PLACES_QUERY = gql`
     allPeoriaPlaces(
       where: {
         OR: [
-          { name_contains: $searchTerm }
-          { description_contains: $searchTerm }
-          { tags_contains: $searchTerm }
+          { name_contains_i: $searchTerm }
+          { description_contains_i: $searchTerm }
+          { tags_contains_i: $searchTerm }
         ]
       }
     ) {
@@ -26,7 +26,6 @@ const SEARCH_PLACES_QUERY = gql`
       mainCategory {
         name
       }
-      category
     }
   }
 `;
