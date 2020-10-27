@@ -3,7 +3,6 @@ import { initGA, logPageView } from '../lib/analytics';
 import Header from './Header';
 import Alert from './Alert';
 import Footer from './Footer';
-import Meta from '../components/Meta';
 
 // Styles
 import '../styles/style.scss';
@@ -19,7 +18,6 @@ class Page extends Component {
   render() {
     return (
       <div>
-        {/* <Meta /> */}
         <Alert />
         <Header />
         <div className='main'>{this.props.children}</div>

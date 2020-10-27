@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Place from '../components/Place';
-import Loading from './loading';
+import Loading from '../components/Loading';
 import { perPage } from '../config';
 
 const ALL_PLACES_QUERY = gql`

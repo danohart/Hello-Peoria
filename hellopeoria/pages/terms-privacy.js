@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TermsPrivaacy extends Component {
+class TermsPrivacy extends Component {
   render() {
     return (
       <div>
@@ -20,14 +20,14 @@ class TermsPrivaacy extends Component {
 
         <h3>2. Use License</h3>
 
-        <ol type="a">
+        <ol type='a'>
           <li>
             Permission is granted to temporarily download one copy of the
             materials (information or software) on Hello Peoria's web site for
             personal, non-commercial transitory viewing only. This is the grant
             of a license, not a transfer of title, and under this license you
             may not:
-            <ol type="i">
+            <ol type='i'>
               <li>modify or copy the materials;</li>
               <li>
                 use the materials for any commercial purpose, or for any public
@@ -59,7 +59,7 @@ class TermsPrivaacy extends Component {
 
         <h3>3. Disclaimer</h3>
 
-        <ol type="a">
+        <ol type='a'>
           <li>
             The materials on Hello Peoria's web site are provided "as is". Hello
             Peoria makes no warranties, expressed or implied, and hereby
@@ -184,4 +184,4 @@ class TermsPrivaacy extends Component {
   }
 }
 
-export default TermsPrivaacy;
+export default TermsPrivacy;
