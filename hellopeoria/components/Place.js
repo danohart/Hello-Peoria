@@ -20,7 +20,7 @@ class Place extends Component {
         return (
           'https://source.unsplash.com/400x200/?' +
           tag[Math.floor(Math.random() * tag.length)]
-            .replace(/\s+/g, '-')
+            .replace(/\s+/g, ',')
             .toLowerCase()
         );
       } else {

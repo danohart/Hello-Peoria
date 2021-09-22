@@ -18,7 +18,7 @@ class Page extends Component {
   render() {
     return (
       <div>
-        <Alert />
+        {/* <Alert /> */}
         <Header />
         <div className='main'>{this.props.children}</div>
         <Footer />
