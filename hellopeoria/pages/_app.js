@@ -1,6 +1,7 @@
 import App from 'next/app';
+import { ApolloProvider } from '@apollo/client';
 import Page from '../components/Page';
-import { ApolloProvider } from 'react-apollo';
+import '../styles/style.scss';
 import withData from '../lib/withData';
 
 class MyApp extends App {
@@ -13,17 +14,16 @@ class MyApp extends App {
     pageProps.query = ctx.query;
     return { pageProps };
   }
+
   render() {
     const { Component, apollo, pageProps } = this.props;
 
     return (
-      <>
-        <ApolloProvider client={apollo}>
-          <Page>
-            <Component {...pageProps} />
-          </Page>
-        </ApolloProvider>
-      </>
+      <ApolloProvider client={apollo}>
+        <Page>
+          <Component {...pageProps} />
+        </Page>
+      </ApolloProvider>
     );
   }
 }

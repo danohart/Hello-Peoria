@@ -650,19 +650,19 @@ header {
     }
 
     &.coffee {
-      background-image: url(/static/categories/coffee.jpg);
+      background-image: url('../public/categories/coffee.jpg');
     }
     &.event {
-      background-image: url(/static/categories/events.jpg);
+      background-image: url('../public/categories/events.jpg');
     }
     &.restaurant {
-      background-image: url(/static/categories/restaurants.jpg);
+      background-image: url('../public/categories/restaurants.jpg');
     }
     &.breakfast {
-      background-image: url(/static/categories/breakfast.jpg);
+      background-image: url('../public/categories/breakfast.jpg');
     }
     &.bar {
-      background-image: url(/static/categories/bars.jpg);
+      background-image: url("../public/categories/bars.jpg");
     }
   }
 }

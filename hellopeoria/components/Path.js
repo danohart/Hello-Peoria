@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 import Place from './Place';
+import Error from './ErrorMessage';
 import Loading from './Loading';
 
 const PATH_PLACES_QUERY = gql`
@@ -28,28 +28,19 @@ const PATH_PLACES_QUERY = gql`
   }
 `;
 
-class PathPlaces extends Component {
-  render() {
-    return (
-      <div>
-        <Query query={PATH_PLACES_QUERY} variables={{ path: this.props.paths }}>
-          {({ data, error, loading }) => {
-            if (loading) return <Loading />;
-            if (error) return <p>Error: {error.message}</p>;
+export default function PathPlaces(props) {
+  const { loading, error, data } = useQuery(PATH_PLACES_QUERY, {
+    variables: { path: props.paths },
+  });
 
-            return (
-              <div className='card-wrapper'>
-                {data.allPeoriaPlaces.map((place) => (
-                  <Place place={place} key={place.id} />
-                ))}
-              </div>
-            );
-          }}
-        </Query>
-      </div>
-    );
-  }
+  if (loading) return <Loading />;
+  if (error) return <Error error={error} />;
+
+  return (
+    <div className='card-wrapper'>
+      {data.allPeoriaPlaces.map((place) => (
+        <Place place={place} key={place.id} />
+      ))}
+    </div>
+  );
 }
-
-export default PathPlaces;
-export { PATH_PLACES_QUERY };

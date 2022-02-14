@@ -17,14 +17,14 @@ Router.onRouteChangeError = () => {
 
 const Header = () => (
   <header>
-    <div className="logo">
+    <div className='logo'>
       <Link href={{ pathname: '/' }}>
         <a>
-          <img src={'../static/images/logo.png'} />
+          <img src={'/images/logo.png'} />
         </a>
       </Link>
     </div>
-    <Search />
+    {/* <Search /> */}
     <Nav />
   </header>
 );

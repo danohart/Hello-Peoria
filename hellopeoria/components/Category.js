@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 import Place from './Place';
+import Error from './ErrorMessage';
 import Loading from './Loading';
 
 const CATEGORY_PLACES_QUERY = gql`
@@ -28,34 +28,21 @@ const CATEGORY_PLACES_QUERY = gql`
   }
 `;
 
-class CategoryPlaces extends Component {
-  render() {
-    return (
-      <div>
-        <Query
-          query={CATEGORY_PLACES_QUERY}
-          variables={{
-            category:
-              this.props.category === 'Coffee' ? 'Cafe' : this.props.category,
-          }}
-        >
-          {({ data, error, loading }) => {
-            if (loading) return <Loading />;
-            if (error) return <p>Error: {error.message}</p>;
+export default function CategoryPlaces(props) {
+  const { loading, error, data } = useQuery(CATEGORY_PLACES_QUERY, {
+    variables: {
+      category: props.category === 'Coffee' ? 'Cafe' : props.category,
+    },
+  });
 
-            return (
-              <div className='card-wrapper'>
-                {data.allPeoriaPlaces.map((place) => (
-                  <Place place={place} key={place.id} />
-                ))}
-              </div>
-            );
-          }}
-        </Query>
-      </div>
-    );
-  }
+  if (loading) return <Loading />;
+  if (error) return <Error error={error} />;
+
+  return (
+    <div className='card-wrapper'>
+      {data.allPeoriaPlaces.map((place) => (
+        <Place place={place} key={place.id} />
+      ))}
+    </div>
+  );
 }
-
-export default CategoryPlaces;
-export { CATEGORY_PLACES_QUERY };

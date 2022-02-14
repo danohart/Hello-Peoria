@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 import Place from './Place';
+import Error from './ErrorMessage';
 import Loading from './Loading';
 import Pagination from './Pagination';
 import { perPage } from '../config';
@@ -28,29 +28,16 @@ const ALL_PLACES_QUERY = gql`
   }
 `;
 
-class Places extends Component {
-  render() {
-    return (
-      <div>
-        <Query query={ALL_PLACES_QUERY}>
-          {({ data, error, loading }) => {
-            if (loading) return <Loading />;
-            if (error) return <p>Error: {error.message}</p>;
+export default function Places() {
+  const { loading, error, data } = useQuery(ALL_PLACES_QUERY);
 
-            return (
-              <div className='card-wrapper'>
-                {data.allPeoriaPlaces.map((place) => (
-                  <Place place={place} key={place.id} />
-                ))}
-              </div>
-            );
-          }}
-        </Query>
-        {/* <Pagination page={this.props.page} /> */}
-      </div>
-    );
-  }
+  if (loading) return <Loading />;
+  if (error) return <Error error={error} />;
+  return (
+    <div className='card-wrapper'>
+      {data.allPeoriaPlaces.map((place) => (
+        <Place place={place} key={place.id} />
+      ))}
+    </div>
+  );
 }
-
-export default Places;
-export { ALL_PLACES_QUERY };
