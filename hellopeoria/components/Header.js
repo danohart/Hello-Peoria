@@ -24,7 +24,7 @@ const Header = () => (
         </a>
       </Link>
     </div>
-    {/* <Search /> */}
+    <Search />
     <Nav />
   </header>
 );

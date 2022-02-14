@@ -1,8 +1,7 @@
 import React from 'react';
 import Downshift, { resetIdCounter } from 'downshift';
 import Router from 'next/router';
-import { ApolloConsumer } from '@apollo/client';
-import gql from 'graphql-tag';
+import { ApolloConsumer, gql } from '@apollo/client';
 import debounce from 'lodash.debounce';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

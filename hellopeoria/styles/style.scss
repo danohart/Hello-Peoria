@@ -254,7 +254,7 @@ header {
 }
 
 .advert {
-  background: url('/static/images/advert.jpg') center center;
+  background: url('../public/images/advert.jpg') center center;
   background-size: cover;
   @include rounded-corners;
   position: relative;

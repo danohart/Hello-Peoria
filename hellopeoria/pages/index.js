@@ -6,11 +6,11 @@ import Loading from '../components/Loading';
 import Meta from '../components/Meta';
 
 const HOME_PLACES_QUERY = gql`
-  query allPeoriaPlaces($path: PathNameType, $itemNumber: Int = 8) {
-    featuredPlaces: allPeoriaPlaces(
+  query allPeoriaPlaces($itemNumber: Int = 8) {
+    foodiePlaces: allPeoriaPlaces(
       first: $itemNumber
       sortBy: description_DESC
-      where: { AND: [{ mainPath: { name: $path } }, { featured: true }] }
+      where: { AND: [{ mainPath: { name: Foodie } }, { featured: true }] }
     ) {
       id
       name
@@ -172,7 +172,7 @@ export default function Home() {
 
       <h2 className='path-title'>Foodie</h2>
       <div className='card-wrapper home'>
-        {data.featuredPlaces.map((place) => (
+        {data.foodiePlaces.map((place) => (
           <Place place={place} key={place.id} />
         ))}
         <button>
