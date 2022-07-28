@@ -43,6 +43,11 @@ ol {
   margin-left: 2em;
 }
 
+p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 button {
   @include button;
 }
@@ -273,7 +278,7 @@ header {
   .ad-inner {
     padding: 50px 250px 50px 50px;
     font-size: 3em;
-    background-color: rgba(107, 193, 248, 0.85);
+    background-color: rgba(107, 193, 248, 0.88);
     @include rounded-corners;
 
     @include tablet {
