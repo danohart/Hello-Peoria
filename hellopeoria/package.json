@@ -37,7 +37,7 @@
     "graphql-tag": "^2.10.1",
     "lodash.debounce": "^4.0.8",
     "moment": "^2.29.4",
-    "moment-timezone": "^0.5.26",
+    "moment-timezone": "^0.5.35",
     "next": "^11.1.4",
     "next-with-apollo": "^3.4.0",
     "node": "^11.15.0",
