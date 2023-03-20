@@ -1,8 +1,8 @@
-import React from 'react';
-import { useQuery, gql } from '@apollo/client';
-import Loading from '../components/Loading';
-import Error from '../components/ErrorMessage';
-import Head from 'next/head';
+import React from "react";
+import { useQuery, gql } from "@apollo/client";
+import Loading from "../components/Loading";
+import Error from "../components/ErrorMessage";
+import Head from "next/head";
 
 const SINGLE_PLACE_QUERY = gql`
   query SINGLE_PLACE_QUERY($id: ID!) {
@@ -37,9 +37,9 @@ export default function SinglePlace(props) {
 
   function determineImage() {
     if (!place.mainCategory)
-      return 'https://source.unsplash.com/600x200/?' + place.category;
+      return "https://source.unsplash.com/600x200/?" + place.category;
     if (place.mainCategory)
-      return 'https://source.unsplash.com/600x200/?' + place.mainCategory.name;
+      return "https://source.unsplash.com/600x200/?" + place.mainCategory.name;
     return place.image;
   }
 
@@ -70,7 +70,7 @@ export default function SinglePlace(props) {
           content={
             place.largeImage && place.largeImage
               ? place.largeImage
-              : 'https://source.unsplash.com/600x200/?' + place.category
+              : "https://source.unsplash.com/600x200/?" + place.category
           }
           key='ogimage'
         />
@@ -85,7 +85,7 @@ export default function SinglePlace(props) {
           content={
             place.largeImage && place.largeImage
               ? place.largeImage
-              : 'https://source.unsplash.com/600x200/?' + place.category
+              : "https://source.unsplash.com/600x200/?" + place.category
           }
         />
         <meta name='twitter:card' content='summary_large_image' />
@@ -96,25 +96,26 @@ export default function SinglePlace(props) {
             <img src={place.image} alt={place.name} />
           ) : (
             <img
-              src={'https://source.unsplash.com/600x200/?' + place.description}
+              src={"https://source.unsplash.com/600x200/?" + place.description}
               alt={place.name}
             />
           )}
         </div>
         <h1>{place.name}</h1>
         <p>{place.description}</p>
+        <button onClick={() => props.setList(place)}>Add To List</button>
         <div className='address'>{determineAddress()}</div>
       </div>
       <div className='map'>
-        {place.category === 'Mural' ? (
+        {place.category === "Mural" ? (
           <iframe
             src={
-              'https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=' +
+              "https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=" +
               place.address
                 ? place.address.formattedAddress
                 : place.altAddress
                 ? place.altAddress
-                : null + 'Peoria, IL'
+                : null + "Peoria, IL"
             }
             width='600'
             height='450'
@@ -124,9 +125,9 @@ export default function SinglePlace(props) {
         ) : (
           <iframe
             src={
-              'https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=' +
+              "https://www.google.com/maps/embed/v1/place?key=AIzaSyAuttk2zvb-3npbAgYFWg0vl_jc_0mYf0U&q=" +
               place.name +
-              ' ' +
+              " " +
               determineAddress()
             }
             width='600'
