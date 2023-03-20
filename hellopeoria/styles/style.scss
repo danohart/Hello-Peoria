@@ -890,3 +890,98 @@ header {
     }
   }
 }
+
+.fav-list {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: flex-start;
+  z-index: 100;
+  bottom: 0;
+  background: $white;
+  width: 100%;
+  border-top: 5px solid $secondary-color;
+  padding: 20px;
+  height: 120px;
+  overflow: scroll;
+
+  &-place {
+    width: 33%;
+    position: relative;
+    padding-top: 10px;
+
+    @include mobile {
+      width: 50%;
+    }
+
+    &-remove {
+      position: absolute;
+      top: 0;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+   h4 {
+    width: 100%;
+  }
+
+  &-save {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 46px;
+    width: 20%;
+
+    @include mobile {
+      width: 30%;
+    }
+  }
+}
+
+.share {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &-input {
+    margin-right: 5px;
+    width: 20%;
+    padding: 10px;
+    @include rounded-corners;
+    border: 1px solid $black;
+
+    @include mobile {
+      width: 50%;
+    }
+  }
+
+  &-toast {
+    display: none;
+    position: absolute;
+    top: -26px;
+    background-color: $primary-color;
+    color: $black;
+    width: 80%;
+    text-align: center;
+    padding: 4px;
+    @include rounded-corners;
+  }
+
+  &-click {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+      .share-toast {
+        display: block;
+      }
+    }
+  }
+
+  &-button {
+    margin-top: 0;
+  }
+}

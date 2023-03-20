@@ -1,31 +1,52 @@
-import App from 'next/app';
-import { ApolloProvider } from '@apollo/client';
-import Page from '../components/Page';
-import '../styles/style.scss';
-import withData from '../lib/withData';
+import { useState } from "react";
+import { ApolloProvider } from "@apollo/client";
+import Page from "../components/Page";
+import "../styles/style.scss";
+import withData from "../lib/withData";
+import FavoritesList from "../components/FavoritesList";
+function App({ Component, apollo, pageProps: { ...pageProps } }) {
+  const [favList, setFavList] = useState([]);
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
+  function addOrRemoveToFavList(place, clear) {
+    console.log("place", place);
+    if (clear) return setFavList([]);
+    setFavList((prevState) => [...prevState, { ...place }]);
+
+    const array = [...favList];
+    const index = array.map((place) => place.id).indexOf(place.id);
+
+    if (index !== -1) {
+      array.splice(index, 1);
+      setFavList(array);
     }
-    // this exposes the query to the user
-    pageProps.query = ctx.query;
-    return { pageProps };
   }
 
-  render() {
-    const { Component, apollo, pageProps } = this.props;
-
-    return (
-      <ApolloProvider client={apollo}>
-        <Page>
-          <Component {...pageProps} />
-        </Page>
-      </ApolloProvider>
-    );
-  }
+  return (
+    <ApolloProvider client={apollo}>
+      <Page>
+        <Component
+          {...pageProps}
+          setList={(place) => addOrRemoveToFavList(place)}
+        />
+        {favList.length > 0 ? (
+          <FavoritesList
+            favList={favList}
+            addOrRemoveToFavList={addOrRemoveToFavList}
+          />
+        ) : null}
+      </Page>
+    </ApolloProvider>
+  );
 }
 
-export default withData(MyApp);
+App.getInitialProps = async ({ Component, ctx }) => {
+  let pageProps = {};
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+  // this exposes the query to the user
+  pageProps.query = ctx.query;
+  return { pageProps };
+};
+
+export default withData(App);

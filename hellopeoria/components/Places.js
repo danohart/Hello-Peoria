@@ -1,10 +1,10 @@
-import React from 'react';
-import { useQuery, gql } from '@apollo/client';
-import Place from './Place';
-import Error from './ErrorMessage';
-import Loading from './Loading';
-import Pagination from './Pagination';
-import { perPage } from '../config';
+import React from "react";
+import { useQuery, gql } from "@apollo/client";
+import Place from "./Place";
+import Error from "./ErrorMessage";
+import Loading from "./Loading";
+import Pagination from "./Pagination";
+import { perPage } from "../config";
 
 const ALL_PLACES_QUERY = gql`
   query {
@@ -28,7 +28,7 @@ const ALL_PLACES_QUERY = gql`
   }
 `;
 
-export default function Places() {
+export default function Places(props) {
   const { loading, error, data } = useQuery(ALL_PLACES_QUERY);
 
   if (loading) return <Loading />;
@@ -36,7 +36,7 @@ export default function Places() {
   return (
     <div className='card-wrapper'>
       {data.allPeoriaPlaces.map((place) => (
-        <Place place={place} key={place.id} />
+        <Place place={place} key={place.id} setList={props.setList} />
       ))}
     </div>
   );

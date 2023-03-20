@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Meta from '../components/Meta';
-import Places from '../components/Places';
+import Link from "next/link";
+import Meta from "../components/Meta";
+import Places from "../components/Places";
 
 const places = (props) => (
   <div>
@@ -9,7 +9,7 @@ const places = (props) => (
       <h1>Places</h1>
       {/* <Link href={{pathname: '/add-place',}}><a className="button">Add New Place</a></Link> */}
     </div>
-    <Places page={parseFloat(props.query.page) || 1} />
+    <Places setList={props.setList} page={parseFloat(props.query.page) || 1} />
   </div>
 );
 
