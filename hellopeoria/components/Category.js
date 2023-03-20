@@ -1,8 +1,8 @@
-import React from 'react';
-import { useQuery, gql } from '@apollo/client';
-import Place from './Place';
-import Error from './ErrorMessage';
-import Loading from './Loading';
+import React from "react";
+import { useQuery, gql } from "@apollo/client";
+import Place from "./Place";
+import Error from "./ErrorMessage";
+import Loading from "./Loading";
 
 const CATEGORY_PLACES_QUERY = gql`
   query($category: String!) {
@@ -31,7 +31,7 @@ const CATEGORY_PLACES_QUERY = gql`
 export default function CategoryPlaces(props) {
   const { loading, error, data } = useQuery(CATEGORY_PLACES_QUERY, {
     variables: {
-      category: props.category === 'Coffee' ? 'Cafe' : props.category,
+      category: props.category === "Coffee" ? "Cafe" : props.category,
     },
   });
 
@@ -41,7 +41,7 @@ export default function CategoryPlaces(props) {
   return (
     <div className='card-wrapper'>
       {data.allPeoriaPlaces.map((place) => (
-        <Place place={place} key={place.id} />
+        <Place place={place} key={place.id} setList={props.setList} />
       ))}
     </div>
   );

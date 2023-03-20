@@ -1,8 +1,8 @@
-import React from 'react';
-import { useQuery, gql } from '@apollo/client';
-import Place from './Place';
-import Error from './ErrorMessage';
-import Loading from './Loading';
+import React from "react";
+import { useQuery, gql } from "@apollo/client";
+import Place from "./Place";
+import Error from "./ErrorMessage";
+import Loading from "./Loading";
 
 const ALL_PLACES_QUERY = gql`
   query {
@@ -33,7 +33,7 @@ const ALL_PLACES_QUERY = gql`
   }
 `;
 
-export default function BreakfastPlaces() {
+export default function BreakfastPlaces(props) {
   const { loading, error, data } = useQuery(ALL_PLACES_QUERY);
 
   if (loading) return <Loading />;
@@ -42,7 +42,7 @@ export default function BreakfastPlaces() {
   return (
     <div className='card-wrapper'>
       {data.allPeoriaPlaces.map((place) => (
-        <Place place={place} key={place.id} />
+        <Place place={place} key={place.id} setList={props.setList} />
       ))}
     </div>
   );

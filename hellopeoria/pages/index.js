@@ -1,9 +1,9 @@
-import React from 'react';
-import { useQuery, gql } from '@apollo/client';
-import Place from '../components/Place';
-import Link from 'next/link';
-import Loading from '../components/Loading';
-import Meta from '../components/Meta';
+import React from "react";
+import { useQuery, gql } from "@apollo/client";
+import Place from "../components/Place";
+import Link from "next/link";
+import Loading from "../components/Loading";
+import Meta from "../components/Meta";
 
 const HOME_PLACES_QUERY = gql`
   query allPeoriaPlaces($itemNumber: Int = 8) {
@@ -70,7 +70,7 @@ const HOME_PLACES_QUERY = gql`
   }
 `;
 
-export default function Home() {
+export default function Home(props) {
   const { loading, error, data } = useQuery(HOME_PLACES_QUERY);
 
   if (loading) return <Loading />;
@@ -173,7 +173,7 @@ export default function Home() {
       <h2 className='path-title'>Foodie</h2>
       <div className='card-wrapper home'>
         {data.foodiePlaces.map((place) => (
-          <Place place={place} key={place.id} />
+          <Place place={place} key={place.id} setList={props.setList} />
         ))}
         <button>
           <Link href='/path?paths=Foodie'>
@@ -198,7 +198,7 @@ export default function Home() {
         <h2 className='path-title'>Free</h2>
         <div className='card-wrapper home'>
           {data.freePlaces.map((place) => (
-            <Place place={place} key={place.id} />
+            <Place place={place} key={place.id} setList={props.setList} />
           ))}
           <button>
             <Link href='/path?paths=Free'>
@@ -212,7 +212,7 @@ export default function Home() {
         <h2 className='path-title'>Nightlife</h2>
         <div className='card-wrapper home'>
           {data.nightlifePlaces.map((place) => (
-            <Place place={place} key={place.id} />
+            <Place place={place} key={place.id} setList={props.setList} />
           ))}
           <button>
             <Link href='/path?paths=Nightlife'>

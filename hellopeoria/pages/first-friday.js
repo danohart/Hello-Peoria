@@ -27,7 +27,7 @@ const ALL_PLACES_QUERY = gql`
   }
 `;
 
-export default function FirstFriday() {
+export default function FirstFriday(props) {
   const { loading, error, data } = useQuery(ALL_PLACES_QUERY);
 
   if (loading) return <Loading />;
@@ -65,7 +65,7 @@ export default function FirstFriday() {
 
       <div className='card-wrapper'>
         {data.allPeoriaPlaces.map((place) => (
-          <Place place={place} key={place.id} />
+          <Place place={place} key={place.id} setList={props.setList} />
         ))}
       </div>
     </>

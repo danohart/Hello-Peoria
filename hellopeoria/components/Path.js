@@ -1,8 +1,8 @@
-import React from 'react';
-import { useQuery, gql } from '@apollo/client';
-import Place from './Place';
-import Error from './ErrorMessage';
-import Loading from './Loading';
+import React from "react";
+import { useQuery, gql } from "@apollo/client";
+import Place from "./Place";
+import Error from "./ErrorMessage";
+import Loading from "./Loading";
 
 const PATH_PLACES_QUERY = gql`
   query($path: PathNameType!) {
@@ -39,7 +39,7 @@ export default function PathPlaces(props) {
   return (
     <div className='card-wrapper'>
       {data.allPeoriaPlaces.map((place) => (
-        <Place place={place} key={place.id} />
+        <Place place={place} key={place.id} setList={props.setList} />
       ))}
     </div>
   );

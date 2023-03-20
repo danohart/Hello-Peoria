@@ -9,7 +9,7 @@ const CREATE_LIST_MUTATION = gql`
     $url: String
     $postedAt: DateTime
   ) {
-    createFavoriteList(
+    createPeoriaFavoriteList(
       data: { places: { connect: $places }, url: $url, postedAt: $postedAt }
     ) {
       url
