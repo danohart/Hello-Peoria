@@ -1,7 +1,7 @@
-import CategoryPlaces from '../components/Category';
-import Head from 'next/head';
+import CategoryPlaces from "../components/Category";
+import Head from "next/head";
 
-const Category = props => (
+const Category = (props) => (
   <div>
     <Head>
       <title>
@@ -9,12 +9,12 @@ const Category = props => (
         now
       </title>
       <meta
-        name="description"
-        content={props.query.category + ' in Peoria, IL'}
+        name='description'
+        content={props.query.category + " in Peoria, IL"}
       />
     </Head>
-    <h1 className="page-header">{props.query.category}s</h1>
-    <CategoryPlaces category={props.query.category} />
+    <h1 className='page-header'>{props.query.category}s</h1>
+    <CategoryPlaces category={props.query.category} setList={props.setList} />
   </div>
 );
 
