@@ -8,7 +8,6 @@ function App({ Component, apollo, pageProps: { ...pageProps } }) {
   const [favList, setFavList] = useState([]);
 
   function addOrRemoveToFavList(place, clear) {
-    console.log("place", place);
     if (clear) return setFavList([]);
     setFavList((prevState) => [...prevState, { ...place }]);
 

@@ -43,7 +43,7 @@ export default function List(props) {
 
   const currentUrl =
     process.env.NODE_ENV === "production"
-      ? "https://hellopeoria.co/list/"
+      ? "https://hellopeoria.co/list/" + list
       : "https://localhost:7777/list/" + list;
 
   function copyUrl() {
@@ -56,7 +56,7 @@ export default function List(props) {
 
   return (
     <>
-      <Meta title='List created for places in Avondale Chicago Restaurants // Hello Avondale' />
+      <Meta title='List created for places in Peoria' />
       <div className='share'>
         <input className='share-input' defaultValue={currentUrl} />
         <div className='share-click'>
