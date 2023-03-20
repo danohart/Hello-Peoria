@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 const CREATE_LIST_MUTATION = gql`
   mutation CREATE_LIST_MUTATION(
-    $places: [PlaceWhereUniqueInput]
+    $places: [PeoriaPlaceWhereUniqueInput]
     $url: String
     $postedAt: DateTime
   ) {

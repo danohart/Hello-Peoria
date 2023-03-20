@@ -80,7 +80,7 @@ export default function Place({ place, setList }) {
           {place.description}
           <br />
           <button
-            style={{ display: "none" }}
+            // style={{ display: "none" }}
             onClick={() => addPlaceToList(place)}
           >
             Add To List

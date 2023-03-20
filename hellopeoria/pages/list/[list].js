@@ -10,7 +10,7 @@ export default function List(props) {
 
   const GET_LIST = gql`
     query GET_LIST($list: String!) {
-      allFavoriteLists(where: { url: $list }) {
+      allPeoriaFavoriteLists(where: { url: $list }) {
         url
         places {
           id
@@ -21,7 +21,7 @@ export default function List(props) {
             lng
             formattedAddress
           }
-          path
+
           image
           mainCategory {
             name
@@ -41,7 +41,10 @@ export default function List(props) {
   if (loading) return <Loading />;
   if (error) return <p>Error :( {error}</p>;
 
-  const currentUrl = window.location.href;
+  const currentUrl =
+    process.env.NODE_ENV === "production"
+      ? "https://hellopeoria.co/list/"
+      : "https://localhost:7777/list/" + list;
 
   function copyUrl() {
     navigator.clipboard.writeText(currentUrl);
@@ -55,7 +58,7 @@ export default function List(props) {
     <>
       <Meta title='List created for places in Avondale Chicago Restaurants // Hello Avondale' />
       <div className='share'>
-        <input className='share-input' value={currentUrl} />
+        <input className='share-input' defaultValue={currentUrl} />
         <div className='share-click'>
           <div className='share-toast'>{message}</div>
           <button className='share-button' onClick={copyUrl}>
@@ -65,7 +68,7 @@ export default function List(props) {
       </div>
       <div className='list'>
         <div className='card-wrapper'>
-          {data.allFavoriteLists[0].places.map((place) => (
+          {data.allPeoriaFavoriteLists[0].places.map((place) => (
             <Place place={place} key={place.id} setList={props.setList} />
           ))}
         </div>
