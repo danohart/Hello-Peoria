@@ -11,3 +11,5 @@ backend/export*
 GMaps-Restaurants/
 
 .vercel
+.env.local
+.env*.local

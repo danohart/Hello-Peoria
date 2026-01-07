@@ -5,7 +5,7 @@ import Error from "./ErrorMessage";
 import Loading from "./Loading";
 
 const CATEGORY_PLACES_QUERY = gql`
-  query($category: String!) {
+  query($category: CategoryNameType!) {
     allPeoriaPlaces(
       sortBy: name_ASC
       where: { mainCategory: { name: $category } }
