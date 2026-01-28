@@ -338,3 +338,92 @@ export async function getPlacesByIds(ids) {
 
   return orderedPlaces.map((place) => resolvePlace(place, categories, paths));
 }
+
+// Check for duplicate places by googlePlaceID or similar name
+export async function checkDuplicatePlace(googlePlaceID, name) {
+  const { db } = await connectToDatabase();
+
+  let exactMatch = null;
+  let similarPlaces = [];
+
+  // Check for exact googlePlaceID match
+  if (googlePlaceID) {
+    exactMatch = await db.collection('peoriaplaces').findOne({
+      'address.googlePlaceID': googlePlaceID
+    });
+  }
+
+  // Check for similar names (case-insensitive)
+  if (name) {
+    const similar = await db
+      .collection('peoriaplaces')
+      .find({
+        name: { $regex: name, $options: 'i' }
+      })
+      .limit(5)
+      .toArray();
+
+    similarPlaces = similar.map(p => ({
+      id: p._id.toString(),
+      name: p.name,
+      address: p.address?.formattedAddress || p.altAddress || ''
+    }));
+  }
+
+  return {
+    exactMatch: exactMatch ? {
+      id: exactMatch._id.toString(),
+      name: exactMatch.name,
+      address: exactMatch.address?.formattedAddress || exactMatch.altAddress || ''
+    } : null,
+    similarPlaces
+  };
+}
+
+// Create a new place
+export async function createPlace(placeData) {
+  const { db } = await connectToDatabase();
+
+  // Look up category ObjectId by name
+  let mainCategoryId = null;
+  if (placeData.mainCategory) {
+    const category = await db.collection('placecategories').findOne({
+      name: placeData.mainCategory
+    });
+    if (category) {
+      mainCategoryId = category._id;
+    }
+  }
+
+  // Look up path ObjectId by name
+  let mainPathId = null;
+  if (placeData.mainPath) {
+    const path = await db.collection('paths').findOne({
+      name: placeData.mainPath
+    });
+    if (path) {
+      mainPathId = path._id;
+    }
+  }
+
+  const newPlace = {
+    name: placeData.name,
+    description: placeData.description || '',
+    address: placeData.address || null,
+    image: placeData.image || '',
+    mainCategory: mainCategoryId,
+    mainPath: mainPathId,
+    tags: placeData.tags || '',
+    featured: placeData.featured || false,
+    unlisted: false,
+  };
+
+  const result = await db.collection('peoriaplaces').insertOne(newPlace);
+
+  return {
+    id: result.insertedId.toString(),
+    ...newPlace,
+    mainCategory: placeData.mainCategory ? { id: mainCategoryId?.toString(), name: placeData.mainCategory } : null,
+    mainPath: placeData.mainPath ? { id: mainPathId?.toString(), name: placeData.mainPath } : null,
+  };
+}
