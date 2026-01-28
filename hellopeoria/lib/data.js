@@ -64,11 +64,28 @@ function resolvePlace(place, categories, paths) {
     firstFriday: place.firstFriday || false,
     category: place.category || null,
     path: place.path || null,
+    unlisted: place.unlisted || false,
   };
 }
 
-// Get all places sorted by name
+// Get all places sorted by name (excludes unlisted)
 export async function getAllPlaces() {
+  const { db } = await connectToDatabase();
+
+  const categories = await db.collection('placecategories').find({}).toArray();
+  const paths = await db.collection('paths').find({}).toArray();
+
+  const places = await db
+    .collection('peoriaplaces')
+    .find({ unlisted: { $ne: true } })
+    .sort({ name: 1 })
+    .toArray();
+
+  return places.map((place) => resolvePlace(place, categories, paths));
+}
+
+// Get all places including unlisted (for admin)
+export async function getAllPlacesIncludingUnlisted() {
   const { db } = await connectToDatabase();
 
   const categories = await db.collection('placecategories').find({}).toArray();
@@ -95,7 +112,7 @@ export async function getPlacesByPath(pathName) {
 
   const places = await db
     .collection('peoriaplaces')
-    .find({ mainPath: path._id })
+    .find({ mainPath: path._id, unlisted: { $ne: true } })
     .sort({ name: 1 })
     .toArray();
 
@@ -114,7 +131,7 @@ export async function getFeaturedPlacesByPath(pathName, limit = 8) {
 
   const places = await db
     .collection('peoriaplaces')
-    .find({ mainPath: path._id, featured: true })
+    .find({ mainPath: path._id, featured: true, unlisted: { $ne: true } })
     .sort({ description: -1 })
     .limit(limit)
     .toArray();
@@ -134,14 +151,14 @@ export async function getPlacesByCategory(categoryName) {
 
   const places = await db
     .collection('peoriaplaces')
-    .find({ mainCategory: category._id })
+    .find({ mainCategory: category._id, unlisted: { $ne: true } })
     .sort({ name: 1 })
     .toArray();
 
   return places.map((place) => resolvePlace(place, categories, paths));
 }
 
-// Get a single place by ID
+// Get a single place by ID (excludes unlisted)
 export async function getPlaceById(id) {
   const { db } = await connectToDatabase();
 
@@ -152,7 +169,10 @@ export async function getPlaceById(id) {
     placeId = id;
   }
 
-  const place = await db.collection('peoriaplaces').findOne({ _id: placeId });
+  const place = await db.collection('peoriaplaces').findOne({
+    _id: placeId,
+    unlisted: { $ne: true }
+  });
   if (!place) return null;
 
   const categories = await db.collection('placecategories').find({}).toArray();
@@ -161,13 +181,13 @@ export async function getPlaceById(id) {
   return resolvePlace(place, categories, paths);
 }
 
-// Get all place IDs for static paths
+// Get all place IDs for static paths (excludes unlisted)
 export async function getAllPlaceIds() {
   const { db } = await connectToDatabase();
 
   const places = await db
     .collection('peoriaplaces')
-    .find({}, { projection: { _id: 1 } })
+    .find({ unlisted: { $ne: true } }, { projection: { _id: 1 } })
     .toArray();
 
   return places.map((place) => place._id.toString());
@@ -209,7 +229,7 @@ export async function getListByUrl(url) {
 
     const placeDocs = await db
       .collection('peoriaplaces')
-      .find({ _id: { $in: placeIds } })
+      .find({ _id: { $in: placeIds }, unlisted: { $ne: true } })
       .toArray();
 
     places = placeDocs.map((place) => resolvePlace(place, categories, paths));
@@ -249,14 +269,38 @@ export async function searchPlaces(searchTerm) {
   const places = await db
     .collection('peoriaplaces')
     .find({
-      $or: [
-        { name: { $regex: searchTerm, $options: 'i' } },
-        { description: { $regex: searchTerm, $options: 'i' } },
-        { tags: { $regex: searchTerm, $options: 'i' } },
+      $and: [
+        { unlisted: { $ne: true } },
+        {
+          $or: [
+            { name: { $regex: searchTerm, $options: 'i' } },
+            { description: { $regex: searchTerm, $options: 'i' } },
+            { tags: { $regex: searchTerm, $options: 'i' } },
+          ],
+        },
       ],
     })
     .sort({ name: 1 })
     .toArray();
 
   return places.map((place) => resolvePlace(place, categories, paths));
+}
+
+// Update place unlisted status
+export async function updatePlaceUnlisted(id, unlisted) {
+  const { db } = await connectToDatabase();
+
+  let placeId;
+  try {
+    placeId = new ObjectId(id);
+  } catch (e) {
+    placeId = id;
+  }
+
+  const result = await db.collection('peoriaplaces').updateOne(
+    { _id: placeId },
+    { $set: { unlisted: unlisted } }
+  );
+
+  return result.modifiedCount > 0;
 }

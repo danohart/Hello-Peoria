@@ -34,6 +34,7 @@ const schema = buildSchema(`
     firstFriday: Boolean
     category: String
     path: String
+    unlisted: Boolean
   }
 
   type PeoriaFavoriteList {
@@ -111,9 +112,12 @@ const schema = buildSchema(`
 
 // Helper to build MongoDB filter from GraphQL where input
 function buildPlaceFilter(where, categories, paths) {
-  if (!where) return {};
+  // Always exclude unlisted places by default
+  const baseFilter = { unlisted: { $ne: true } };
 
-  const filter = {};
+  if (!where) return baseFilter;
+
+  const filter = { ...baseFilter };
   const conditions = [];
 
   // Handle direct ID lookup
@@ -257,16 +261,13 @@ function resolvePlace(place, categories, paths) {
     firstFriday: place.firstFriday,
     category: place.category,
     path: place.path,
+    unlisted: place.unlisted || false,
   };
 }
 
 const root = {
   allPeoriaPlaces: async ({ where, sortBy, first }) => {
     const { db } = await connectToDatabase();
-
-    // Debug: list all collections
-    const collections = await db.listCollections().toArray();
-    console.log("Available collections:", collections.map((c) => c.name));
 
     // Load categories and paths for filtering
     const categories = await db
@@ -277,9 +278,6 @@ const root = {
       .collection("paths")
       .find({})
       .toArray();
-
-    console.log("Categories count:", categories.length);
-    console.log("Paths count:", paths.length);
 
     const filter = buildPlaceFilter(where, categories, paths);
     const sort = buildSort(sortBy);
@@ -308,7 +306,10 @@ const root = {
       placeId = where.id;
     }
 
-    const place = await db.collection("peoriaplaces").findOne({ _id: placeId });
+    const place = await db.collection("peoriaplaces").findOne({
+      _id: placeId,
+      unlisted: { $ne: true }
+    });
 
     if (!place) return null;
 
@@ -357,7 +358,7 @@ const root = {
 
           const placeDocs = await db
             .collection("peoriaplaces")
-            .find({ _id: { $in: placeIds } })
+            .find({ _id: { $in: placeIds }, unlisted: { $ne: true } })
             .toArray();
 
           places = placeDocs.map((place) =>
