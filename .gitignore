@@ -12,3 +12,6 @@ backend/now.json
 backend/data/*
 *.env
 hellopeoria/env.js
+hellopeoria/pages/admin.js
+hellopeoria/pages/api/check-business-status.js
+hellopeoria/pages/api/update-unlisted.js

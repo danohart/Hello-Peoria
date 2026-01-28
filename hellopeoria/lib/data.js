@@ -304,3 +304,37 @@ export async function updatePlaceUnlisted(id, unlisted) {
 
   return result.modifiedCount > 0;
 }
+
+// Get multiple places by IDs (for URL-based lists)
+export async function getPlacesByIds(ids) {
+  if (!ids || ids.length === 0) return [];
+
+  const { db } = await connectToDatabase();
+
+  const categories = await db.collection('placecategories').find({}).toArray();
+  const paths = await db.collection('paths').find({}).toArray();
+
+  const objectIds = ids.map((id) => {
+    try {
+      return new ObjectId(id);
+    } catch (e) {
+      return id;
+    }
+  });
+
+  const places = await db
+    .collection('peoriaplaces')
+    .find({
+      _id: { $in: objectIds },
+      unlisted: { $ne: true }
+    })
+    .toArray();
+
+  // Maintain the original order of IDs
+  const placeMap = new Map(places.map(p => [p._id.toString(), p]));
+  const orderedPlaces = ids
+    .map(id => placeMap.get(id))
+    .filter(Boolean);
+
+  return orderedPlaces.map((place) => resolvePlace(place, categories, paths));
+}

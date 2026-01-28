@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import Place from "../../components/Place";
 import Meta from "../../components/Meta";
-import { getListByUrl, getAllListUrls } from "../../lib/data";
+import { getPlacesByIds } from "../../lib/data";
 
-export default function List({ list, listData, setList }) {
+export default function List({ list, places, setList }) {
   const [message, setMessage] = useState("Copy");
 
-  if (!listData) {
-    return <div>List not found</div>;
+  if (!places || places.length === 0) {
+    return <div>No places found in this list</div>;
   }
 
   const currentUrl =
     process.env.NODE_ENV === "production"
       ? "https://hellopeoria.co/list/" + list
-      : "https://localhost:7777/list/" + list;
+      : "http://localhost:7777/list/" + list;
 
   function copyUrl() {
     navigator.clipboard.writeText(currentUrl);
@@ -25,9 +25,9 @@ export default function List({ list, listData, setList }) {
 
   return (
     <>
-      <Meta title='List created for places in Peoria' />
+      <Meta title='My Peoria Places List' />
       <div className='share'>
-        <input className='share-input' defaultValue={currentUrl} />
+        <input className='share-input' defaultValue={currentUrl} readOnly />
         <div className='share-click'>
           <div className='share-toast'>{message}</div>
           <button className='share-button' onClick={copyUrl}>
@@ -37,7 +37,7 @@ export default function List({ list, listData, setList }) {
       </div>
       <div className='list'>
         <div className='card-wrapper'>
-          {listData.places.map((place) => (
+          {places.map((place) => (
             <Place place={place} key={place.id} setList={setList} />
           ))}
         </div>
@@ -47,21 +47,28 @@ export default function List({ list, listData, setList }) {
 }
 
 export async function getStaticPaths() {
-  const listUrls = await getAllListUrls();
-
+  // No pre-generated paths - all lists are created dynamically from URL
   return {
-    paths: listUrls.map((url) => ({
-      params: { list: url },
-    })),
-    fallback: 'blocking', // Allow new lists to be created dynamically
+    paths: [],
+    fallback: 'blocking',
   };
 }
 
 export async function getStaticProps({ params }) {
   const { list } = params;
-  const listData = await getListByUrl(list);
 
-  if (!listData) {
+  // Parse place IDs from the URL (comma-separated)
+  const placeIds = list.split(',').filter(id => id.trim());
+
+  if (placeIds.length === 0) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const places = await getPlacesByIds(placeIds);
+
+  if (places.length === 0) {
     return {
       notFound: true,
     };
@@ -70,8 +77,8 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       list,
-      listData,
+      places,
     },
-    revalidate: 60, // Revalidate more frequently for user-created lists
+    revalidate: 3600,
   };
 }

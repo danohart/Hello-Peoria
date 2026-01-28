@@ -1,57 +1,13 @@
-import { useMutation } from "@apollo/client";
-import { slugify } from "../lib/slugify";
-import { gql } from "apollo-boost";
 import { useRouter } from "next/router";
-
-const CREATE_LIST_MUTATION = gql`
-  mutation CREATE_LIST_MUTATION(
-    $places: [PeoriaPlaceWhereUniqueInput]
-    $url: String
-    $postedAt: DateTime
-  ) {
-    createPeoriaFavoriteList(
-      data: { places: { connect: $places }, url: $url, postedAt: $postedAt }
-    ) {
-      url
-    }
-  }
-`;
 
 export default function FavoritesList({ favList, addOrRemoveToFavList }) {
   const router = useRouter();
-  const placeIdArray = favList.map((place) => ({
-    id: place.id,
-  }));
 
-  const today = new Date();
-
-  const postedAt =
-    today.getDate() +
-    ":" +
-    today.getHours() +
-    ":" +
-    today.getMinutes() +
-    ":" +
-    today.getSeconds();
-  const url = slugify(postedAt);
-
-  const [addListToDatabase, { loading, error }] = useMutation(
-    CREATE_LIST_MUTATION,
-    {
-      variables: {
-        places: placeIdArray,
-        url,
-        postedAt: today,
-      },
-    }
-  );
-
-  async function saveList() {
-    const addToDatabase = await addListToDatabase();
-    const res = addToDatabase;
+  function saveList() {
+    // Encode place IDs in the URL
+    const placeIds = favList.map((place) => place.id).join(",");
     addOrRemoveToFavList("place", "clear");
-
-    return res ? router.push(`/list/${url}`) : null;
+    router.push(`/list/${placeIds}`);
   }
 
   return (
