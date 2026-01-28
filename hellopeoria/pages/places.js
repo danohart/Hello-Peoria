@@ -1,16 +1,31 @@
 import Link from "next/link";
 import Meta from "../components/Meta";
-import Places from "../components/Places";
+import Place from "../components/Place";
+import { getAllPlaces } from "../lib/data";
 
-const places = (props) => (
+const PlacesPage = ({ places, setList }) => (
   <div>
     <Meta title='All Peoria Places' />
     <div className='page-header'>
       <h1>Places</h1>
-      {/* <Link href={{pathname: '/add-place',}}><a className="button">Add New Place</a></Link> */}
     </div>
-    <Places setList={props.setList} page={parseFloat(props.query.page) || 1} />
+    <div className='card-wrapper'>
+      {places.map((place) => (
+        <Place place={place} key={place.id} setList={setList} />
+      ))}
+    </div>
   </div>
 );
 
-export default places;
+export async function getStaticProps() {
+  const places = await getAllPlaces();
+
+  return {
+    props: {
+      places,
+    },
+    revalidate: 3600,
+  };
+}
+
+export default PlacesPage;

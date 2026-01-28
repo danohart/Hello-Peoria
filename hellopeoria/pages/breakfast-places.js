@@ -1,14 +1,33 @@
-import Link from "next/link";
-import BreakfastPlaces from "../components/BreakfastPlaces";
+import Head from "next/head";
+import Place from "../components/Place";
+import { searchPlaces } from "../lib/data";
 
-const coffeePlaces = props => (
+const BreakfastPlacesPage = ({ places, setList }) => (
   <div>
-    <div className="page-header">
+    <Head>
+      <title>Breakfast Places - Hello Peoria // Places in Peoria, IL</title>
+      <meta name='description' content='Breakfast places in Peoria, IL' />
+    </Head>
+    <div className='page-header'>
       <h1>Breakfast</h1>
-      {/* <Link href={{pathname: '/add-place',}}><a className="button">Add New Place</a></Link> */}
     </div>
-    <BreakfastPlaces page={parseFloat(props.query.page) || 1} />
+    <div className='card-wrapper'>
+      {places.map((place) => (
+        <Place place={place} key={place.id} setList={setList} />
+      ))}
+    </div>
   </div>
 );
 
-export default coffeePlaces;
+export async function getStaticProps() {
+  const places = await searchPlaces('breakfast');
+
+  return {
+    props: {
+      places,
+    },
+    revalidate: 3600,
+  };
+}
+
+export default BreakfastPlacesPage;

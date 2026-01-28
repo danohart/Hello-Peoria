@@ -31,6 +31,7 @@ const schema = buildSchema(`
     mainPath: Path
     tags: String
     featured: Boolean
+    firstFriday: Boolean
     category: String
     path: String
   }
@@ -70,6 +71,7 @@ const schema = buildSchema(`
     mainCategory: CategoryWhereInput
     mainPath: PathWhereInput
     featured: Boolean
+    firstFriday: Boolean
     name_contains_i: String
     description_contains_i: String
     tags_contains_i: String
@@ -126,6 +128,11 @@ function buildPlaceFilter(where, categories, paths) {
   // Handle featured filter
   if (where.featured !== undefined) {
     conditions.push({ featured: where.featured });
+  }
+
+  // Handle firstFriday filter
+  if (where.firstFriday !== undefined) {
+    conditions.push({ firstFriday: where.firstFriday });
   }
 
   // Handle category filter
@@ -247,6 +254,7 @@ function resolvePlace(place, categories, paths) {
     mainPath,
     tags: place.tags,
     featured: place.featured,
+    firstFriday: place.firstFriday,
     category: place.category,
     path: place.path,
   };
@@ -262,7 +270,7 @@ const root = {
 
     // Load categories and paths for filtering
     const categories = await db
-      .collection("categories")
+      .collection("placecategories")
       .find({})
       .toArray();
     const paths = await db
@@ -305,7 +313,7 @@ const root = {
     if (!place) return null;
 
     const categories = await db
-      .collection("categories")
+      .collection("placecategories")
       .find({})
       .toArray();
     const paths = await db
@@ -326,7 +334,7 @@ const root = {
       .toArray();
 
     const categories = await db
-      .collection("categories")
+      .collection("placecategories")
       .find({})
       .toArray();
     const paths = await db

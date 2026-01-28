@@ -3,29 +3,29 @@ import Link from "next/link";
 
 export default function Place({ place, setList }) {
   function placeBackground() {
-    if (!place.image) {
-      if (!place.mainCategory) {
-        return place.category;
-      }
-      if (place.mainCategory.name === "Cafe") {
-        return "/static/categories/coffee.jpg";
-      }
-      if (place.tags) {
-        const tag = place.tags.split(", ");
-        return (
-          "https://source.unsplash.com/400x200/?" +
-          tag[Math.floor(Math.random() * tag.length)]
-            .replace(/\s+/g, ",")
-            .toLowerCase()
-        );
-      } else {
-        return (
-          "https://source.unsplash.com/400x200/?" + place.mainCategory.name
-        );
-      }
+    if (place.image) {
+      return place.image;
     }
+    // Use LoremFlickr with category keyword and place ID for consistency
+    const category = place.mainCategory?.name || place.category || 'peoria';
+    const keyword = getCategoryKeyword(category);
+    const lockId = place.id?.slice(-6) || '1';
+    return `https://loremflickr.com/400/200/${keyword}?lock=${lockId}`;
+  }
 
-    return place.image;
+  function getCategoryKeyword(category) {
+    const keywords = {
+      'Cafe': 'coffee,cafe',
+      'Coffee': 'coffee,cafe',
+      'Restaurant': 'restaurant,food',
+      'Bar': 'bar,cocktail',
+      'Breakfast': 'breakfast,brunch',
+      'Mural': 'mural,street-art',
+      'Attraction': 'attraction,landmark',
+      'Shop': 'shop,store',
+      'Entertainment': 'entertainment,theater',
+    };
+    return keywords[category] || 'restaurant,city';
   }
 
   const [isAdded, setIsAdded] = useState(false);
@@ -45,24 +45,14 @@ export default function Place({ place, setList }) {
         className='image'
         style={{ backgroundImage: `url(${placeBackground()})` }}
       >
-        <Link
-          href={{
-            pathname: "/place",
-            query: { id: place.id },
-          }}
-        >
+        <Link href={`/place/${place.id}`}>
           <a className='featured-link' />
         </Link>
         <div className='title-wrapper'>
           <div className='place-category'>
             {place.mainCategory ? (
               <span>
-                <Link
-                  href={{
-                    pathname: "/category",
-                    query: { category: place.mainCategory.name },
-                  }}
-                >
+                <Link href={`/category/${place.mainCategory.name}`}>
                   <a>{place.mainCategory.name}</a>
                 </Link>
               </span>

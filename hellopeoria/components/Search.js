@@ -30,12 +30,7 @@ const SEARCH_PLACES_QUERY = gql`
 `;
 
 function routeToPlace(place) {
-  Router.push({
-    pathname: '/place',
-    query: {
-      id: place.id,
-    },
-  });
+  Router.push(`/place/${place.id}`);
 }
 
 class AutoComplete extends React.Component {
@@ -87,25 +82,30 @@ class AutoComplete extends React.Component {
               {isOpen && (
                 <div className='search-wrapper'>
                   <div>
-                    {this.state.places.map((place, index) => (
-                      <Link
-                        href={{ pathname: '/place', query: { id: place.id } }}
-                        key={place.id}
-                      >
+                    {this.state.places.map((place, index) => {
+                    const getCategoryKeyword = (cat) => {
+                      const keywords = {
+                        'Cafe': 'coffee,cafe', 'Coffee': 'coffee,cafe',
+                        'Restaurant': 'restaurant,food', 'Bar': 'bar,cocktail',
+                        'Breakfast': 'breakfast,brunch', 'Mural': 'mural,street-art',
+                        'Attraction': 'attraction,landmark', 'Shop': 'shop,store',
+                        'Entertainment': 'entertainment,theater',
+                      };
+                      return keywords[cat] || 'restaurant,city';
+                    };
+                    const keyword = getCategoryKeyword(place.mainCategory?.name);
+                    const lockId = place.id?.slice(-6) || '1';
+                    const fallbackImage = `https://loremflickr.com/600/200/${keyword}?lock=${lockId}`;
+
+                    return (
+                      <Link href={`/place/${place.id}`} key={place.id}>
                         <a>
                           <div className='search-item' key={place.id}>
                             <div className='image'>
-                              {place.image ? (
-                                <img src={place.image} alt={place.name} />
-                              ) : (
-                                <img
-                                  src={
-                                    'https://source.unsplash.com/600x200/?' +
-                                    place.mainCategory.name
-                                  }
-                                  alt={place.name}
-                                />
-                              )}
+                              <img
+                                src={place.image || fallbackImage}
+                                alt={place.name}
+                              />
                             </div>
                             <div className='name'>
                               {place.name}
@@ -116,7 +116,8 @@ class AutoComplete extends React.Component {
                           </div>
                         </a>
                       </Link>
-                    ))}
+                    );
+                    })}
                     {!this.state.places.length && !this.state.loading && (
                       <div className='search-item'>
                         Nothing Found for {inputValue}

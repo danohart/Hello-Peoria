@@ -1,45 +1,14 @@
 import React, { useState } from "react";
 import Place from "../../components/Place";
-import Loading from "../../components/Loading";
-import { useQuery } from "@apollo/client";
-import { gql } from "apollo-boost";
 import Meta from "../../components/Meta";
+import { getListByUrl, getAllListUrls } from "../../lib/data";
 
-export default function List(props) {
-  const { list } = props.query;
-
-  const GET_LIST = gql`
-    query GET_LIST($list: String!) {
-      allPeoriaFavoriteLists(where: { url: $list }) {
-        url
-        places {
-          id
-          name
-          description
-          address {
-            lat
-            lng
-            formattedAddress
-          }
-
-          image
-          mainCategory {
-            name
-          }
-        }
-        postedAt
-      }
-    }
-  `;
-
+export default function List({ list, listData, setList }) {
   const [message, setMessage] = useState("Copy");
 
-  const { data, loading, error } = useQuery(GET_LIST, {
-    variables: { list },
-  });
-
-  if (loading) return <Loading />;
-  if (error) return <p>Error :( {error}</p>;
+  if (!listData) {
+    return <div>List not found</div>;
+  }
 
   const currentUrl =
     process.env.NODE_ENV === "production"
@@ -51,7 +20,7 @@ export default function List(props) {
     setMessage("Copied!");
     setTimeout(() => {
       setMessage("Copy");
-    }, "2000");
+    }, 2000);
   }
 
   return (
@@ -68,11 +37,41 @@ export default function List(props) {
       </div>
       <div className='list'>
         <div className='card-wrapper'>
-          {data.allPeoriaFavoriteLists[0].places.map((place) => (
-            <Place place={place} key={place.id} setList={props.setList} />
+          {listData.places.map((place) => (
+            <Place place={place} key={place.id} setList={setList} />
           ))}
         </div>
       </div>
     </>
   );
+}
+
+export async function getStaticPaths() {
+  const listUrls = await getAllListUrls();
+
+  return {
+    paths: listUrls.map((url) => ({
+      params: { list: url },
+    })),
+    fallback: 'blocking', // Allow new lists to be created dynamically
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const { list } = params;
+  const listData = await getListByUrl(list);
+
+  if (!listData) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      list,
+      listData,
+    },
+    revalidate: 60, // Revalidate more frequently for user-created lists
+  };
 }

@@ -1,87 +1,16 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
 import Place from "../components/Place";
 import Link from "next/link";
-import Loading from "../components/Loading";
 import Meta from "../components/Meta";
+import { getFeaturedPlacesByPath } from "../lib/data";
 
-const HOME_PLACES_QUERY = gql`
-  query allPeoriaPlaces($itemNumber: Int = 8) {
-    foodiePlaces: allPeoriaPlaces(
-      first: $itemNumber
-      sortBy: description_DESC
-      where: { AND: [{ mainPath: { name: Foodie } }, { featured: true }] }
-    ) {
-      id
-      name
-      address {
-        formattedAddress
-      }
-      altAddress
-      image
-      mainCategory {
-        name
-      }
-      mainPath {
-        name
-      }
-      tags
-    }
-    freePlaces: allPeoriaPlaces(
-      first: $itemNumber
-      sortBy: description_DESC
-      where: { AND: [{ mainPath: { name: Free } }, { featured: true }] }
-    ) {
-      id
-      name
-      address {
-        formattedAddress
-      }
-      altAddress
-      image
-      mainCategory {
-        name
-      }
-      mainPath {
-        name
-      }
-      tags
-    }
-    nightlifePlaces: allPeoriaPlaces(
-      first: $itemNumber
-      sortBy: description_DESC
-      where: { AND: [{ mainPath: { name: Nightlife } }, { featured: true }] }
-    ) {
-      id
-      name
-      address {
-        formattedAddress
-      }
-      altAddress
-      image
-      mainCategory {
-        name
-      }
-      mainPath {
-        name
-      }
-      tags
-    }
-  }
-`;
-
-export default function Home(props) {
-  const { loading, error, data } = useQuery(HOME_PLACES_QUERY);
-
-  if (loading) return <Loading />;
-  if (error) return `Error! ${error.message}`;
-
+export default function Home({ foodiePlaces, freePlaces, nightlifePlaces, setList }) {
   return (
     <div className='homepage'>
       <Meta />
       <div className='card-wrapper'>
         <div className='category card coffee'>
-          <Link href='/category?category=Coffee'>
+          <Link href='/category/Coffee'>
             <a>
               <div className='inner'>
                 <h2>Coffee</h2>
@@ -92,7 +21,7 @@ export default function Home(props) {
         </div>
 
         <div className='category card restaurant'>
-          <Link href='/category?category=Restaurant'>
+          <Link href='/category/Restaurant'>
             <a>
               <div className='inner'>
                 <h2>Restaurants</h2>
@@ -103,7 +32,7 @@ export default function Home(props) {
         </div>
 
         <div className='category card bar'>
-          <Link href='/category?category=Bar'>
+          <Link href='/category/Bar'>
             <a>
               <div className='inner'>
                 <h2>Bars</h2>
@@ -129,54 +58,39 @@ export default function Home(props) {
 
       <div className='paths-wrapper'>
         <div className='path free'>
-          <Link href='/path?paths=Free'>
+          <Link href='/path/Free'>
             <a>Free</a>
           </Link>
         </div>
         <div className='path family'>
-          <Link href='/path?paths=Family'>
+          <Link href='/path/Family'>
             <a>Family</a>
           </Link>
         </div>
-        {/* <div className="path sightseeing">
-        <Link href="/path?paths=Sightseeing">
-          <a>Sightseeing</a>
-        </Link>
-      </div> */}
         <div className='path nightlife'>
-          <Link href='/path?paths=Nightlife'>
+          <Link href='/path/Nightlife'>
             <a>Night Life</a>
           </Link>
         </div>
         <div className='path local'>
-          <Link href='/path?paths=Local'>
+          <Link href='/path/Local'>
             <a>Local</a>
           </Link>
         </div>
         <div className='path foodie'>
-          <Link href='/path?paths=Foodie'>
+          <Link href='/path/Foodie'>
             <a>Foodie</a>
           </Link>
         </div>
-        {/* <div className="path outdoor">
-        <Link href="/path?paths=Outdoor">
-          <a>Outdoor</a>
-        </Link>
-      </div> */}
-        {/* <div className="path events">
-        <Link href="/path?paths=Events">
-          <a>Events</a>
-        </Link>
-      </div> */}
       </div>
 
       <h2 className='path-title'>Foodie</h2>
       <div className='card-wrapper home'>
-        {data.foodiePlaces.map((place) => (
-          <Place place={place} key={place.id} setList={props.setList} />
+        {foodiePlaces.map((place) => (
+          <Place place={place} key={place.id} setList={setList} />
         ))}
         <button>
-          <Link href='/path?paths=Foodie'>
+          <Link href='/path/Foodie'>
             <a>More</a>
           </Link>
         </button>
@@ -197,11 +111,11 @@ export default function Home(props) {
       <>
         <h2 className='path-title'>Free</h2>
         <div className='card-wrapper home'>
-          {data.freePlaces.map((place) => (
-            <Place place={place} key={place.id} setList={props.setList} />
+          {freePlaces.map((place) => (
+            <Place place={place} key={place.id} setList={setList} />
           ))}
           <button>
-            <Link href='/path?paths=Free'>
+            <Link href='/path/Free'>
               <a>More</a>
             </Link>
           </button>
@@ -211,11 +125,11 @@ export default function Home(props) {
       <>
         <h2 className='path-title'>Nightlife</h2>
         <div className='card-wrapper home'>
-          {data.nightlifePlaces.map((place) => (
-            <Place place={place} key={place.id} setList={props.setList} />
+          {nightlifePlaces.map((place) => (
+            <Place place={place} key={place.id} setList={setList} />
           ))}
           <button>
-            <Link href='/path?paths=Nightlife'>
+            <Link href='/path/Nightlife'>
               <a>More</a>
             </Link>
           </button>
@@ -223,4 +137,21 @@ export default function Home(props) {
       </>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const [foodiePlaces, freePlaces, nightlifePlaces] = await Promise.all([
+    getFeaturedPlacesByPath('Foodie', 8),
+    getFeaturedPlacesByPath('Free', 8),
+    getFeaturedPlacesByPath('Nightlife', 8),
+  ]);
+
+  return {
+    props: {
+      foodiePlaces,
+      freePlaces,
+      nightlifePlaces,
+    },
+    revalidate: 3600, // Regenerate page every hour
+  };
 }
